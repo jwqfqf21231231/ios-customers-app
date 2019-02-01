@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-9B-dHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="agV-C2-ItU">
+                                        <rect key="frame" x="87" y="58.5" width="200" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="3pA-41-zTh"/>
+                                            <constraint firstAttribute="height" constant="250" id="CR3-BE-f9v"/>
+                                            <constraint firstAttribute="width" secondItem="agV-C2-ItU" secondAttribute="height" multiplier="4:5" id="GiN-UB-l0q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شركة فيوجن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Py-d4-XSC">
+                                        <rect key="frame" x="37.5" y="321" width="300" height="25.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="nok-QT-3li"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <color key="textColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لخدمة الانترنت وأنظمة الاتصالات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-uF-ndy">
+                                        <rect key="frame" x="37" y="352.5" width="300" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="2SW-dt-C9Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" id="0Kp-6l-7CE"/>
+                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="30" id="B0g-Of-D08"/>
+                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="Bxo-AQ-c9c"/>
+                                    <constraint firstItem="agV-C2-ItU" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="-150" id="Iby-FZ-wVx"/>
+                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="MJb-QQ-jYT"/>
+                                    <constraint firstItem="agV-C2-ItU" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="V6R-u9-cpd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PhM-9B-dHJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="13i-aP-koZ"/>
+                            <constraint firstItem="PhM-9B-dHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4BU-ay-VP6"/>
+                            <constraint firstItem="PhM-9B-dHJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="L37-d6-3c2"/>
+                            <constraint firstItem="PhM-9B-dHJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="N6y-gv-ibt"/>
+                            <constraint firstItem="PhM-9B-dHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gmr-Qf-Jx1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PhM-9B-dHJ" secondAttribute="trailing" id="k50-Eh-xPv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo-1" width="612" height="792"/>
+    </resources>
+</document>

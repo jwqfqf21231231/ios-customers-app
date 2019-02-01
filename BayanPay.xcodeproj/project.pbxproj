@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		174E6029206ECD1A0022CD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6028206ECD1A0022CD0A /* AppDelegate.swift */; };
+		174E602E206ECD1A0022CD0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174E602C206ECD1A0022CD0A /* Main.storyboard */; };
+		174E6030206ECD1A0022CD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174E602F206ECD1A0022CD0A /* Assets.xcassets */; };
+		174E6033206ECD1A0022CD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174E6031206ECD1A0022CD0A /* LaunchScreen.storyboard */; };
+		174E6080206F15D80022CD0A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6076206F15D70022CD0A /* HomeVC.swift */; };
+		174E6081206F15D80022CD0A /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6077206F15D70022CD0A /* ActivityVC.swift */; };
+		174E6082206F15D80022CD0A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6078206F15D70022CD0A /* LoginVC.swift */; };
+		C10E622421D8A36F00813CB6 /* AdvsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10E622321D8A36F00813CB6 /* AdvsVC.swift */; };
+		C10E622621D8A4EE00813CB6 /* AdvsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10E622521D8A4EE00813CB6 /* AdvsCell.swift */; };
+		C10E622821D8F52700813CB6 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10E622721D8F52700813CB6 /* NotificationVC.swift */; };
+		C10EAE0821FDB28800ED8223 /* OutAdvdetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10EAE0721FDB28800ED8223 /* OutAdvdetailsVC.swift */; };
+		C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120FB9021EDD0C0004A5694 /* OutAdvsVS.swift */; };
+		C120FB9321EDD419004A5694 /* OutAdvsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120FB9221EDD419004A5694 /* OutAdvsCell.swift */; };
+		C12A18B721F792C3008A179D /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A18B621F792C3008A179D /* Extention.swift */; };
+		C135681322005923000A6CBC /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681222005923000A6CBC /* ActivityCell.swift */; };
+		C135681522005C45000A6CBC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681422005C45000A6CBC /* ActivityModel.swift */; };
+		C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA321C68899003124E5 /* AdvdetailsVS.swift */; };
+		C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA521C68927003124E5 /* ConfairmVC.swift */; };
+		C18E483F21EF39B8003E0E27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E483E21EF39B8003E0E27 /* Config.swift */; };
+		C18E484121EF3A4E003E0E27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484021EF3A4E003E0E27 /* API.swift */; };
+		C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484221EF5233003E0E27 /* TbBarVS.swift */; };
+		C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3FD5A2202CEF400A7CB0F /* AccountHistoryVC.swift */; };
+		C1A3FD5D2202CF4500A7CB0F /* AccountHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3FD5C2202CF4500A7CB0F /* AccountHistoryCell.swift */; };
+		C1A3FD5F2202CF6700A7CB0F /* AccountHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3FD5E2202CF6700A7CB0F /* AccountHistoryModel.swift */; };
+		C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C0025421C77A530023CE4A /* RegisterVC.swift */; };
+		C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB02EA2201A692000F72C9 /* ProfileVC.swift */; };
+		C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB02EE2201A73F000F72C9 /* Profile.swift */; };
+		C1F2FB0D21FDE081003040F5 /* AdvModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2FB0C21FDE081003040F5 /* AdvModels.swift */; };
+		C1F5A9CA21F5F5A1002DAB9A /* AdvertaismentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F5A9C921F5F5A1002DAB9A /* AdvertaismentItem.swift */; };
+		DD5F25DE2EA908E6EDD53BFD /* Pods_BayanPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04789A0AC2CFFAF1B3DF54FC /* Pods_BayanPay.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04789A0AC2CFFAF1B3DF54FC /* Pods_BayanPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BayanPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		174E6025206ECD1A0022CD0A /* BayanPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayanPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		174E6028206ECD1A0022CD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		174E602D206ECD1A0022CD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		174E602F206ECD1A0022CD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		174E6032206ECD1A0022CD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		174E6034206ECD1A0022CD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174E6076206F15D70022CD0A /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		174E6077206F15D70022CD0A /* ActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		174E6078206F15D70022CD0A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BayanPay.release.xcconfig"; path = "Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay.release.xcconfig"; sourceTree = "<group>"; };
+		C10E622321D8A36F00813CB6 /* AdvsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvsVC.swift; sourceTree = "<group>"; };
+		C10E622521D8A4EE00813CB6 /* AdvsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvsCell.swift; sourceTree = "<group>"; };
+		C10E622721D8F52700813CB6 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		C10EAE0721FDB28800ED8223 /* OutAdvdetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvdetailsVC.swift; sourceTree = "<group>"; };
+		C120FB9021EDD0C0004A5694 /* OutAdvsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvsVS.swift; sourceTree = "<group>"; };
+		C120FB9221EDD419004A5694 /* OutAdvsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvsCell.swift; sourceTree = "<group>"; };
+		C12A18B621F792C3008A179D /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		C135681222005923000A6CBC /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		C135681422005C45000A6CBC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		C139BBA321C68899003124E5 /* AdvdetailsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvdetailsVS.swift; sourceTree = "<group>"; };
+		C139BBA521C68927003124E5 /* ConfairmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfairmVC.swift; sourceTree = "<group>"; };
+		C18E483E21EF39B8003E0E27 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C18E484021EF3A4E003E0E27 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		C18E484221EF5233003E0E27 /* TbBarVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TbBarVS.swift; sourceTree = "<group>"; };
+		C1A3FD5A2202CEF400A7CB0F /* AccountHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryVC.swift; sourceTree = "<group>"; };
+		C1A3FD5C2202CF4500A7CB0F /* AccountHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryCell.swift; sourceTree = "<group>"; };
+		C1A3FD5E2202CF6700A7CB0F /* AccountHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryModel.swift; sourceTree = "<group>"; };
+		C1C0025421C77A530023CE4A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		C1CB02EA2201A692000F72C9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C1CB02EE2201A73F000F72C9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C1F2FB0C21FDE081003040F5 /* AdvModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvModels.swift; sourceTree = "<group>"; };
+		C1F5A9C921F5F5A1002DAB9A /* AdvertaismentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertaismentItem.swift; sourceTree = "<group>"; };
+		CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BayanPay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		174E6022206ECD1A0022CD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD5F25DE2EA908E6EDD53BFD /* Pods_BayanPay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		174E601C206ECD1A0022CD0A = {
+			isa = PBXGroup;
+			children = (
+				174E6027206ECD1A0022CD0A /* BayanPay */,
+				174E6026206ECD1A0022CD0A /* Products */,
+				A9C10696AF4920D77206022F /* Pods */,
+				4C095FDD5F199D17CC2C1F2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		174E6026206ECD1A0022CD0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				174E6025206ECD1A0022CD0A /* BayanPay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		174E6027206ECD1A0022CD0A /* BayanPay */ = {
+			isa = PBXGroup;
+			children = (
+				174E6028206ECD1A0022CD0A /* AppDelegate.swift */,
+				174E603A206ECD2E0022CD0A /* Views */,
+				174E6040206EED4F0022CD0A /* Controllers */,
+				C18E483D21EF3998003E0E27 /* Model */,
+				174E603B206ECD360022CD0A /* Assets */,
+				174E603C206ECD450022CD0A /* Supporting Files */,
+			);
+			path = BayanPay;
+			sourceTree = "<group>";
+		};
+		174E603A206ECD2E0022CD0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				174E6031206ECD1A0022CD0A /* LaunchScreen.storyboard */,
+				174E602C206ECD1A0022CD0A /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		174E603B206ECD360022CD0A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				174E602F206ECD1A0022CD0A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		174E603C206ECD450022CD0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				174E6034206ECD1A0022CD0A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		174E6040206EED4F0022CD0A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				174E6077206F15D70022CD0A /* ActivityVC.swift */,
+				174E6076206F15D70022CD0A /* HomeVC.swift */,
+				174E6078206F15D70022CD0A /* LoginVC.swift */,
+				C139BBA321C68899003124E5 /* AdvdetailsVS.swift */,
+				C139BBA521C68927003124E5 /* ConfairmVC.swift */,
+				C1C0025421C77A530023CE4A /* RegisterVC.swift */,
+				C10E622321D8A36F00813CB6 /* AdvsVC.swift */,
+				C10E622521D8A4EE00813CB6 /* AdvsCell.swift */,
+				C10E622721D8F52700813CB6 /* NotificationVC.swift */,
+				C120FB9021EDD0C0004A5694 /* OutAdvsVS.swift */,
+				C120FB9221EDD419004A5694 /* OutAdvsCell.swift */,
+				C18E484221EF5233003E0E27 /* TbBarVS.swift */,
+				C12A18B621F792C3008A179D /* Extention.swift */,
+				C10EAE0721FDB28800ED8223 /* OutAdvdetailsVC.swift */,
+				C135681222005923000A6CBC /* ActivityCell.swift */,
+				C1CB02EA2201A692000F72C9 /* ProfileVC.swift */,
+				C1A3FD5A2202CEF400A7CB0F /* AccountHistoryVC.swift */,
+				C1A3FD5C2202CF4500A7CB0F /* AccountHistoryCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4C095FDD5F199D17CC2C1F2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04789A0AC2CFFAF1B3DF54FC /* Pods_BayanPay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9C10696AF4920D77206022F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */,
+				31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C18E483D21EF3998003E0E27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C18E483E21EF39B8003E0E27 /* Config.swift */,
+				C18E484021EF3A4E003E0E27 /* API.swift */,
+				C1F5A9C921F5F5A1002DAB9A /* AdvertaismentItem.swift */,
+				C1F2FB0C21FDE081003040F5 /* AdvModels.swift */,
+				C135681422005C45000A6CBC /* ActivityModel.swift */,
+				C1CB02EE2201A73F000F72C9 /* Profile.swift */,
+				C1A3FD5E2202CF6700A7CB0F /* AccountHistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		174E6024206ECD1A0022CD0A /* BayanPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 174E6037206ECD1A0022CD0A /* Build configuration list for PBXNativeTarget "BayanPay" */;
+			buildPhases = (
+				25E5388C8E62583CD1B75045 /* [CP] Check Pods Manifest.lock */,
+				174E6021206ECD1A0022CD0A /* Sources */,
+				174E6022206ECD1A0022CD0A /* Frameworks */,
+				174E6023206ECD1A0022CD0A /* Resources */,
+				693852A852FD1C51C7A1C9E4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BayanPay;
+			productName = Paypal;
+			productReference = 174E6025206ECD1A0022CD0A /* BayanPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		174E601D206ECD1A0022CD0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Paypal;
+				TargetAttributes = {
+					174E6024206ECD1A0022CD0A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 174E6020206ECD1A0022CD0A /* Build configuration list for PBXProject "BayanPay" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 174E601C206ECD1A0022CD0A;
+			productRefGroup = 174E6026206ECD1A0022CD0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				174E6024206ECD1A0022CD0A /* BayanPay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		174E6023206ECD1A0022CD0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174E6033206ECD1A0022CD0A /* LaunchScreen.storyboard in Resources */,
+				174E6030206ECD1A0022CD0A /* Assets.xcassets in Resources */,
+				174E602E206ECD1A0022CD0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25E5388C8E62583CD1B75045 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BayanPay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		693852A852FD1C51C7A1C9E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		174E6021206ECD1A0022CD0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174E6080206F15D80022CD0A /* HomeVC.swift in Sources */,
+				C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */,
+				C10E622821D8F52700813CB6 /* NotificationVC.swift in Sources */,
+				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
+				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
+				C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */,
+				C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */,
+				C135681522005C45000A6CBC /* ActivityModel.swift in Sources */,
+				174E6082206F15D80022CD0A /* LoginVC.swift in Sources */,
+				C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */,
+				C1F2FB0D21FDE081003040F5 /* AdvModels.swift in Sources */,
+				174E6029206ECD1A0022CD0A /* AppDelegate.swift in Sources */,
+				C1A3FD5D2202CF4500A7CB0F /* AccountHistoryCell.swift in Sources */,
+				C18E484121EF3A4E003E0E27 /* API.swift in Sources */,
+				C1F5A9CA21F5F5A1002DAB9A /* AdvertaismentItem.swift in Sources */,
+				C18E483F21EF39B8003E0E27 /* Config.swift in Sources */,
+				C120FB9321EDD419004A5694 /* OutAdvsCell.swift in Sources */,
+				C12A18B721F792C3008A179D /* Extention.swift in Sources */,
+				C10EAE0821FDB28800ED8223 /* OutAdvdetailsVC.swift in Sources */,
+				174E6081206F15D80022CD0A /* ActivityVC.swift in Sources */,
+				C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */,
+				C10E622421D8A36F00813CB6 /* AdvsVC.swift in Sources */,
+				C10E622621D8A4EE00813CB6 /* AdvsCell.swift in Sources */,
+				C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */,
+				C1A3FD5F2202CF6700A7CB0F /* AccountHistoryModel.swift in Sources */,
+				C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		174E602C206ECD1A0022CD0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174E602D206ECD1A0022CD0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+		};
+		174E6031206ECD1A0022CD0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174E6032206ECD1A0022CD0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		174E6035206ECD1A0022CD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		174E6036206ECD1A0022CD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		174E6038206ECD1A0022CD0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		174E6039206ECD1A0022CD0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		174E6020206ECD1A0022CD0A /* Build configuration list for PBXProject "BayanPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174E6035206ECD1A0022CD0A /* Debug */,
+				174E6036206ECD1A0022CD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		174E6037206ECD1A0022CD0A /* Build configuration list for PBXNativeTarget "BayanPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				174E6038206ECD1A0022CD0A /* Debug */,
+				174E6039206ECD1A0022CD0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 174E601D206ECD1A0022CD0A /* Project object */;
+}
