@@ -17,6 +17,7 @@ class Services: NSObject {
         defualt.setValue(access_token, forKey: "access_token")
         defualt.synchronize()
     }
+    
     class func SaveUser(UserName:String){
         let defualt = UserDefaults.standard
         defualt.setValue(UserName, forKey: "UserName")
@@ -159,13 +160,13 @@ class Services: NSObject {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let AccountItem = AccountHistoryModel()
-                        
+
                         AccountItem.IP = data["IP"]?.string ?? ""
-                        AccountItem.AcctDate = data["UserName"]?.string ?? ""
-                        AccountItem.Download = data["Mobile"]?.string ?? ""
-                        AccountItem.Upload = data["Price"]?.string ?? ""
-                        AccountItem.Speed = data["Hamla"]?.string ?? ""
-                        AccountItem.Time = data["ExpiryDate"]?.string ?? ""
+                        AccountItem.AcctDate = data["AcctDate"]?.string ?? ""
+                        AccountItem.Download = data["Download"]?.string ?? ""
+                        AccountItem.Upload = data["Upload"]?.string ?? ""
+                        AccountItem.Speed = data["Speed"]?.string ?? ""
+                        AccountItem.Time = data["Time"]?.string ?? ""
                         AccountHistory.append(AccountItem)
                         print(AccountItem)
                         }
@@ -174,6 +175,51 @@ class Services: NSObject {
                 
         }
     }
+//     Get Hamla Price Out Price
     
-
+       class func GetPrice(completion: @escaping(_ error: Error?, _ PriceModel: [PriceModel]?)->Void){
+            let url = Urls.Price
+            guard let api_User = Services.getApiUser() else {
+                completion(nil,nil)
+                return
+            }
+            print("",api_User)
+            
+            let Params:[String: Any] = [
+                "id": "155"
+            ]
+            print("param", Params)
+            Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+                .responseJSON { response in
+                    switch response.result {
+                    case .failure(let error):
+                        completion(error,nil)
+                        print("error")
+                    case .success(let value):
+                        print(url)
+                        let json = JSON(value)
+                        print(json)
+                        guard let dataArr = json["data"].array else {
+                            return }
+                        var getPriceModel:[PriceModel] = []
+                        for data in dataArr {
+                            guard let data = data.dictionary else { return }
+                            let priceItem = PriceModel()
+                            priceItem.ID = data["ID"]?.int ?? 0
+                            priceItem.name = data["name"]?.string ?? ""
+                            priceItem.price1 = data["price1"]?.int ?? 0
+                            priceItem.price2 = data["price2"]?.int ?? 0
+                            priceItem.price3 = data["price3"]?.int ?? 0
+                            priceItem.price4 = data["price4"]?.int ?? 0
+                            priceItem.price6 = data["price6"]?.int ?? 0
+                            priceItem.price12 = data["price12"]?.int ?? 0
+                            priceItem.group = data["group"]?.string ?? ""
+                            getPriceModel.append(priceItem)
+                            print(priceItem)
+                        }
+                        completion(nil, getPriceModel)
+                    }
+            }}
+ 
+    
 }

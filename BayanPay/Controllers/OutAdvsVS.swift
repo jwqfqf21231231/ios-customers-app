@@ -65,13 +65,13 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
 
                 if let resp = response.result.value as? NSDictionary {
                     let items = resp.value(forKey: "data") as? [[String:Any]]
-
+                    
                     for i in items! {
                         self.AdvertaismentItems.append(AdvModel(i))
                         print(i.values)
                 }
-                    self.CollectionAdvsOut.reloadData()
-                }else {
+                self.CollectionAdvsOut.reloadData()
+                } else {
                 print("error")
 
                 }

@@ -16,8 +16,12 @@ class ActivityCell: UITableViewCell {
     @IBOutlet weak var Serial: UILabel!
     @IBOutlet weak var UseDate: UILabel!
 
+    @IBOutlet weak var ViewActivity: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        ViewActivity.setRounded(radius: 8)
+        ViewActivity.setBorder(width: CGFloat(1.0), color: UIColor.gray)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

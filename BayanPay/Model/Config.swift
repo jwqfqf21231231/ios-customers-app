@@ -30,6 +30,7 @@ struct Urls {
     
 //    Account History
     static let AccountHisotry = "http://mapi.fusion.ps/api/Users/GetUserAccountHistory"
-
+// Get Hamla Price
+    static let Price = "http://mapi.fusion.ps/api/Values/GetHamlaPrice"
 
 }

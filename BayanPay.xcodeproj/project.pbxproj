@@ -25,6 +25,7 @@
 		C135681522005C45000A6CBC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681422005C45000A6CBC /* ActivityModel.swift */; };
 		C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA321C68899003124E5 /* AdvdetailsVS.swift */; };
 		C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA521C68927003124E5 /* ConfairmVC.swift */; };
+		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C18E483F21EF39B8003E0E27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E483E21EF39B8003E0E27 /* Config.swift */; };
 		C18E484121EF3A4E003E0E27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484021EF3A4E003E0E27 /* API.swift */; };
 		C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484221EF5233003E0E27 /* TbBarVS.swift */; };
@@ -62,6 +63,7 @@
 		C135681422005C45000A6CBC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		C139BBA321C68899003124E5 /* AdvdetailsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvdetailsVS.swift; sourceTree = "<group>"; };
 		C139BBA521C68927003124E5 /* ConfairmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfairmVC.swift; sourceTree = "<group>"; };
+		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C18E483E21EF39B8003E0E27 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C18E484021EF3A4E003E0E27 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C18E484221EF5233003E0E27 /* TbBarVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TbBarVS.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				C135681422005C45000A6CBC /* ActivityModel.swift */,
 				C1CB02EE2201A73F000F72C9 /* Profile.swift */,
 				C1A3FD5E2202CF6700A7CB0F /* AccountHistoryModel.swift */,
+				C1526A9F22057E440033E61A /* GetPrice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				174E6080206F15D80022CD0A /* HomeVC.swift in Sources */,
 				C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */,
 				C10E622821D8F52700813CB6 /* NotificationVC.swift in Sources */,
+				C1526AA022057E440033E61A /* GetPrice.swift in Sources */,
 				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
 				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
 				C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */,
