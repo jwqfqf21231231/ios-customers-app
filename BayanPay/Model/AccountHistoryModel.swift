@@ -17,15 +17,6 @@ class AccountHistoryModel: NSObject {
     var Download :String = ""
     var Upload :String = ""
     var Speed : String = ""
-//    init(_ item: [String:Any]){
-//        IP         = item["IP"] as? String ?? ""
-//        AcctDate       = item["AcctDate"] as? String ?? ""
-//        Time = item["Time"] as? String ?? ""
-//        Download       = item["Download"] as? String ?? ""
-//        Upload      = item["Upload"] as? String ?? ""
-//        Speed   = item["Speed"] as? String ?? ""
-//      
-//    }
-    
+
     
 }

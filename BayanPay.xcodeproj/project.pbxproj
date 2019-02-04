@@ -20,12 +20,16 @@
 		C10EAE0821FDB28800ED8223 /* OutAdvdetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10EAE0721FDB28800ED8223 /* OutAdvdetailsVC.swift */; };
 		C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120FB9021EDD0C0004A5694 /* OutAdvsVS.swift */; };
 		C120FB9321EDD419004A5694 /* OutAdvsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120FB9221EDD419004A5694 /* OutAdvsCell.swift */; };
+		C124CAD72206C77500E8CBE7 /* BadHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124CAD62206C77500E8CBE7 /* BadHistoryVC.swift */; };
+		C124CAD92206CA8800E8CBE7 /* BadHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124CAD82206CA8800E8CBE7 /* BadHistoryCell.swift */; };
+		C124CADB2206CB6400E8CBE7 /* BadHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124CADA2206CB6400E8CBE7 /* BadHistoryModel.swift */; };
 		C12A18B721F792C3008A179D /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A18B621F792C3008A179D /* Extention.swift */; };
 		C135681322005923000A6CBC /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681222005923000A6CBC /* ActivityCell.swift */; };
 		C135681522005C45000A6CBC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681422005C45000A6CBC /* ActivityModel.swift */; };
 		C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA321C68899003124E5 /* AdvdetailsVS.swift */; };
 		C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA521C68927003124E5 /* ConfairmVC.swift */; };
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
+		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
 		C18E483F21EF39B8003E0E27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E483E21EF39B8003E0E27 /* Config.swift */; };
 		C18E484121EF3A4E003E0E27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484021EF3A4E003E0E27 /* API.swift */; };
 		C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484221EF5233003E0E27 /* TbBarVS.swift */; };
@@ -58,12 +62,16 @@
 		C10EAE0721FDB28800ED8223 /* OutAdvdetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvdetailsVC.swift; sourceTree = "<group>"; };
 		C120FB9021EDD0C0004A5694 /* OutAdvsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvsVS.swift; sourceTree = "<group>"; };
 		C120FB9221EDD419004A5694 /* OutAdvsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutAdvsCell.swift; sourceTree = "<group>"; };
+		C124CAD62206C77500E8CBE7 /* BadHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHistoryVC.swift; sourceTree = "<group>"; };
+		C124CAD82206CA8800E8CBE7 /* BadHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHistoryCell.swift; sourceTree = "<group>"; };
+		C124CADA2206CB6400E8CBE7 /* BadHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadHistoryModel.swift; sourceTree = "<group>"; };
 		C12A18B621F792C3008A179D /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		C135681222005923000A6CBC /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		C135681422005C45000A6CBC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		C139BBA321C68899003124E5 /* AdvdetailsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvdetailsVS.swift; sourceTree = "<group>"; };
 		C139BBA521C68927003124E5 /* ConfairmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfairmVC.swift; sourceTree = "<group>"; };
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
+		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
 		C18E483E21EF39B8003E0E27 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C18E484021EF3A4E003E0E27 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C18E484221EF5233003E0E27 /* TbBarVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TbBarVS.swift; sourceTree = "<group>"; };
@@ -167,6 +175,9 @@
 				C1CB02EA2201A692000F72C9 /* ProfileVC.swift */,
 				C1A3FD5A2202CEF400A7CB0F /* AccountHistoryVC.swift */,
 				C1A3FD5C2202CF4500A7CB0F /* AccountHistoryCell.swift */,
+				C1526AA1220597950033E61A /* GetPriceCell.swift */,
+				C124CAD62206C77500E8CBE7 /* BadHistoryVC.swift */,
+				C124CAD82206CA8800E8CBE7 /* BadHistoryCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 				C1CB02EE2201A73F000F72C9 /* Profile.swift */,
 				C1A3FD5E2202CF6700A7CB0F /* AccountHistoryModel.swift */,
 				C1526A9F22057E440033E61A /* GetPrice.swift */,
+				C124CADA2206CB6400E8CBE7 /* BadHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,12 +340,15 @@
 			files = (
 				174E6080206F15D80022CD0A /* HomeVC.swift in Sources */,
 				C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */,
+				C124CAD72206C77500E8CBE7 /* BadHistoryVC.swift in Sources */,
 				C10E622821D8F52700813CB6 /* NotificationVC.swift in Sources */,
+				C124CAD92206CA8800E8CBE7 /* BadHistoryCell.swift in Sources */,
 				C1526AA022057E440033E61A /* GetPrice.swift in Sources */,
 				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
 				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
 				C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */,
 				C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */,
+				C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */,
 				C135681522005C45000A6CBC /* ActivityModel.swift in Sources */,
 				174E6082206F15D80022CD0A /* LoginVC.swift in Sources */,
 				C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */,
@@ -349,6 +364,7 @@
 				174E6081206F15D80022CD0A /* ActivityVC.swift in Sources */,
 				C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */,
 				C10E622421D8A36F00813CB6 /* AdvsVC.swift in Sources */,
+				C124CADB2206CB6400E8CBE7 /* BadHistoryModel.swift in Sources */,
 				C10E622621D8A4EE00813CB6 /* AdvsCell.swift in Sources */,
 				C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */,
 				C1A3FD5F2202CF6700A7CB0F /* AccountHistoryModel.swift in Sources */,
@@ -494,7 +510,7 @@
 			baseConfigurationReference = CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 28ZB2VCT96;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -510,7 +526,7 @@
 			baseConfigurationReference = 31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 28ZB2VCT96;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

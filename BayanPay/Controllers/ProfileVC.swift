@@ -9,8 +9,8 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
-//    var ProfileData:[Profile]
+    
+    //    var ProfileData:[Profile]
     var ProfileData:[Profile] = []
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var IsBad: UILabel!
@@ -24,9 +24,9 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Profile()
-
+        
     }
-
+    
     func Profile(){
         Services.UserProfile{(error:Error? , ProfileData:[Profile]?) in
             if let User = ProfileData {
@@ -42,7 +42,7 @@ class ProfileVC: UIViewController {
                 self.ExpDate.text = name.ExpiryDate
                 
                 let _ :Profile = User[0]
-            let status = name.UserOnline as Bool
+                let status = name.UserOnline as Bool
                 self.Status.text = "\(status)"
                 
                 let UserIs = name.Isbad as Bool
@@ -63,14 +63,14 @@ class ProfileVC: UIViewController {
                 
                 
                 
-    }
-    }
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
-
-
+    
+    
+    
 }

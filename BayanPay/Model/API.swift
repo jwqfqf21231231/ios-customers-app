@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class Services: NSObject {
-        class func saveSessions(access_token:String){
+    class func saveSessions(access_token:String){
         let defualt = UserDefaults.standard
         defualt.setValue(access_token, forKey: "access_token")
         defualt.synchronize()
@@ -32,7 +32,7 @@ class Services: NSObject {
         return def.object(forKey: "UserName") as? String
     }
     
-//    Activity Request
+    //    Activity Request
     
     class func Activity(completion: @escaping(_ error: Error?, _ Actity: [ActivityModel]?)->Void){
         let url = Urls.getBinHistory
@@ -41,7 +41,7 @@ class Services: NSObject {
             return
         }
         print("",api_User)
-
+        
         let Params:[String: Any] = [
             "userID": "082853838@gfusion"
         ]
@@ -71,16 +71,16 @@ class Services: NSObject {
                         activity.UseDate = data["UseDate"]?.string ?? ""
                         Activity.append(activity)
                         print([Activity])
-                        }
+                    }
                     
-                        completion(nil, Activity)
-                       }
-    
-            }
+                    completion(nil, Activity)
+                }
+                
         }
+    }
     
     
-// Profile Request
+    // Profile Request
     
     class func UserProfile(completion: @escaping(_ error: Error?, _ Profile: [Profile]?)->Void){
         let url = Urls.userProfile
@@ -106,7 +106,7 @@ class Services: NSObject {
                     print(json)
                     guard let dataArr = json["data"].array else {
                         return }
-                     var ProfileModel:[Profile] = []
+                    var ProfileModel:[Profile] = []
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         var ProfileItem = Profile()
@@ -125,12 +125,12 @@ class Services: NSObject {
                         
                     }
                     completion(nil, ProfileModel)
-                        }
+                }
                 
         }
     }
     
-//    Account History
+    //    Account History
     
     class func AccountHistory(completion: @escaping(_ error: Error?, _ AccountHistory: [AccountHistoryModel]?)->Void){
         let url = Urls.AccountHisotry
@@ -160,7 +160,7 @@ class Services: NSObject {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let AccountItem = AccountHistoryModel()
-
+                        
                         AccountItem.IP = data["IP"]?.string ?? ""
                         AccountItem.AcctDate = data["AcctDate"]?.string ?? ""
                         AccountItem.Download = data["Download"]?.string ?? ""
@@ -169,57 +169,99 @@ class Services: NSObject {
                         AccountItem.Time = data["Time"]?.string ?? ""
                         AccountHistory.append(AccountItem)
                         print(AccountItem)
-                        }
-                        completion(nil, AccountHistory)
+                    }
+                    completion(nil, AccountHistory)
                 }
                 
         }
     }
-//     Get Hamla Price Out Price
+    //     Get Hamla Price Out Price
     
-       class func GetPrice(completion: @escaping(_ error: Error?, _ PriceModel: [PriceModel]?)->Void){
-            let url = Urls.Price
-            guard let api_User = Services.getApiUser() else {
-                completion(nil,nil)
-                return
-            }
-            print("",api_User)
-            
-            let Params:[String: Any] = [
-                "id": "155"
-            ]
-            print("param", Params)
-            Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
-                .responseJSON { response in
-                    switch response.result {
-                    case .failure(let error):
-                        completion(error,nil)
-                        print("error")
-                    case .success(let value):
-                        print(url)
-                        let json = JSON(value)
-                        print(json)
-                        guard let dataArr = json["data"].array else {
-                            return }
-                        var getPriceModel:[PriceModel] = []
-                        for data in dataArr {
-                            guard let data = data.dictionary else { return }
-                            let priceItem = PriceModel()
-                            priceItem.ID = data["ID"]?.int ?? 0
-                            priceItem.name = data["name"]?.string ?? ""
-                            priceItem.price1 = data["price1"]?.int ?? 0
-                            priceItem.price2 = data["price2"]?.int ?? 0
-                            priceItem.price3 = data["price3"]?.int ?? 0
-                            priceItem.price4 = data["price4"]?.int ?? 0
-                            priceItem.price6 = data["price6"]?.int ?? 0
-                            priceItem.price12 = data["price12"]?.int ?? 0
-                            priceItem.group = data["group"]?.string ?? ""
-                            getPriceModel.append(priceItem)
-                            print(priceItem)
-                        }
-                        completion(nil, getPriceModel)
+    class func GetPrice( id:Int ,completion: @escaping(_ error: Error?, _ PriceModel: [PriceModel]?)->Void){
+        let url = Urls.Price
+        guard let api_User = Services.getApiUser() else {
+            completion(nil,nil)
+            return
+        }
+        print("",api_User)
+        
+        let Params:[String: Any] = [
+            "id": id
+        ]
+        print("param", Params)
+        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    print(url)
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else {
+                        return }
+                    var getPriceModel:[PriceModel] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let priceItem = PriceModel()
+                        priceItem.ID = data["ID"]?.int ?? 0
+                        priceItem.name = data["name"]?.string ?? ""
+                        priceItem.price1 = data["price1"]?.int ?? 0
+                        priceItem.price2 = data["price2"]?.int ?? 0
+                        priceItem.price3 = data["price3"]?.int ?? 0
+                        priceItem.price4 = data["price4"]?.int ?? 0
+                        priceItem.price6 = data["price6"]?.int ?? 0
+                        priceItem.price12 = data["price12"]?.int ?? 0
+                        priceItem.group = data["group"]?.string ?? ""
+                        getPriceModel.append(priceItem)
+                        print(priceItem)
                     }
-            }}
- 
+                    completion(nil, getPriceModel)
+                }
+        }
+        
+    }
+    
+    class func BadHistory(completion: @escaping(_ error: Error?, _ BadHistoryModel: [BadHistoryModel]?)->Void){
+        let url = Urls.BadHistory
+        guard let api_User = Services.getApiUser() else {
+            completion(nil,nil)
+            return
+        }
+        print("",api_User)
+        
+        let Params:[String: Any] = [
+            "userID": "082853838@gfusion"
+        ]
+        print("param", Params)
+        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else {
+                        return }
+                    var GetBadHistoryModel:[BadHistoryModel] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let BadItem = BadHistoryModel()
+                        BadItem.ID = data["ID"]?.string ?? ""
+                        BadItem.Date = data["Date"]?.string ?? ""
+                        BadItem.DownloadPerDay = data["DownloadPerDay"]?.int ?? 0
+                        
+                        GetBadHistoryModel.append(BadItem)
+                        print(GetBadHistoryModel)
+                    }
+                    completion(nil, GetBadHistoryModel)
+                }
+        }
+        
+    }
+    
     
 }

@@ -11,7 +11,7 @@ import UIKit
 class OutAdvsCell: UICollectionViewCell {
     
     @IBOutlet weak var imgAdvs: UIImageView!
-    
+    var ID:Int = 0 
     override func awakeFromNib() {
         super.awakeFromNib()
         imgAdvs.setRounded()

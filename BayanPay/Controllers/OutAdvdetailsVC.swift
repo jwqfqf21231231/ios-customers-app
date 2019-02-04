@@ -7,41 +7,34 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
 import SDWebImage
-class OutAdvdetailsVC: UIViewController {
-    @IBOutlet weak var Scroll: UIScrollView!
-    @IBOutlet weak var price1: UILabel!
-    @IBOutlet weak var price2: UILabel!
-    @IBOutlet weak var price4: UILabel!
-    @IBOutlet weak var price3: UILabel!
-    @IBOutlet weak var price12: UILabel!
-    @IBOutlet weak var price6: UILabel!
-    @IBOutlet weak var g1: UILabel!
-    @IBOutlet weak var g2: UILabel!
-    @IBOutlet weak var g3: UILabel!
-    @IBOutlet weak var g6: UILabel!
-    @IBOutlet weak var g12: UILabel!
-    @IBOutlet weak var g4: UILabel!
+
+class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    @IBOutlet weak var Scroll: UIScrollView!
     var advData:AdvModel!
     var PriceItem: [PriceModel] = []
     @IBOutlet weak var Image: UIImageView!
     @IBOutlet weak var Conditions: UITextView!
     @IBOutlet weak var Deatails: UITextView!
     @IBOutlet weak var ExpDate: UILabel!
+    @IBOutlet weak var PricesCollection: UICollectionView!
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-           detalis()
-           getprices()
+        PricesCollection.delegate = self
+        PricesCollection.dataSource = self
+        detalis()
+        getprices()
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         Scroll.alwaysBounceVertical = true
         
     }
-    
     func detalis(){
         let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + advData.Image)
         Image.sd_setImage(with: url)
@@ -50,43 +43,57 @@ class OutAdvdetailsVC: UIViewController {
         ExpDate.text = advData?.ExpireDate
         
     }
-    
     func getprices() {
-        Services.GetPrice{(error:Error? , PriceData:[PriceModel]?) in
+        Services.GetPrice(id: 155){(error:Error? , PriceData:[PriceModel]?) in
             if let Prices = PriceData {
                 self.PriceItem = Prices
-                let price:PriceModel = Prices[0]
-                let price1 = price.price1 as Int
-                self.price1.text = "\(price1)"
-                
-                let price2 = price.price2 as Int
-                self.price2.text = "\(price2)"
-                
-                let price3 = price.price3 as Int
-                self.price3.text = "\(price3)"
-                
-                let price4 = price.price4 as Int
-                self.price4.text = "\(price4)"
-                
-                let price6 = price.price6 as Int
-                self.price6.text = "\(price6)"
-                
-                let price12 = price.price1 as Int
-                self.price12.text = "\(price12)"
-                
-                let _ :PriceModel = Prices[0]
-                self.g1.text = price.group
-                self.g2.text = price.group
-                self.g3.text = price.group
-                self.g4.text = price.group
-                self.g6.text = price.group
-                self.g12.text = price.group
-                
+                self.PricesCollection.reloadData()
             }
-            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return PriceItem.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = PricesCollection.dequeueReusableCell(withReuseIdentifier: "GetPriceCell", for: indexPath) as! GetPriceCell
+        let price1 = PriceItem[indexPath.row].price1
+        let price2 = PriceItem[indexPath.row].price2
+        let price3 = PriceItem[indexPath.row].price3
+        let price4 = PriceItem[indexPath.row].price4
+        let price6 = PriceItem[indexPath.row].price6
+        let price12 = PriceItem[indexPath.row].price12
         
+        if price1 >= 1{
+            cell.price1?.text = "\(price1) شهر"
+        }else{ cell.price1?.text = "" }
+        
+        if price2 >= 1{
+            cell.price2?.text = "\(price2) شهرين"
+        }else{ cell.price2?.text = "" }
+        
+        if price3 >= 1{
+            cell.price3?.text = "\(price3)ثلاث شهور"
+        }else{ cell.price3?.text = "" }
+        
+        if price4 >= 1{
+            cell.price4?.text = "\(price4) اربعة شهور"
+        }else{ cell.price4?.text = "" }
+        
+        if price6 >= 1{
+            cell.price6?.text = "\(price6) ستة شهور"
+        }else{ cell.price6?.text = "" }
+        if price12 >= 1{
+            cell.price12?.text = "\(price12) سنة"
+        }else{ cell.price12?.text = "" }
+        // cell.g?.text = PriceItem[indexPath.row].name
+        cell.giga.text = PriceItem[indexPath.row].group
+        return cell
     }
     
     
-
+    
+    
+    
 }
