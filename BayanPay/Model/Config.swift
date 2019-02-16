@@ -38,5 +38,14 @@ struct Urls {
     
     //    Bad History URL
     static let BadHistory = "http://mapi.fusion.ps/api/Users/GetUserBadHistory"
-    var HamlaID:Int = 0
+
+    // CheckExitOverDownload
+    static let CheckExit = "http://mapi.fusion.ps/api/Users/CheckExitOverDownload"
+    
+    //    ExitOverDownload
+    static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload?userID=082853838"
+    
+    // CheckUser
+    static let CheckUser = "http://mapi.fusion.ps/api/Users/CheckUsermobile?MobileNo"
+    
 }

@@ -10,22 +10,33 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 class LoginVC: UIViewController {
+    var Checkuser:[CheckUser] = []
 
     @IBOutlet weak var UserName: UITextField!
-    
     @IBOutlet weak var Password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserName.text = "0599986181"
-        Password.text = "Mmoh@123"
-     
+//        UserName.text = "0599729146"
+//        Password.text = "Mmoh@123"
+        Check()
+  }
+    
+    func Check(){
+        Services.GetCheckUser{(error:Error? , _ GetCheckuser:[CheckUser]?) in
+            if let User = GetCheckuser {
+                self.Checkuser = User
+                let name :CheckUser = User[0]
+                let Msg = name.Message as String
+                Services.SaveTell()
+            }
+        }
     }
     
     @IBAction func LoginAc(_ sender: Any) {
         
         guard  (UserName.text != nil)  &&  (Password.text != nil)else {
-            return self.displayErrorMessage(message: "قم بإدخال الايميل وكلمة المرور وتأكيد كلمة المرور")
+            return self.displayErrorMessage(message: "قم بإدخال رقم الجوال وكلمة المرور")
         }
         
         let parameters: [String: String]=[
@@ -53,7 +64,7 @@ class LoginVC: UIViewController {
                         
                         print(response)
                     case .failure(let error):
-                        self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك الايميل و كلمة المرور تحتوي حروف وارقام و رموز")
+                        self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
                         print(error)
                 }
         }

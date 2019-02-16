@@ -18,9 +18,7 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Email.text = "0599562194"
-        Password.text = "sS@2020#@"
-        ConfirmPassword.text = "sS@2020#@"
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +54,7 @@ class RegisterVC: UIViewController {
                 }
                 print(response)
             case .failure(let error):
-                self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك الايميل و كلمة المرور تحتوي حروف وارقام و رموز")
+                self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
                 print(error)
             }
     }

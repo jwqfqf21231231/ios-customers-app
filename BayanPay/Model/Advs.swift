@@ -1,15 +1,13 @@
 //
-//  AdvertaismentItem.swift
+//  Advs.swift
 //  BayanPay
 //
-//  Created by Mohanad on 1/21/19.
+//  Created by Mohanad on 2/7/19.
 //  Copyright © 2019 Paypal. All rights reserved.
 //
 
-
-import UIKit
-
-struct AdvModel {
+import Foundation
+struct AdvsModel {
     var ID : Int
     var type : String
     var ShortImage : String
@@ -18,7 +16,7 @@ struct AdvModel {
     var Deatails: String
     var Conditions: String
     var ExpireDate: String
-
+    
     init(_ item: [String:Any]){
         ID         = item["ID"] as? Int ?? 0
         type       = item["type"] as? String ?? ""
@@ -30,4 +28,3 @@ struct AdvModel {
         ExpireDate = item["ExpireDate"] as? String ?? ""
     }
 }
-

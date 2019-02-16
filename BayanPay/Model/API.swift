@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class Services: NSObject {
+    
     class func saveSessions(access_token:String){
         let defualt = UserDefaults.standard
         defualt.setValue(access_token, forKey: "access_token")
@@ -23,6 +24,14 @@ class Services: NSObject {
         defualt.setValue(UserName, forKey: "UserName")
         defualt.synchronize()
     }
+    
+    class func SaveTell()-> String?{
+        let defualt = UserDefaults.standard
+         return defualt.object(forKey: "Message") as? String
+     
+    }
+    
+    
     class func getApiToken() -> String? {
         let def = UserDefaults.standard
         return def.object(forKey: "access_token") as? String
@@ -36,14 +45,15 @@ class Services: NSObject {
     
     class func Activity(completion: @escaping(_ error: Error?, _ Actity: [ActivityModel]?)->Void){
         let url = Urls.getBinHistory
-        guard let api_User = Services.getApiUser() else {
+        guard let api_User = Services.SaveTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID": "082853838@gfusion"
+//            "userID": "082853838@gfusion"
+            "userID" : api_User
         ]
         print("param", Params)
         Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -84,14 +94,16 @@ class Services: NSObject {
     
     class func UserProfile(completion: @escaping(_ error: Error?, _ Profile: [Profile]?)->Void){
         let url = Urls.userProfile
-        guard let api_User = Services.getApiUser() else {
+        guard let api_User = Services.SaveTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID": "082853838@gfusion"
+//            "userID": "082853838@gfusion"
+            "userID" : api_User
+            
         ]
         print("param", Params)
         Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -134,14 +146,15 @@ class Services: NSObject {
     
     class func AccountHistory(completion: @escaping(_ error: Error?, _ AccountHistory: [AccountHistoryModel]?)->Void){
         let url = Urls.AccountHisotry
-        guard let api_User = Services.getApiUser() else {
+        guard let api_User = Services.SaveTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID": "082853838@gfusion"
+//            "userID": "082853838@gfusion"
+            "userID" : api_User
         ]
         print("param", Params)
         Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -215,7 +228,6 @@ class Services: NSObject {
                         priceItem.price12 = data["price12"]?.int ?? 0
                         priceItem.group = data["group"]?.string ?? ""
                         getPriceModel.append(priceItem)
-                        print(priceItem)
                     }
                     completion(nil, getPriceModel)
                 }
@@ -225,14 +237,15 @@ class Services: NSObject {
     
     class func BadHistory(completion: @escaping(_ error: Error?, _ BadHistoryModel: [BadHistoryModel]?)->Void){
         let url = Urls.BadHistory
-        guard let api_User = Services.getApiUser() else {
+        guard let api_User = Services.SaveTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID": "082853838@gfusion"
+//            "userID": "082853838@gfusion"
+            "userID" : api_User
         ]
         print("param", Params)
         Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -258,6 +271,126 @@ class Services: NSObject {
                         print(GetBadHistoryModel)
                     }
                     completion(nil, GetBadHistoryModel)
+                }
+        }
+        
+    }
+    //    Check Exit OverDownload
+    class func CheckExitOverDownload(completion: @escaping(_ error: Error?, _ CheckExit: [CheckExit]?)->Void){
+        let url = Urls.CheckExit
+        guard let api_User = Services.SaveTell() else {
+            completion(nil,nil)
+            return
+        }
+        print("",api_User)
+        
+        let Params:[String: Any] = [
+            "userID" : api_User
+//            "userID": "082853838@gfusion"
+        ]
+        print("param", Params)
+        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else {
+                        return }
+                    var GetCheckExit:[CheckExit] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let CheckExitItem = CheckExit()
+                        CheckExitItem.Total = data["Total"]?.int ?? 0
+                        CheckExitItem.Status = data["Status"]?.int ?? 0
+                        
+                        GetCheckExit.append(CheckExitItem)
+                        print(GetCheckExit)
+                    }
+                    completion(nil, GetCheckExit)
+                }
+        }
+        
+    }
+    
+//    Exit Over Download
+    class func ExitOverDown(completion: @escaping(_ error: Error?, _ ExitOverModel:[ExitOverDownload]?)->Void){
+        let url = Urls.ExitOverDown
+        guard let api_User = Services.SaveTell() else {
+            completion(nil,nil)
+            return
+        }
+        print("",api_User)
+        
+        let Params:[String: Any] = [
+            "userID" : api_User
+//            "userID": "082853838@gfusion"
+        ]
+        print("param", Params)
+        Alamofire.request(url, method: .post, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var GetExit:[ExitOverDownload] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let ExitItem =  ExitOverDownload()
+                        ExitItem.Message = data["Message"]?.string ?? ""
+                        ExitItem.Total = data["Total"]?.string ?? ""
+
+                        GetExit.append(ExitItem)
+                        print(GetExit)
+                    }
+                    completion(nil, GetExit)
+                }
+        }
+        
+    }
+    
+    //    CheckUser
+    class func GetCheckUser(completion: @escaping(_ error: Error?, _ CheckUser:[CheckUser]?)->Void){
+        let url = Urls.CheckUser
+        guard let api_User = Services.getApiUser() else {
+            completion(nil,nil)
+            return
+        }
+        print("",api_User)
+        
+        let Params:[String: Any] = [
+            "userID": api_User
+        ]
+        print("param", Params)
+        Alamofire.request(url, method: .post, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var GetCheckUser:[CheckUser] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let CheckUserItem =  CheckUser()
+                        CheckUserItem.Message = data["Message"]?.string ?? ""
+                        CheckUserItem.FullName = data["FullName"]?.string ?? ""
+                        CheckUserItem.Usertype = data["Usertype"]?.int ?? 0
+                        GetCheckUser.append(CheckUserItem)
+                    }
+                    completion(nil, GetCheckUser)
                 }
         }
         

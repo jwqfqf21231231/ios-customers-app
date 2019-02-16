@@ -22,6 +22,7 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     @IBOutlet weak var Deatails: UITextView!
     @IBOutlet weak var ExpDate: UILabel!
     @IBOutlet weak var PricesCollection: UICollectionView!
+    var id:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +42,12 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         Conditions.text = advData.Conditions
         Deatails.text = advData.Deatails
         ExpDate.text = advData?.ExpireDate
+        self.id = advData?.ID
         
     }
     func getprices() {
-        Services.GetPrice(id: 155){(error:Error? , PriceData:[PriceModel]?) in
+        Services.GetPrice(id: id){(error:Error? , PriceData:[PriceModel]?) in
+            let id = self.id
             if let Prices = PriceData {
                 self.PriceItem = Prices
                 self.PricesCollection.reloadData()
@@ -87,7 +90,7 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         if price12 >= 1{
             cell.price12?.text = "\(price12) سنة"
         }else{ cell.price12?.text = "" }
-        // cell.g?.text = PriceItem[indexPath.row].name
+        //cell.g?.text = PriceItem[indexPath.row].name
         cell.giga.text = PriceItem[indexPath.row].group
         return cell
     }

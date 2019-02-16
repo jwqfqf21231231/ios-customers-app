@@ -36,9 +36,9 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
         let item = AdvertaismentItems[indexPath.row]
         let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + item.ShortImage)
         cell.imgAdvs.sd_setImage(with: url)
-        cell.ID = AdvertaismentItems[indexPath.row].ID
+         cell.ID = AdvertaismentItems[indexPath.row].ID
         return cell
-        print(cell)
+        
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsVC = self.storyboard!.instantiateViewController(withIdentifier: "Deatails") as? OutAdvdetailsVC
