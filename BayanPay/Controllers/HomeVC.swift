@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
+     var window: UIWindow?
     var CheckExitOverDownload:[CheckExit] = []
     var ExitOverDown:[ExitOverDownload] = []
     
@@ -45,8 +46,6 @@ class HomeVC: UIViewController {
                 self.Status = Total.Status
                 print(self.Status)
                 print(self.total)
-                
-                
             }
         }
     }
@@ -79,6 +78,11 @@ class HomeVC: UIViewController {
         }
         self.present(alertView, animated: true, completion:nil) }
     
+        @IBAction func Exit(_ sender: Any) {
+            Services.cleansession()
+          dismiss(animated: true, completion: nil)
+            
+        }
     
     
     func ExitOverDownload(message:String) {

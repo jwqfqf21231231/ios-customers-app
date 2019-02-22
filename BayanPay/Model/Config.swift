@@ -19,7 +19,7 @@ struct Urls {
     static let getOutAdvs = "http://mapi.fusion.ps/api/Values/GetHamlat"
     
     //    Register New User
-    static let Register = URL + "/Account/Register"
+    static let Register = "http://mapi.fusion.ps/api/Account/Register"
     
     //    Login Exist Users
     static let login = "http://mapi.fusion.ps/token"
@@ -33,19 +33,21 @@ struct Urls {
     //    Account History
     static let AccountHisotry = "http://mapi.fusion.ps/api/Users/GetUserAccountHistory"
     
+    //   Bad History
+    static let BadHisotry = "http://mapi.fusion.ps/api/Users/GetUserBadHistory?"
+
+    
     // Get Hamla Price
     static let Price = "http://mapi.fusion.ps/api/Values/GetHamlaPrice"
     
-    //    Bad History URL
-    static let BadHistory = "http://mapi.fusion.ps/api/Users/GetUserBadHistory"
-
+   
     // CheckExitOverDownload
     static let CheckExit = "http://mapi.fusion.ps/api/Users/CheckExitOverDownload"
     
     //    ExitOverDownload
-    static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload?userID=082853838"
+    static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload"
     
     // CheckUser
-    static let CheckUser = "http://mapi.fusion.ps/api/Users/CheckUsermobile?MobileNo"
+    static let CheckUser = "http://mapi.fusion.ps/api/Users/CheckUsermobile?"
     
 }

@@ -12,4 +12,7 @@ target 'BayanPay' do
   pod 'AlamofireImage', '~> 3.5'
   pod 'SwiftyJSON'
   pod 'SDWebImage'
+  pod 'SwiftyOnboard'
+
+
 end

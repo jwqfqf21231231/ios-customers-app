@@ -1,11 +1,3 @@
-//
-//  LoginVC.swift
-//  Paypal
-//
-//  Created by Suzan Amassy on 3/31/18.
-//  Copyright © 2018 Paypal. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -14,12 +6,13 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var Password: UITextField!
-    
+    var msg:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserName.text = "0599729146"
-//        Password.text = "Mmoh@123"
-        Check()
+        UserName.text = "0599684763"
+        Password.text = "Hilles@2020"
+        
+        
   }
     
     func Check(){
@@ -27,8 +20,8 @@ class LoginVC: UIViewController {
             if let User = GetCheckuser {
                 self.Checkuser = User
                 let name :CheckUser = User[0]
-                let Msg = name.Message as String
-                Services.SaveTell()
+                self.msg = name.Message as String
+                Services.SaveTell(Tell: self.msg)
             }
         }
     }
@@ -56,7 +49,9 @@ class LoginVC: UIViewController {
                         Services.saveSessions(access_token: access_token)
                         Services.SaveUser(UserName: UserName)
                         self.loadLoginScreen()
+                            
                         print(access_token)
+                            self.Check()
                         } else {
                         print("error .. !")
                         self.displayErrorMessage(message: "أدخل كلمة مرور صحيحة")
@@ -86,7 +81,6 @@ class LoginVC: UIViewController {
             presenter.sourceRect = self.view.bounds
         }
         self.present(alertView, animated: true, completion:nil) }
-
 
 }
 

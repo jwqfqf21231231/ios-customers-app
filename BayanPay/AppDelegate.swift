@@ -12,14 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+   
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        Override point for customization after application launch.
-//        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//        let vc2 : AdvsVC = storyBoard.instantiateViewController(withIdentifier: “Advs”) as! AdvsVC
-//        appdelegate.window?.rootViewController =AdvsVC
         
+//        let titleDict: NSDictionary = [NSAttributedString.Key.foregroundColor: CGColor.black,
+//         NSAttributedString.Key.font:MyTools.tool.appFontLight(size: 16)]
+//        UINavigationBar.appearance().titleTextAttributes = titleDict as? [NSAttributedString.Key : Any]
+
+//        if let userName = Services.lunched(){
+//            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "TbBarVS")
+//            window?.rootViewController = wind
+//        } else {
+//            
+//            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "StoryboardExampleViewController")
+//            window?.rootViewController = wind
+//        }
+//
+
+
         return true
         
     }

@@ -12,6 +12,48 @@ import Alamofire
 import SwiftyJSON
 
 class Services: NSObject {
+     var window: UIWindow?
+    
+    class func restartapp(){
+        
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController
+        if lunched() != nil {
+            vc = sb.instantiateViewController(withIdentifier: "TbBarVS")
+        }else {
+            vc = sb.instantiateViewController(withIdentifier: "login")
+        }
+        window.rootViewController = vc
+        UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromTop, animations: nil, completion: nil)
+    }
+    
+    class func removeSessions(session_id:String){
+        let defualt = UserDefaults.standard
+        defualt.removeObject(forKey: "UserName")
+        defualt.synchronize()
+    }
+    
+    class func lunched() -> String? {
+        let defualt = UserDefaults.standard
+        return defualt.object(forKey: "UserName") as? String
+        defualt.synchronize()
+        
+    }
+    class func cleansession() -> String? {
+        let defualt = UserDefaults.standard
+        return defualt.object(forKey: "") as? String
+        defualt.synchronize()
+        
+    }
+    
+    class func removeUser() -> String? {
+        let defaults = UserDefaults.standard
+        return defaults.removeObject(forKey: "UserName") as? String
+        defaults.synchronize()
+        
+        
+    }
     
     class func saveSessions(access_token:String){
         let defualt = UserDefaults.standard
@@ -25,10 +67,16 @@ class Services: NSObject {
         defualt.synchronize()
     }
     
-    class func SaveTell()-> String?{
+    class func SaveTell(Tell:String){
         let defualt = UserDefaults.standard
-         return defualt.object(forKey: "Message") as? String
+         defualt.setValue(Tell, forKey: "Message")
+        defualt.synchronize()
      
+    }
+    class func getApiTell()-> String?{
+        let defualt = UserDefaults.standard
+        return defualt.object(forKey: "Message") as? String
+        
     }
     
     
@@ -45,14 +93,13 @@ class Services: NSObject {
     
     class func Activity(completion: @escaping(_ error: Error?, _ Actity: [ActivityModel]?)->Void){
         let url = Urls.getBinHistory
-        guard let api_User = Services.SaveTell() else {
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-//            "userID": "082853838@gfusion"
             "userID" : api_User
         ]
         print("param", Params)
@@ -94,14 +141,13 @@ class Services: NSObject {
     
     class func UserProfile(completion: @escaping(_ error: Error?, _ Profile: [Profile]?)->Void){
         let url = Urls.userProfile
-        guard let api_User = Services.SaveTell() else {
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
-        print("",api_User)
+        print("api",api_User)
         
         let Params:[String: Any] = [
-//            "userID": "082853838@gfusion"
             "userID" : api_User
             
         ]
@@ -132,8 +178,6 @@ class Services: NSObject {
                         ProfileItem.Isbad = data["Isbad"]?.bool ?? false
                         ProfileItem.Email = data["Email"]?.string ?? ""
                         ProfileModel.append(ProfileItem)
-                        print(ProfileItem)
-                        
                         
                     }
                     completion(nil, ProfileModel)
@@ -146,14 +190,13 @@ class Services: NSObject {
     
     class func AccountHistory(completion: @escaping(_ error: Error?, _ AccountHistory: [AccountHistoryModel]?)->Void){
         let url = Urls.AccountHisotry
-        guard let api_User = Services.SaveTell() else {
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-//            "userID": "082853838@gfusion"
             "userID" : api_User
         ]
         print("param", Params)
@@ -235,20 +278,16 @@ class Services: NSObject {
         
     }
     
+    
     class func BadHistory(completion: @escaping(_ error: Error?, _ BadHistoryModel: [BadHistoryModel]?)->Void){
-        let url = Urls.BadHistory
-        guard let api_User = Services.SaveTell() else {
+        let url = Urls.BadHisotry
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
-        print("",api_User)
-        
-        let Params:[String: Any] = [
-//            "userID": "082853838@gfusion"
-            "userID" : api_User
-        ]
-        print("param", Params)
-        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+
+        let BadhistoryUrl = url + "userID=" + api_User + "@gfusion"
+        Alamofire.request(BadhistoryUrl, method: .get ,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure(let error):
@@ -266,9 +305,7 @@ class Services: NSObject {
                         BadItem.ID = data["ID"]?.string ?? ""
                         BadItem.Date = data["Date"]?.string ?? ""
                         BadItem.DownloadPerDay = data["DownloadPerDay"]?.int ?? 0
-                        
                         GetBadHistoryModel.append(BadItem)
-                        print(GetBadHistoryModel)
                     }
                     completion(nil, GetBadHistoryModel)
                 }
@@ -278,15 +315,14 @@ class Services: NSObject {
     //    Check Exit OverDownload
     class func CheckExitOverDownload(completion: @escaping(_ error: Error?, _ CheckExit: [CheckExit]?)->Void){
         let url = Urls.CheckExit
-        guard let api_User = Services.SaveTell() else {
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID" : api_User
-//            "userID": "082853838@gfusion"
+            "userID": api_User
         ]
         print("param", Params)
         Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -319,15 +355,14 @@ class Services: NSObject {
 //    Exit Over Download
     class func ExitOverDown(completion: @escaping(_ error: Error?, _ ExitOverModel:[ExitOverDownload]?)->Void){
         let url = Urls.ExitOverDown
-        guard let api_User = Services.SaveTell() else {
+        guard let api_User = Services.getApiTell() else {
             completion(nil,nil)
             return
         }
         print("",api_User)
         
         let Params:[String: Any] = [
-            "userID" : api_User
-//            "userID": "082853838@gfusion"
+            "userID": api_User
         ]
         print("param", Params)
         Alamofire.request(url, method: .post, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
@@ -364,13 +399,8 @@ class Services: NSObject {
             completion(nil,nil)
             return
         }
-        print("",api_User)
-        
-        let Params:[String: Any] = [
-            "userID": api_User
-        ]
-        print("param", Params)
-        Alamofire.request(url, method: .post, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+
+        Alamofire.request(url + "MobileNo=" + api_User, method: .post,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure(let error):
@@ -389,6 +419,7 @@ class Services: NSObject {
                         CheckUserItem.FullName = data["FullName"]?.string ?? ""
                         CheckUserItem.Usertype = data["Usertype"]?.int ?? 0
                         GetCheckUser.append(CheckUserItem)
+                        print("tell",data)
                     }
                     completion(nil, GetCheckUser)
                 }

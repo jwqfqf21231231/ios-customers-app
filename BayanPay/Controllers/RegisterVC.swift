@@ -27,10 +27,10 @@ class RegisterVC: UIViewController {
     
 
     @IBAction func RegisterBtn(_ sender: Any) {
-       guard  (Email.text != nil)  &&  (Password.text != nil) && (ConfirmPassword.text != nil)else {
-       return self.displayErrorMessage(message: "قم بإدخال الايميل وكلمة المرور وتأكيد كلمة المرور")
-        }
-        
+//       guard  (Email.text != nil)  &&  (Password.text != nil) && (ConfirmPassword.text != nil)else {
+//       return self.displayErrorMessage(message: "قم بإدخال الايميل وكلمة المرور وتأكيد كلمة المرور")
+//        }
+//        
         let parameters: [String: String]=[
             "Mobile":Email.text!,
             "Password":Password.text!,
@@ -40,7 +40,6 @@ class RegisterVC: UIViewController {
         Alamofire.request(Urls.Register, method: .post,parameters:parameters, encoding: URLEncoding.default, headers: Urls.header)
         .validate(statusCode: 200..<300)
         .responseJSON { response  in
-
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
