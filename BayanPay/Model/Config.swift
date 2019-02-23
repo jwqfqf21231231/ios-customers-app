@@ -47,7 +47,23 @@ struct Urls {
     //    ExitOverDownload
     static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload"
     
+    
     // CheckUser
     static let CheckUser = "http://mapi.fusion.ps/api/Users/CheckUsermobile?"
+    
+    
+    // GetHamlaList
+    static let GetHamlaList = "http://mapi.fusion.ps/api/Users/GetHamlatList?userID="
+    
+    
+//     GetHamlaSpeed
+    static let GetHamlaSpeed = "http://mapi.fusion.ps/api/Users/GetHamlaSpeed?hamlaid="
+    
+    
+//    GetPeriod
+    static let GetHamlaPeriod = "http://mapi.fusion.ps/api/Users/GetHamlaPeriod?hamlaid="
+    
+//    AddPending
+    static let AddPending = "http://mapi.fusion.ps/api/Users/AddPending?userid=082853838&hamlaid=104&speedid=120&Month=12"
     
 }

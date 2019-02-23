@@ -14,6 +14,8 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     var ActivityItem = [ActivityModel]()
     
     override func viewDidLoad() {
+      
+
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .default
         ActivaityTB.dataSource = self

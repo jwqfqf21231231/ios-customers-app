@@ -2,15 +2,15 @@ import UIKit
 import SwiftyOnboard
 
 class ViewController: UIViewController {
-    
+    var window: UIWindow?
     var swiftyOnboard: SwiftyOnboard!
     var titleArray: [String] = ["تفاصيل اشتراكك", "شحن الرصيد", "الحملات والعروض","الدعم الفني","الاستخدام العادل","سجل الاستخدام","فحص السرعة"]
     var subTitleArray: [String] = ["يمكنك الان رؤية كافة تفاصيل اشتراكك عن طريق تطبيق فيوجن", "أصبح بإمكانك شحن الرصيد المستخدم للأنترنت من خلال تطبيق فيوجن.", "يمكنك الان التحويل من حملة إلي حملة بكل سهولة :)","امكانية التواصل مع  الدعم الفني بكل سهولة","اصبح بإمكانك الخروج من الأستخدام العادل بكل سهولة لمدة ثلاث مرات","رؤية كافة سجلات الاستخدام في حسابك","يمكنك فحص سرعتك بكل سهولة"]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view
-        let blue = UIColor(red: 69/255, green: 127/255, blue: 202/255, alpha: 1.0).cgColor
-        let purple = UIColor(red: 166/255, green: 172/255, blue: 236/255, alpha: 1.0).cgColor
+        let blue = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0).cgColor
+        let purple = UIColor(red: 255, green: 255, blue: 255, alpha: 1.0).cgColor
         let gradiant = CAGradientLayer()
         gradiant.colors = [purple, blue]
         gradiant.startPoint = CGPoint(x: 0.5, y: 0.18)
@@ -37,8 +37,16 @@ class ViewController: UIViewController {
         view.layer.addSublayer(gradiant)
     }
     
+    func loadLoginScreen(){
+
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ViewController = storyBoard.instantiateViewController(withIdentifier: "NavMain") 
+        self.present(ViewController, animated: true, completion: nil)
+
+    }
+
     @objc func handleSkip() {
-        swiftyOnboard?.goToPage(index: 6, animated: true)
+     loadLoginScreen()
     }
     
     @objc func handleContinue(sender: UIButton) {
@@ -66,9 +74,9 @@ extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
         view.imageView.image = UIImage(named: "onboard\(index)")
         
         //Set the font and color for the labels:
-        view.title.font = UIFont(name: "Lato-Heavy", size: 22)
-        view.subTitle.font = UIFont(name: "Lato-Regular", size: 16)
-        
+        view.title.font = UIFont(name: "Cairo", size: 14)
+        view.subTitle.font = UIFont(name: "Cairo", size: 14)
+      
         //Set the text in the page:
         view.title.text = titleArray[index]
         view.subTitle.text = subTitleArray[index]
@@ -85,10 +93,10 @@ extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
         overlay.continueButton.addTarget(self, action: #selector(handleContinue), for: .touchUpInside)
         
         //Setup for the overlay buttons:
-        overlay.continueButton.titleLabel?.font = UIFont(name: "Lato-Bold", size: 16)
-        overlay.continueButton.setTitleColor(UIColor.white, for: .normal)
-        overlay.skipButton.setTitleColor(UIColor.white, for: .normal)
-        overlay.skipButton.titleLabel?.font = UIFont(name: "Lato-Heavy", size: 16)
+        overlay.continueButton.titleLabel?.font = UIFont(name: "Cairo", size: 16)
+        overlay.continueButton.setTitleColor(UIColor.black, for: .normal)
+        overlay.skipButton.setTitleColor(UIColor.black, for: .normal)
+        overlay.skipButton.titleLabel?.font = UIFont(name: "Cairo", size: 16)
         
         //Return the overlay view:
         return overlay
@@ -105,8 +113,8 @@ extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
             overlay.skipButton.setTitle("تخطي", for: .normal)
             overlay.skipButton.isHidden = false
         } else {
-            overlay.continueButton.setTitle("الرجوع من البداية !", for: .normal)
-            overlay.skipButton.isHidden = true
+            overlay.continueButton.setTitle("اضغط تخطي", for: .normal)
+            overlay.skipButton.isHidden = false
         }
     }
 }

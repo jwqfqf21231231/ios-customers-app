@@ -427,5 +427,101 @@ class Services: NSObject {
         
     }
     
+//    Get Hamla List
+    class func GetHamlaListPost(completion: @escaping(_ error: Error?, _ HamlaList:[HamlaList]?)->Void){
+        let url = Urls.GetHamlaList
+        guard let api_User = Services.getApiTell() else {
+            completion(nil,nil)
+            return
+        }
+        let HamlaListURL = url + api_User
+        Alamofire.request(HamlaListURL, method: .post,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var GetHamlaList:[HamlaList] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let GetHamlaItem =  HamlaList()
+                        GetHamlaItem.id = data["id"]?.int ?? 0
+                        GetHamlaItem.name = data["name"]?.string ?? ""
+                        GetHamlaItem.type = data["Type"]?.int ?? 0
+                        GetHamlaList.append(GetHamlaItem)
+                        print("tell",data)
+                    }
+                    completion(nil, GetHamlaList)
+                }
+        }
+        
+    }
+    
+//    GetHamlaListSpeed
+    
+    class func GetHamlaSpeedGet(HamlaID:String ,completion: @escaping(_ error: Error?, _ HamlaSpeed:[HamlaSpeed]?)->Void){
+        let url = Urls.GetHamlaSpeed
+            var SpeedUrl = url + HamlaID
+        Alamofire.request(SpeedUrl, method: .get,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var GetHamlaSpeed:[HamlaSpeed] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let GetHamlaSpeedItem =  HamlaSpeed()
+                        GetHamlaSpeedItem.ID = data["ID"]?.int ?? 0
+                        GetHamlaSpeedItem.Title = data["Title"]?.string ?? ""
+                        GetHamlaSpeed.append(GetHamlaSpeedItem)
+                        print("tell",data)
+                    }
+                    completion(nil, GetHamlaSpeed)
+                }
+        }
+        
+    }
+//    Get Period
+    class func GetHamlaPeriodGet(Speed:String, Hamla:String, completion: @escaping(_ error: Error?, _ HamlaPeriod:[HamlaPeriod]?)->Void){
+        let url = Urls.GetHamlaPeriod
+        let PeriodUrl = url + Hamla + "&speedid=" + Speed
+        print("URL SPEEED",PeriodUrl)
+       Alamofire.request(PeriodUrl, method: .get,encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var GetHamlaPeriod:[HamlaPeriod] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let GetHamlaPeriodItem =  HamlaPeriod()
+                        GetHamlaPeriodItem.ID = data["ID"]?.int ?? 0
+                        GetHamlaPeriodItem.Title = data["Title"]?.string ?? ""
+                        GetHamlaPeriod.append(GetHamlaPeriodItem)
+                        print("tell",data)
+                    }
+                    completion(nil, GetHamlaPeriod)
+                }
+        }
+        
+    }
+    
     
 }

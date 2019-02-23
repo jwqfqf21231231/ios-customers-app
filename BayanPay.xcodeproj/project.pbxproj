@@ -36,11 +36,11 @@
 		C135681522005C45000A6CBC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681422005C45000A6CBC /* ActivityModel.swift */; };
 		C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA321C68899003124E5 /* AdvdetailsVS.swift */; };
 		C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA521C68927003124E5 /* ConfairmVC.swift */; };
+		C1483E93222130A700B04378 /* HamlaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1483E92222130A700B04378 /* HamlaList.swift */; };
 		C14AEB0E220C110E002BB10B /* Advs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0D220C110E002BB10B /* Advs.swift */; };
 		C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */; };
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
-		C186F1C4221A9B53006714EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C186F1C3221A9B53006714EE /* GoogleService-Info.plist */; };
 		C186F385221566FD00D6B444 /* CheckUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186F384221566FD00D6B444 /* CheckUser.swift */; };
 		C18E483F21EF39B8003E0E27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E483E21EF39B8003E0E27 /* Config.swift */; };
 		C18E484121EF3A4E003E0E27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484021EF3A4E003E0E27 /* API.swift */; };
@@ -97,11 +97,11 @@
 		C135681422005C45000A6CBC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		C139BBA321C68899003124E5 /* AdvdetailsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvdetailsVS.swift; sourceTree = "<group>"; };
 		C139BBA521C68927003124E5 /* ConfairmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfairmVC.swift; sourceTree = "<group>"; };
+		C1483E92222130A700B04378 /* HamlaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamlaList.swift; sourceTree = "<group>"; };
 		C14AEB0D220C110E002BB10B /* Advs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advs.swift; sourceTree = "<group>"; };
 		C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGetPriceCell.swift; sourceTree = "<group>"; };
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
-		C186F1C3221A9B53006714EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C186F384221566FD00D6B444 /* CheckUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUser.swift; sourceTree = "<group>"; };
 		C18E483E21EF39B8003E0E27 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C18E484021EF3A4E003E0E27 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -188,7 +188,6 @@
 		174E603C206ECD450022CD0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C186F1C3221A9B53006714EE /* GoogleService-Info.plist */,
 				174E6034206ECD1A0022CD0A /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -280,6 +279,7 @@
 				C1D972F3220842C500024CCD /* CheckExit.swift */,
 				C14AEB0D220C110E002BB10B /* Advs.swift */,
 				C186F384221566FD00D6B444 /* CheckUser.swift */,
+				C1483E92222130A700B04378 /* HamlaList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,7 +364,6 @@
 				C12982A9221FEEFF0076EDFD /* Cairo-Black.ttf in Resources */,
 				C1F4606F221ED999007A16AC /* CustomPage.xib in Resources */,
 				C1F4606E221ED999007A16AC /* CustomOverlay.xib in Resources */,
-				C186F1C4221A9B53006714EE /* GoogleService-Info.plist in Resources */,
 				C12982AB221FEEFF0076EDFD /* OFL.txt in Resources */,
 				174E6030206ECD1A0022CD0A /* Assets.xcassets in Resources */,
 				C12982A5221FEEFF0076EDFD /* Cairo-ExtraLight.ttf in Resources */,
@@ -441,6 +440,7 @@
 				C1526AA022057E440033E61A /* GetPrice.swift in Sources */,
 				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
 				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
+				C1483E93222130A700B04378 /* HamlaList.swift in Sources */,
 				C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */,
 				C1F46064221ED916007A16AC /* LoadVC.swift in Sources */,
 				C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */,

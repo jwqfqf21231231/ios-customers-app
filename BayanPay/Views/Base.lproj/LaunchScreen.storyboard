@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
+        </array>
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -31,27 +39,27 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شركة فيوجن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Py-d4-XSC">
-                                        <rect key="frame" x="37.5" y="321" width="300" height="25.5"/>
+                                        <rect key="frame" x="37.5" y="283" width="300" height="41.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="nok-QT-3li"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="22"/>
                                         <color key="textColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لخدمة الانترنت وأنظمة الاتصالات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-uF-ndy">
-                                        <rect key="frame" x="37" y="352.5" width="300" height="22"/>
+                                        <rect key="frame" x="37" y="313" width="300" height="41.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="2SW-dt-C9Z"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" id="0Kp-6l-7CE"/>
-                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="30" id="B0g-Of-D08"/>
+                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="-30" id="0Kp-6l-7CE"/>
+                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" id="B0g-Of-D08"/>
                                     <constraint firstItem="4Py-d4-XSC" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="Bxo-AQ-c9c"/>
                                     <constraint firstItem="agV-C2-ItU" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="-150" id="Iby-FZ-wVx"/>
                                     <constraint firstItem="hWr-uF-ndy" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="MJb-QQ-jYT"/>

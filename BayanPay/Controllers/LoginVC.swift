@@ -11,8 +11,6 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         UserName.text = "0599684763"
         Password.text = "Hilles@2020"
-        
-        
   }
     
     func Check(){
@@ -66,10 +64,7 @@ class LoginVC: UIViewController {
         
     }
     
-    func loadLoginScreen(){
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "TbBarVS") as! TbBarVS
-        self.present(viewController, animated: true, completion: nil) }
+   
     
     func displayErrorMessage(message:String) {
         let alertView = UIAlertController(title: "خطأ في الأدخال", message: message, preferredStyle: .alert)
@@ -81,6 +76,11 @@ class LoginVC: UIViewController {
             presenter.sourceRect = self.view.bounds
         }
         self.present(alertView, animated: true, completion:nil) }
+    
+    func loadLoginScreen(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "TbBarVS") as! TbBarVS
+        self.present(viewController, animated: true, completion: nil) }
 
 }
 
