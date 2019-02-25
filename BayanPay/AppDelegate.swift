@@ -15,22 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-//        let titleDict: NSDictionary = [NSAttributedString.Key.foregroundColor: CGColor.black,
-//         NSAttributedString.Key.font:MyTools.tool.appFontLight(size: 16)]
-//        UINavigationBar.appearance().titleTextAttributes = titleDict as? [NSAttributedString.Key : Any]
 
-//        if let userName = Services.lunched(){
-//            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "TbBarVS")
-//            window?.rootViewController = wind
-//        } else {
-//            
-//            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "StoryboardExampleViewController")
-//            window?.rootViewController = wind
-//        }
-//
-
-
+        if let userName = Services.lunched(){
+            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "TbBarVS")
+            window?.rootViewController = wind
+        } else {
+            
+            let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "StoryboardVC")
+            window?.rootViewController = wind
+        }
         return true
         
     }

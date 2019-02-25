@@ -36,6 +36,21 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         Scroll.alwaysBounceVertical = true
         
     }
+    
+    @IBAction func SendToRegister(_ sender: Any){
+
+        loadRegisterScreen()
+    }
+    
+    //    Load Menu From Home
+    func loadRegisterScreen(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ViewController = storyBoard.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterVC
+        ViewController.Hamlaid = self.id
+        self.navigationController?.pushViewController(ViewController, animated: true)
+    }
+    
+    
     func detalis(){
         let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + advData.Image)
         Image.sd_setImage(with: url)

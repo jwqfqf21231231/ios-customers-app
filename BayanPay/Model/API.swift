@@ -15,7 +15,6 @@ class Services: NSObject {
      var window: UIWindow?
     
     class func restartapp(){
-        
         guard let window = UIApplication.shared.keyWindow else { return }
         let sb = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
@@ -33,6 +32,13 @@ class Services: NSObject {
         defualt.removeObject(forKey: "UserName")
         defualt.synchronize()
     }
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "UserName")
+        defaults.removeObject(forKey: "Message")
+        defaults.synchronize()
+    }
+    
     
     class func lunched() -> String? {
         let defualt = UserDefaults.standard
@@ -51,8 +57,6 @@ class Services: NSObject {
         let defaults = UserDefaults.standard
         return defaults.removeObject(forKey: "UserName") as? String
         defaults.synchronize()
-        
-        
     }
     
     class func saveSessions(access_token:String){
@@ -70,7 +74,7 @@ class Services: NSObject {
     class func SaveTell(Tell:String){
         let defualt = UserDefaults.standard
          defualt.setValue(Tell, forKey: "Message")
-        defualt.synchronize()
+         defualt.synchronize()
      
     }
     class func getApiTell()-> String?{
@@ -395,10 +399,8 @@ class Services: NSObject {
     //    CheckUser
     class func GetCheckUser(completion: @escaping(_ error: Error?, _ CheckUser:[CheckUser]?)->Void){
         let url = Urls.CheckUser
-        guard let api_User = Services.getApiUser() else {
-            completion(nil,nil)
-            return
-        }
+        guard let api_User = Services.getApiUser() else { completion(nil,nil)
+            return }
 
         Alamofire.request(url + "MobileNo=" + api_User, method: .post,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
@@ -464,9 +466,9 @@ class Services: NSObject {
     
 //    GetHamlaListSpeed
     
-    class func GetHamlaSpeedGet(HamlaID:String ,completion: @escaping(_ error: Error?, _ HamlaSpeed:[HamlaSpeed]?)->Void){
+    class func GetHamlaSpeedGet(HamlaID:Int ,completion: @escaping(_ error: Error?, _ HamlaSpeed:[HamlaSpeed]?)->Void){
         let url = Urls.GetHamlaSpeed
-            var SpeedUrl = url + HamlaID
+        let SpeedUrl = url + "\(HamlaID)"
         Alamofire.request(SpeedUrl, method: .get,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
@@ -493,9 +495,9 @@ class Services: NSObject {
         
     }
 //    Get Period
-    class func GetHamlaPeriodGet(Speed:String, Hamla:String, completion: @escaping(_ error: Error?, _ HamlaPeriod:[HamlaPeriod]?)->Void){
+    class func GetHamlaPeriodGet(Speed:Int, Hamla:Int, completion: @escaping(_ error: Error?, _ HamlaPeriod:[HamlaPeriod]?)->Void){
         let url = Urls.GetHamlaPeriod
-        let PeriodUrl = url + Hamla + "&speedid=" + Speed
+        let PeriodUrl = url + "\(Hamla)" + "&speedid=" + "\(Speed)"
         print("URL SPEEED",PeriodUrl)
        Alamofire.request(PeriodUrl, method: .get,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
@@ -518,6 +520,42 @@ class Services: NSObject {
                         print("tell",data)
                     }
                     completion(nil, GetHamlaPeriod)
+                }
+        }
+        
+    }
+    
+//    add Ticket
+    
+    class func AddTicketPost(Mobile:String, Note:String,Name:String, completion: @escaping(_ error: Error?, _ Ticket:[Ticket]?)->Void){
+        let url = Urls.AddTicket
+          guard let api_User = Services.getApiTell() else { completion(nil,nil)
+            return }
+        let AddTicketURL = url + "\(api_User)" + "&name=" + "\(Name)" + "&mobile=" + "\(Mobile)" + "&nots=" + "\(Note)"
+        print("URL SPEEED", AddTicketURL)
+        Alamofire.request(AddTicketURL, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var AddTicket:[Ticket] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let AddTicketItem =  Ticket()
+                        AddTicketItem.userid = data["userid"]?.int ?? 0
+                        AddTicketItem.Name = data["Name"]?.string ?? ""
+                        AddTicketItem.Mobile = data["Mobile"]?.string ?? ""
+                        AddTicketItem.Note = data["Note"]?.string ?? ""
+                        AddTicket.append(AddTicketItem)
+                        print("tell",data)
+                    }
+                    completion(nil, AddTicket)
                 }
         }
         

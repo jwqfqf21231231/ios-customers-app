@@ -40,13 +40,17 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
         return cell
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsVC = self.storyboard!.instantiateViewController(withIdentifier: "Deatails") as? OutAdvdetailsVC
         detailsVC?.advData = AdvertaismentItems[indexPath.row]
-        
         self.navigationController?.pushViewController(detailsVC!, animated: true)
-        
     }
+    
+    
+    
+    
+//    Display MESG
     
     func displayErrorMessage(message:String) {
         let alertView = UIAlertController(title: "خطأ في الأدخال", message: message, preferredStyle: .alert)
@@ -59,6 +63,9 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
         }
         self.present(alertView, animated: true, completion:nil) }
     
+    
+    
+//    API Hamla
     func Load(){
         Alamofire.request(Urls.getOutAdvs, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Urls.header)
             .validate(statusCode: 200..<500)

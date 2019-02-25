@@ -64,6 +64,19 @@ struct Urls {
     static let GetHamlaPeriod = "http://mapi.fusion.ps/api/Users/GetHamlaPeriod?hamlaid="
     
 //    AddPending
-    static let AddPending = "http://mapi.fusion.ps/api/Users/AddPending?userid=082853838&hamlaid=104&speedid=120&Month=12"
+    static let AddPending = "http://mapi.fusion.ps/api/Users/AddPending?userid="
+    
+//    GetUserDownloadChart
+    static let GetUserDownloadChart = "http://mapi.fusion.ps/api/Users/GetUserDownloadChart?userID=082853838@gfusion"
+    
+    
+//    AddTicket
+    static let AddTicket = "http://mapi.fusion.ps/api/Users/AddTicket?userid="
+    
+//    Register Hamla
+    static let RegisterHamla = "http://mapi.fusion.ps/api/Users/RegisterNewHamla?MobileNo="
+    
+// Check Hamla
+    static let CheckHamla = "http://mapi.fusion.ps/api/Users/CheckHamla?userID="
     
 }

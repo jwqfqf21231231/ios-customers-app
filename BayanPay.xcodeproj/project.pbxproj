@@ -41,6 +41,9 @@
 		C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */; };
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
+		C17E3B82222288CF0078380A /* LoginNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17E3B81222288CF0078380A /* LoginNavVC.swift */; };
+		C17E3B842222B4820078380A /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17E3B832222B4820078380A /* Chart.swift */; };
+		C18073442223D1AB00DD8DEE /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18073432223D1AB00DD8DEE /* TicketVC.swift */; };
 		C186F385221566FD00D6B444 /* CheckUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C186F384221566FD00D6B444 /* CheckUser.swift */; };
 		C18E483F21EF39B8003E0E27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E483E21EF39B8003E0E27 /* Config.swift */; };
 		C18E484121EF3A4E003E0E27 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E484021EF3A4E003E0E27 /* API.swift */; };
@@ -102,6 +105,9 @@
 		C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGetPriceCell.swift; sourceTree = "<group>"; };
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
+		C17E3B81222288CF0078380A /* LoginNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavVC.swift; sourceTree = "<group>"; };
+		C17E3B832222B4820078380A /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		C18073432223D1AB00DD8DEE /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		C186F384221566FD00D6B444 /* CheckUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUser.swift; sourceTree = "<group>"; };
 		C18E483E21EF39B8003E0E27 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C18E484021EF3A4E003E0E27 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -221,6 +227,8 @@
 				C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */,
 				C103DE23221EA79E00296EF4 /* ReservationVC.swift */,
 				C1F46063221ED916007A16AC /* LoadVC.swift */,
+				C17E3B81222288CF0078380A /* LoginNavVC.swift */,
+				C18073432223D1AB00DD8DEE /* TicketVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				C14AEB0D220C110E002BB10B /* Advs.swift */,
 				C186F384221566FD00D6B444 /* CheckUser.swift */,
 				C1483E92222130A700B04378 /* HamlaList.swift */,
+				C17E3B832222B4820078380A /* Chart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,10 +449,12 @@
 				C1526AA022057E440033E61A /* GetPrice.swift in Sources */,
 				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
 				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
+				C18073442223D1AB00DD8DEE /* TicketVC.swift in Sources */,
 				C1483E93222130A700B04378 /* HamlaList.swift in Sources */,
 				C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */,
 				C1F46064221ED916007A16AC /* LoadVC.swift in Sources */,
 				C1C0025521C77A530023CE4A /* RegisterVC.swift in Sources */,
+				C17E3B82222288CF0078380A /* LoginNavVC.swift in Sources */,
 				C14AEB0E220C110E002BB10B /* Advs.swift in Sources */,
 				C186F385221566FD00D6B444 /* CheckUser.swift in Sources */,
 				C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */,
@@ -454,6 +465,7 @@
 				C18E484321EF5233003E0E27 /* TbBarVS.swift in Sources */,
 				C1F2FB0D21FDE081003040F5 /* AdvModels.swift in Sources */,
 				174E6029206ECD1A0022CD0A /* AppDelegate.swift in Sources */,
+				C17E3B842222B4820078380A /* Chart.swift in Sources */,
 				C1A3FD5D2202CF4500A7CB0F /* AccountHistoryCell.swift in Sources */,
 				C18E484121EF3A4E003E0E27 /* API.swift in Sources */,
 				C1F5A9CA21F5F5A1002DAB9A /* AdvertaismentItem.swift in Sources */,

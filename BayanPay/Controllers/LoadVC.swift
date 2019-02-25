@@ -38,7 +38,6 @@ class ViewController: UIViewController {
     }
     
     func loadLoginScreen(){
-
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let ViewController = storyBoard.instantiateViewController(withIdentifier: "NavMain") 
         self.present(ViewController, animated: true, completion: nil)

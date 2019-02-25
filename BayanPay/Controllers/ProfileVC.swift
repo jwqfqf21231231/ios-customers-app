@@ -43,10 +43,22 @@ class ProfileVC: UIViewController {
                 
                 let _ :Profile = User[0]
                 let status = name.UserOnline as Bool
-                self.Status.text = "\(status)"
+                
+                if (status == false){
+                    self.Status.text = "غير فعال"
+                } else {
+                    self.Status.text = "فعال"
+                }
                 
                 let UserIs = name.Isbad as Bool
-                self.IsBad.text = "\(UserIs)"
+                if(UserIs == false){
+                    
+                    self.IsBad.text = "ليس ضمن الاستخدام العادل"
+                } else{
+                    
+                    self.IsBad.text = "ضمن الاستخدام العادل"
+                }
+                
                 
                 let _ :Profile = User[0]
                 self.Mobile.text = name.Mobile

@@ -17,7 +17,7 @@ class BadHistoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         BadHistoryView.setRounded(radius: 10)
-        BadHistoryView.setBorder(width: CGFloat(1.0), color: UIColor.gray)
+        BadHistoryView.setBorder(width: CGFloat(1.0), color: UIColor.white)
 
         
     }

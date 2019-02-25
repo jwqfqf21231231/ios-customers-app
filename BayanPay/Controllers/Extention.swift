@@ -15,6 +15,7 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+  
     func removeRounded() {
         self.layer.cornerRadius = 0
         self.layer.masksToBounds = true
@@ -163,3 +164,14 @@ extension UIImage {
    
     
 }
+
+extension UINavigationItem
+{
+    func hideBackWord()  {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.backBarButtonItem = backItem
+    }
+}
+
+    

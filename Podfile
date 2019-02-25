@@ -14,5 +14,4 @@ target 'BayanPay' do
   pod 'SDWebImage'
   pod 'SwiftyOnboard'
 
-
 end

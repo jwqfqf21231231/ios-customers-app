@@ -22,7 +22,7 @@ class AccountHistoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         ViewAccount.setRounded(radius: 10)
-        ViewAccount.setBorder(width: CGFloat(1.0), color: UIColor.gray)
+        ViewAccount.setBorder(width: CGFloat(1.0), color: UIColor.white)
 
     }
     

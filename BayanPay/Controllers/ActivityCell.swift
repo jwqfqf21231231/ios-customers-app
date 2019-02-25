@@ -21,7 +21,7 @@ class ActivityCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         ViewActivity.setRounded(radius: 8)
-        ViewActivity.setBorder(width: CGFloat(1.0), color: UIColor.gray)
+        ViewActivity.setBorder(width: CGFloat(1.0), color: UIColor.white)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

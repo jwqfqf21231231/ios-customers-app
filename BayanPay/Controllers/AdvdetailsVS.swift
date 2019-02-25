@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     var advData:AdvsModel!
@@ -43,6 +44,35 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
                 self.pricesCollection.reloadData()
             }
         }
+    }
+    
+    func CheckHamla(){
+        guard let api_User = Services.getApiTell() else {
+          return }
+        
+//        082853838&HamlaID=104&Groupid=22
+        let url = Urls.CheckHamla
+        let RegisterHamla = url + api_User + "&&HamlaID=" + "\(id)" + "&Groupid=" + "122"
+        print("RegisterHamla",RegisterHamla)
+        Alamofire.request(RegisterHamla, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .validate(statusCode: 200..<500)
+            .responseJSON { response  in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    if  let _ = json["result"].string,
+                        let _ = json["result"].string {
+                        
+                    } else {
+                        print("error .. !")
+                    }
+                    print(response)
+                case .failure(let error):
+//                    self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
+                    print(error)
+                }
+        }
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{

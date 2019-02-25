@@ -11,6 +11,10 @@ import Alamofire
 import SwiftyJSON
 class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
+    var hamlaID:Int = 0
+    var SpeedID:Int = 0
+    var PeriodID:Int = 0
+    
     @IBOutlet weak var PeriodPK: UIPickerView!
     @IBOutlet weak var HamlaPK: UIPickerView!
     @IBOutlet weak var SpeedPK: UIPickerView!
@@ -30,9 +34,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         self.PeriodPK.dataSource = self
         self.PeriodPK.delegate = self
         
-          GetHamlaSpeed()
           GetHamlaList()
-          GetHamlaPeriod()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +46,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         Services.GetHamlaListPost{(error:Error? , HamlaList:[HamlaList]?) in
             if let HamlaItem = HamlaList {
                 self.GetHamlaList_Var = HamlaItem
+                self.SpeedPK.reloadAllComponents()
                 self.HamlaPK.reloadAllComponents()
                 print(HamlaItem)
                 
@@ -51,19 +54,20 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         }
     }
     
-    func GetHamlaSpeed(){
-        Services.GetHamlaSpeedGet(HamlaID: "104"){(error:Error? , HamlaSpeed:[HamlaSpeed]?) in
+    func GetHamlaSpeed(_ id:Int){
+        Services.GetHamlaSpeedGet(HamlaID: id){(error:Error? , HamlaSpeed:[HamlaSpeed]?) in
             if let SpeedItem = HamlaSpeed {
                 self.GetHamlaSpeed_Var = SpeedItem
                 self.SpeedPK.reloadAllComponents()
+                 self.PeriodPK.reloadAllComponents()
                 print(SpeedItem)
                 
             }
         }
     }
     
-    func GetHamlaPeriod(){
-        Services.GetHamlaPeriodGet(Speed: "120", Hamla: "104"){(error:Error? , HamlaPeriod:[HamlaPeriod]?) in
+    func GetHamlaPeriod(_ speed:Int, _ Hamla:Int){
+        Services.GetHamlaPeriodGet(Speed: speed, Hamla: Hamla){(error:Error? , HamlaPeriod:[HamlaPeriod]?) in
             if let PeriodItem = HamlaPeriod {
                 self.GetHamlaPeriod_Var = PeriodItem
                 self.PeriodPK.reloadAllComponents()
@@ -94,15 +98,21 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView.tag == 0){
+            hamlaID = GetHamlaList_Var[row].id
+            GetHamlaSpeed(hamlaID)
             
             return GetHamlaList_Var[row].name
+            
+            
         }
         else if(pickerView.tag == 1){
+            SpeedID = GetHamlaSpeed_Var[row].ID
+            GetHamlaPeriod(SpeedID,hamlaID)
             
             return self.GetHamlaSpeed_Var[row].Title
             
         } else {
-            
+           PeriodID = GetHamlaPeriod_Var[row].ID
           return self.GetHamlaPeriod_Var[row].Title
         }
         
@@ -113,15 +123,9 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         let url = Urls.AddPending
         guard let api_User = Services.getApiTell() else { return }
         
-        let parameters: [String: Any]=[
-            "userid":api_User,
-            "hamlaid":"104",
-            "speedid": "120",
-            "Month":"1"
-        ]
-//        parameters:parameters
-        Alamofire.request(url, method: .post, encoding: URLEncoding.default, headers: Urls.header)
-            .validate(statusCode: 200..<300)
+       let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"
+        Alamofire.request(AddPending, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .validate(statusCode: 200..<500)
             .responseJSON { response  in
                 
                 switch response.result {
