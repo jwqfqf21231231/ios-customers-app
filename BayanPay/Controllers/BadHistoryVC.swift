@@ -19,6 +19,7 @@ class BadHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         GetBadHistory()
     }
     
+    
     func GetBadHistory(){
         Services.BadHistory{(error:Error? , BadHistory:[BadHistoryModel]?) in
             if let BadItem = BadHistory {

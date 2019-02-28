@@ -26,6 +26,8 @@ class AdvsVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelega
         layout?.minimumInteritemSpacing = 5
         layout?.itemSize = CGSize(width: (CollectionViewAdvs.frame.size.width-20)/2, height: self.CollectionViewAdvs.frame.size.height/3)
         Load()
+        self.navigationItem.hideBackWord()
+
         
     }
     

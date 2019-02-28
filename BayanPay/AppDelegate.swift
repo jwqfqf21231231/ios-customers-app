@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "TbBarVS")
             window?.rootViewController = wind
         } else {
-            
+
             let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "StoryboardVC")
             window?.rootViewController = wind
         }

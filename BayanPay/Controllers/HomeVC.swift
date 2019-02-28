@@ -42,10 +42,19 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         alertCheckOver()
        array = [#imageLiteral(resourceName: "slide0"),#imageLiteral(resourceName: "slide1"),#imageLiteral(resourceName: "slide2"),#imageLiteral(resourceName: "slide3"),#imageLiteral(resourceName: "slide4"),#imageLiteral(resourceName: "slide5")]
+        self.navigationItem.hideBackWord()
+        ExitOver()
     }
     
     @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) { }
+    
+    
     @IBAction func LogOut(_ sender: Any) {
+        Services.removeUser()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ViewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.present(ViewController, animated: true, completion: nil)
+//        (ViewController, animated: true)
     }
     
     @IBAction func UserProfile(_ sender: Any) { }
@@ -71,10 +80,12 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
 //    Services End
     
     @IBAction func CheckExitOverDownload(_ sender: Any) {
-        CheckExitOver(message:"لديك \(self.total) محاولات للخروج من الاستخدام العادل")
+//        CheckExitOver(message:"لديك \(self.total) محاولات للخروج من الاستخدام العادل")
+        CheckExitOver(message: Msg)
     }
     
     //    BSA Action
@@ -136,12 +147,12 @@ class HomeVC: UIViewController {
 //    CheckExitOver Action
     func CheckExitOver(message:String) {
         let alertView = UIAlertController(title:"", message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع", style: .default) { (action:UIAlertAction) in
+        let OKAction = UIAlertAction(title: "موفق", style: .default) { (action:UIAlertAction) in
             
         }
         let ExitOverAction = UIAlertAction(title: "أضغط هنا للخروج من سياسة", style: .default) { (action:UIAlertAction) in
             self.ExitOver()
-            self.ExitOverDownload(message: "تمت عملية الخروج بنجاح ")
+            self.ExitOverDownload(message: "لديك \(self.total) للخروج من سياسة الاستخدام" )
             
         }
         alertView.addAction(OKAction)
@@ -158,12 +169,10 @@ class HomeVC: UIViewController {
         self.present(alertView, animated: true, completion:nil) }
     
     
-    
-    
 //    ExitOverDownload Action
     func ExitOverDownload(message:String) {
         let alertView = UIAlertController(title:"", message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع", style: .default) { (action:UIAlertAction) in
+        let OKAction = UIAlertAction(title: "موافق", style: .default) { (action:UIAlertAction) in
             
         }
         let ExitOverAction = UIAlertAction(title: "الخروج من سياسة الاستخدام", style: .default) { (action:UIAlertAction) in

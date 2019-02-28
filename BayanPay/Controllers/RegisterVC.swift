@@ -19,6 +19,8 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("HAMLAID",Hamlaid)
+        self.navigationItem.hideBackWord()
+
     }
 
     override func didReceiveMemoryWarning() {

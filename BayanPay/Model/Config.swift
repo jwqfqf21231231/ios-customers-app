@@ -42,10 +42,10 @@ struct Urls {
     
    
     // CheckExitOverDownload
-    static let CheckExit = "http://mapi.fusion.ps/api/Users/CheckExitOverDownload"
+    static let CheckExit = "http://mapi.fusion.ps/api/Users/CheckExitOverDownload?userID="
     
     //    ExitOverDownload
-    static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload"
+    static let ExitOverDown = "http://mapi.fusion.ps/api/Users/ExitOverDownload?userID="
     
     
     // CheckUser
@@ -73,10 +73,14 @@ struct Urls {
 //    AddTicket
     static let AddTicket = "http://mapi.fusion.ps/api/Users/AddTicket?userid="
     
-//    Register Hamla
+//    Register Hamla OUT
     static let RegisterHamla = "http://mapi.fusion.ps/api/Users/RegisterNewHamla?MobileNo="
     
-// Check Hamla
+// Check Hamla IN
     static let CheckHamla = "http://mapi.fusion.ps/api/Users/CheckHamla?userID="
+    
+// ChargeHamla
+    static let ChargeHamla = "http://mapi.fusion.ps/api/Users/chargHamla?userID="
+    
     
 }

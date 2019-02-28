@@ -274,6 +274,7 @@ class Services: NSObject {
                         priceItem.price6 = data["price6"]?.int ?? 0
                         priceItem.price12 = data["price12"]?.int ?? 0
                         priceItem.group = data["group"]?.string ?? ""
+                         priceItem.q = data["q"]?.int ?? 0
                         getPriceModel.append(priceItem)
                     }
                     completion(nil, getPriceModel)
@@ -325,11 +326,9 @@ class Services: NSObject {
         }
         print("",api_User)
         
-        let Params:[String: Any] = [
-            "userID": api_User
-        ]
-        print("param", Params)
-        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+     let checkURL = url + api_User
+
+        Alamofire.request(checkURL, method: .get ,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure(let error):
@@ -365,11 +364,8 @@ class Services: NSObject {
         }
         print("",api_User)
         
-        let Params:[String: Any] = [
-            "userID": api_User
-        ]
-        print("param", Params)
-        Alamofire.request(url, method: .post, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+      let exitURL = url + api_User
+        Alamofire.request(exitURL, method: .post, encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure(let error):
@@ -556,6 +552,72 @@ class Services: NSObject {
                         print("tell",data)
                     }
                     completion(nil, AddTicket)
+                }
+        }
+        
+    }
+//    Check Hamla
+    
+    class func CheckHamlat(id:Int, groupid:Int, completion: @escaping(_ error: Error?, _ CheckHamla:[CheckHamla]?)->Void){
+        guard let api_User = Services.getApiTell() else {
+            return }
+        //        082853838&HamlaID=104&Groupid=22
+        let url = Urls.CheckHamla
+        let RegisterHamla = url + api_User + "&&HamlaID=" + "\(id)" + "&Groupid=" + "\(groupid)"
+        print("RegisterHamla",RegisterHamla)
+        Alamofire.request(RegisterHamla, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Check:[CheckHamla] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let CheckItem =  CheckHamla()
+                        CheckItem.Message = data["Message"]?.string ?? ""
+                        Check.append(CheckItem)
+                        print("tell",data)
+                    }
+                    completion(nil, Check)
+                }
+        }
+        
+    }
+    
+//    ChargeHamla
+    class func ChargeHamlaFunc(id:Int, groupid:Int, completion: @escaping(_ error: Error?, _ ChargeHamla:[ChargeHamla]?)->Void){
+        guard let api_User = Services.getApiTell() else {
+            return }
+        //        082853838&HamlaID=104&Groupid=22
+        let url = Urls.ChargeHamla
+        let Charge = url + api_User + "&&HamlaID=" + "\(id)" + "&Groupid=" + "\(groupid)"
+        print("RegisterHamla",Charge)
+        Alamofire.request(Charge, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Charge:[ChargeHamla] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let ChargeItem =  ChargeHamla()
+                        ChargeItem.Message = data["Message"]?.string ?? ""
+                        Charge.append(ChargeItem)
+                        print("tell",data)
+                    }
+                    completion(nil, Charge)
                 }
         }
         

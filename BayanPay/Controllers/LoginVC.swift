@@ -11,7 +11,11 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         UserName.text = "0599684763"
         Password.text = "Hilles@2020"
+        self.navigationItem.hideBackWord()
+
+        
   }
+
     
     func Check(){
         Services.GetCheckUser{(error:Error? , _ GetCheckuser:[CheckUser]?) in

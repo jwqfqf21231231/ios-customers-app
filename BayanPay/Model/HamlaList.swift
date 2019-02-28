@@ -27,4 +27,10 @@ class AddPending:NSObject{
     var MessageCode:Int = 0
     var Message:String = ""
 }
+class CheckHamla: NSObject {
+    var Message:String = ""
+}
 
+class ChargeHamla: NSObject {
+    var Message:String = ""
+}

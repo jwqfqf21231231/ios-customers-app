@@ -20,6 +20,7 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
         CollectionAdvsOut.dataSource = self
         CollectionAdvsOut.delegate = self
         Load()
+        self.navigationItem.hideBackWord()
     }
     
     override func didReceiveMemoryWarning() {
