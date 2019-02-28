@@ -9,8 +9,7 @@ class LoginVC: UIViewController {
     var msg:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserName.text = "0599684763"
-        Password.text = "Hilles@2020"
+       
         self.navigationItem.hideBackWord()
 
         

@@ -204,7 +204,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PW-nb-h6I">
                                                 <rect key="frame" x="8" y="3" width="143" height="44"/>
@@ -528,7 +528,7 @@
                                                 <rect key="frame" x="0.0" y="106" width="160" height="43"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="A8S-Sd-9g0">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="A8S-Sd-9g0">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="109"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="A8S-Sd-9g0" secondAttribute="height" multiplier="160:109" id="FVT-D5-hN2"/>
@@ -566,7 +566,7 @@
                                                 <rect key="frame" x="0.0" y="106" width="160" height="43"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="K6F-ml-fOF">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="K6F-ml-fOF">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="109"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="K6F-ml-fOF" secondAttribute="height" multiplier="160:109" id="SGW-B4-dTW"/>
@@ -607,7 +607,7 @@
                                                 <rect key="frame" x="0.0" y="105.99999999999994" width="160" height="43"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-kv-YiM">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-kv-YiM">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="109"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Pgj-kv-YiM" secondAttribute="height" multiplier="160:109" id="MPE-5y-6eh"/>
@@ -648,7 +648,7 @@
                                                 <rect key="frame" x="0.0" y="105.99999999999994" width="160" height="43"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-pv-Zf3">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-pv-Zf3">
                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="109"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hqT-pv-Zf3" secondAttribute="height" multiplier="160:109" id="hgH-yt-7Yn"/>
