@@ -24,7 +24,7 @@ class ChartsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         GetData()
-        PieChartView.chartDescription?.text = "نسبة التحميل"
+        PieChartView.chartDescription?.text = ""
 //        PieChartView.isUserInteractionEnabled = false
        
         //UpdateData()
@@ -35,6 +35,8 @@ class ChartsVC: UIViewController {
         //Configration of chart and set data of x , y
         DataEntryX.value = Double(self.x)
         DataEntryY.value = Double(self.y)
+        DataEntryY.label = "نسبة التحميل"
+        DataEntryX.label = "نسة المتبقي"
         NumberOfRows = [DataEntryX,DataEntryY]
     
         let chartDataSet = PieChartDataSet(values:NumberOfRows, label:nil)
