@@ -36,6 +36,7 @@
 		C135681522005C45000A6CBC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135681422005C45000A6CBC /* ActivityModel.swift */; };
 		C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA321C68899003124E5 /* AdvdetailsVS.swift */; };
 		C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C139BBA521C68927003124E5 /* ConfairmVC.swift */; };
+		C142282F2229CD7A00D1C503 /* ChartsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C142282E2229CD7A00D1C503 /* ChartsVC.swift */; };
 		C1483E93222130A700B04378 /* HamlaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1483E92222130A700B04378 /* HamlaList.swift */; };
 		C14AEB0E220C110E002BB10B /* Advs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0D220C110E002BB10B /* Advs.swift */; };
 		C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */; };
@@ -101,6 +102,7 @@
 		C135681422005C45000A6CBC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		C139BBA321C68899003124E5 /* AdvdetailsVS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvdetailsVS.swift; sourceTree = "<group>"; };
 		C139BBA521C68927003124E5 /* ConfairmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfairmVC.swift; sourceTree = "<group>"; };
+		C142282E2229CD7A00D1C503 /* ChartsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsVC.swift; sourceTree = "<group>"; };
 		C1483E92222130A700B04378 /* HamlaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamlaList.swift; sourceTree = "<group>"; };
 		C14AEB0D220C110E002BB10B /* Advs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advs.swift; sourceTree = "<group>"; };
 		C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGetPriceCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				C17E3B81222288CF0078380A /* LoginNavVC.swift */,
 				C18073432223D1AB00DD8DEE /* TicketVC.swift */,
 				C16256F22227BA5500C35475 /* SpeedVC.swift */,
+				C142282E2229CD7A00D1C503 /* ChartsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -425,6 +429,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -471,6 +476,7 @@
 				174E6029206ECD1A0022CD0A /* AppDelegate.swift in Sources */,
 				C17E3B842222B4820078380A /* Chart.swift in Sources */,
 				C1A3FD5D2202CF4500A7CB0F /* AccountHistoryCell.swift in Sources */,
+				C142282F2229CD7A00D1C503 /* ChartsVC.swift in Sources */,
 				C18E484121EF3A4E003E0E27 /* API.swift in Sources */,
 				C1F5A9CA21F5F5A1002DAB9A /* AdvertaismentItem.swift in Sources */,
 				C18E483F21EF39B8003E0E27 /* Config.swift in Sources */,
@@ -622,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,7 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";

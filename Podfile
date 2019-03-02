@@ -13,5 +13,5 @@ target 'BayanPay' do
   pod 'SwiftyJSON'
   pod 'SDWebImage'
   pod 'SwiftyOnboard'
-
+  pod 'Charts', '~> 3.1.0'
 end

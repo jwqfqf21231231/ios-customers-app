@@ -480,6 +480,36 @@
             </objects>
             <point key="canvasLocation" x="2124" y="54"/>
         </scene>
+        <!--ChartsVC-->
+        <scene sceneID="5ll-MN-pZs">
+            <objects>
+                <viewController storyboardIdentifier="ChartsVC" id="zeA-OZ-l8x" customClass="ChartsVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RW6-zx-HuL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-aA-wfi" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="10" y="120" width="394" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oLO-aA-wfi" firstAttribute="top" secondItem="jN6-lb-psI" secondAttribute="top" constant="100" id="g9x-nL-yKn"/>
+                            <constraint firstItem="jN6-lb-psI" firstAttribute="bottom" secondItem="oLO-aA-wfi" secondAttribute="bottom" constant="80" id="kR9-Pb-1Zk"/>
+                            <constraint firstItem="oLO-aA-wfi" firstAttribute="leading" secondItem="jN6-lb-psI" secondAttribute="leading" constant="10" id="rSP-mr-eRZ"/>
+                            <constraint firstItem="jN6-lb-psI" firstAttribute="trailing" secondItem="oLO-aA-wfi" secondAttribute="trailing" constant="10" id="xyl-e8-rRm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jN6-lb-psI"/>
+                    </view>
+                    <connections>
+                        <outlet property="PieChartView" destination="oLO-aA-wfi" id="Lt4-qz-P5w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rf1-mr-awT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2066.666666666667" y="2259.7826086956525"/>
+        </scene>
         <!--فحص السرعه-->
         <scene sceneID="XTB-Qd-Pv8">
             <objects>
@@ -2574,10 +2604,10 @@
                                                                     <rect key="frame" x="10" y="0.0" width="140" height="116"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qwy-jq-2VB">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="26.666666666666668"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="26.333333333333332"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIGA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-0L-vM3">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="26.666666666666668"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="26.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
                                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2592,43 +2622,43 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شهر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-H6-jYv">
-                                                                            <rect key="frame" x="117.66666666666667" y="29" width="22.333333333333329" height="21"/>
+                                                                            <rect key="frame" x="117.66666666666667" y="28.666666666666664" width="22.333333333333329" height="20.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شهرين" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgd-Go-heB">
-                                                                            <rect key="frame" x="106.66666666666667" y="52" width="33.333333333333329" height="21"/>
+                                                                            <rect key="frame" x="106.33333333333333" y="51.333333333333336" width="33.666666666666671" height="20.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٦ شهر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm4-b8-XOZ">
-                                                                            <rect key="frame" x="5" y="29" width="30" height="21"/>
+                                                                            <rect key="frame" x="5.0000000000000018" y="28.666666666666664" width="29.666666666666671" height="20.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سنه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ1-vy-Etq">
-                                                                            <rect key="frame" x="120" y="75" width="20" height="21"/>
+                                                                            <rect key="frame" x="120" y="74" width="20" height="20.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgs-ef-WbB">
-                                                                            <rect key="frame" x="5" y="98" width="130" height="0.0"/>
+                                                                            <rect key="frame" x="5" y="96.666666666666671" width="130" height="0.0"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٤ شهور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaJ-VB-scE">
-                                                                            <rect key="frame" x="5" y="54" width="36" height="21"/>
+                                                                            <rect key="frame" x="5" y="53.333333333333336" width="36" height="20.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٣ شهور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-lL-U1w">
-                                                                            <rect key="frame" x="5" y="77" width="38" height="21"/>
+                                                                            <rect key="frame" x="5" y="76" width="37.666666666666664" height="20.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>

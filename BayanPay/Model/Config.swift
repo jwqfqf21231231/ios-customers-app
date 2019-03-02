@@ -67,7 +67,7 @@ struct Urls {
     static let AddPending = "http://mapi.fusion.ps/api/Users/AddPending?userid="
     
 //    GetUserDownloadChart
-    static let GetUserDownloadChart = "http://mapi.fusion.ps/api/Users/GetUserDownloadChart?userID=082853838@gfusion"
+    static let GetUserDownloadChart = "http://mapi.fusion.ps/api/Users/GetUserDownloadChart?userID="
     
     
 //    AddTicket

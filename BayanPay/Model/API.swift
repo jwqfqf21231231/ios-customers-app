@@ -623,5 +623,37 @@ class Services: NSObject {
         
     }
     
+    //    ChargeHamla
+    class func GetChartHamla(completion: @escaping(_ error: Error?, _ Chart:[Chart]?)->Void){
+        guard let api_User = Services.getApiTell() else {
+            return }
+        let url = Urls.GetUserDownloadChart
+        let ChartURL = url + api_User
+        Alamofire.request(ChartURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Charts:[Chart] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let Chartitem =  Chart()
+                        Chartitem.x = data["x"]?.int ?? 0
+                        Chartitem.y = data["y"]?.int ?? 0
+                        Charts.append(Chartitem)
+                        print("tell",data)
+                    }
+                    completion(nil, Charts)
+                }
+        }
+        
+    }
+    
     
 }
