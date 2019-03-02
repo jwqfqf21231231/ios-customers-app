@@ -17,30 +17,33 @@ class ChartsVC: UIViewController {
     var ChartItem = [Chart]()
     @IBOutlet weak var PieChartView: PieChartView!
     
-    var DataEntryX = PieChartDataEntry(value: 0)
-    var DataEntryY = PieChartDataEntry(value: 0)
-    
+    var DataEntryX = PieChartDataEntry(value: 60)
+    var DataEntryY = PieChartDataEntry(value: 200)
     var NumberOfRows = [PieChartDataEntry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GetData()
-        UpdateData()
-        
-        PieChartView.chartDescription?.text = ""
+        PieChartView.chartDescription?.text = "نسبة التحميل"
+//        PieChartView.isUserInteractionEnabled = false
+       
+        //UpdateData()
+    }
+    
+    //function set and show data
+    func UpdateData(){
+        //Configration of chart and set data of x , y
         DataEntryX.value = Double(self.x)
         DataEntryY.value = Double(self.y)
         NumberOfRows = [DataEntryX,DataEntryY]
-    }
     
-    
-    func UpdateData(){
         let chartDataSet = PieChartDataSet(values:NumberOfRows, label:nil)
         let ChartData = PieChartData(dataSet: chartDataSet)
        
-//        let colors = [UIColor(named: "black"), UIColor(named: "orange")]
-//        chartDataSet.colors = colors as! [NSUIColor]
-         PieChartView.data = ChartData
+        let colors = [UIColor(named: "iosColor"),UIColor(named: "macColor")]
+        chartDataSet.colors = colors as! [NSUIColor]
+        
+        PieChartView.data = ChartData
         
         
     }
@@ -65,12 +68,14 @@ class ChartsVC: UIViewController {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  Chart()
                         Chartitem.x = data["x"]?.int ?? 0
-                        self.x = Chartitem.x
+                        self.x = self.x + Chartitem.x
                         Chartitem.y = data["y"]?.int ?? 0
-                        self.y = Chartitem.y
+                        self.y = self.y + Chartitem.y
                         Charts.append(Chartitem)
                         print("Chart",data)
                     }
+                    //set Data after load from api
+                    self.UpdateData()
                 }
         }
         

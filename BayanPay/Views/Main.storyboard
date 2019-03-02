@@ -480,10 +480,10 @@
             </objects>
             <point key="canvasLocation" x="2124" y="54"/>
         </scene>
-        <!--ChartsVC-->
+        <!--نسبة التحميل-->
         <scene sceneID="5ll-MN-pZs">
             <objects>
-                <viewController storyboardIdentifier="ChartsVC" id="zeA-OZ-l8x" customClass="ChartsVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChartsVC" title="نسبة التحميل" id="zeA-OZ-l8x" customClass="ChartsVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RW6-zx-HuL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1373,6 +1373,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiL-Sd-74V">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="54.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                                                        <connections>
+                                                            <segue destination="zeA-OZ-l8x" kind="show" id="FRV-Og-ZOD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
