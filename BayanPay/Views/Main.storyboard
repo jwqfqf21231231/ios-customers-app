@@ -417,7 +417,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-eO-Tbx">
-                                <rect key="frame" x="56" y="446" width="302" height="44"/>
+                                <rect key="frame" x="56.333333333333343" y="446" width="302" height="44"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                 <state key="normal" title="هل لديك حساب  .. ؟  أضغط لتسجيل الدخول ..">
                                     <color key="titleColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
