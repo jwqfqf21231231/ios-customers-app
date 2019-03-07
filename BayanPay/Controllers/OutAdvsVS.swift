@@ -35,7 +35,7 @@ class OutAdvsVS: UIViewController, UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OutCell", for: indexPath) as! OutAdvsCell
     
         let item = AdvertaismentItems[indexPath.row]
-        let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + item.ShortImage)
+        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + item.ShortImage)
         cell.imgAdvs.sd_setImage(with: url)
          cell.ID = AdvertaismentItems[indexPath.row].ID
         return cell

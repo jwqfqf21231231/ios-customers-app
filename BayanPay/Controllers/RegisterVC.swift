@@ -18,6 +18,7 @@ class RegisterVC: UIViewController {
     var Hamlaid:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.endEditing(true)
         print("HAMLAID",Hamlaid)
         self.navigationItem.hideBackWord()
 

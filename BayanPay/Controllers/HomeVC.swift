@@ -8,13 +8,77 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+  
     var window: UIWindow?
     var total:Int = 000
     var Status:Int = 000
     var Msg:String = ""
     var CheckExitOverDownload:[CheckExit] = []
     var ExitOverDown:[ExitOverDownload] = []
+    var UserMobile: [UserMobile] = []
+    
+    func GetUserMobile() {
+        Services.CheckUserMobile{(error:Error? , UserMobile:[UserMobile]?) in
+            if let Users = UserMobile {
+                self.UserMobile = Users
+//                self.PricesCollection.reloadData()
+                print(Users)
+                
+            }
+        }
+    }
+    
+    func PopUpChoose(){
+        let alert = UIAlertController(title: "أختر المستخدم", message: "\n\n\n\n\n\n", preferredStyle: .alert)
+        alert.isModalInPopover = true
+        
+        let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
+        
+        alert.view.addSubview(pickerFrame)
+        pickerFrame.dataSource = (self as? UIPickerViewDataSource)
+        pickerFrame.delegate = (self as UIPickerViewDelegate)
+        
+        alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { (UIAlertAction) in
+//            print("You selected " + self.typeValue )
+            self.GetUserMobile()
+             Services.getApiTell()
+            print(Services.getApiTell())
+
+        }))
+        self.present(alert,animated: true, completion: nil )
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return UserMobile.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let ExsitUser = UserMobile[row].Message
+        Services.getApiTell() == ExsitUser
+        print(ExsitUser)
+        return ExsitUser
+        
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Cairo", size: 14)
+            pickerLabel?.textAlignment = .center }
+        pickerLabel?.text = UserMobile[row].Message
+        pickerLabel?.textColor = UIColor.blue
+        return pickerLabel!
+    }
+    
+//    ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+    
     
     var array = [UIImage]()
     
@@ -37,29 +101,30 @@ class HomeVC: UIViewController {
         SliderImage.image = array[value]
         
     }
+    
+    
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        alertCheckOver()
        array = [#imageLiteral(resourceName: "slide0"),#imageLiteral(resourceName: "slide1"),#imageLiteral(resourceName: "slide2"),#imageLiteral(resourceName: "slide3"),#imageLiteral(resourceName: "slide4"),#imageLiteral(resourceName: "slide5")]
         self.navigationItem.hideBackWord()
         ExitOver()
+        GetUserMobile()
+        PopUpChoose()
     }
     
     @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) { }
     
-    
     @IBAction func LogOut(_ sender: Any) {
         Services.removeUser()
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let ViewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.present(ViewController, animated: true, completion: nil)
-//        (ViewController, animated: true)
+         dismiss(animated: true, completion: nil)
+       loadLoginScreen()
+       
     }
     
     @IBAction func UserProfile(_ sender: Any) { }
     
-// Services Start
+    // Services Start
     func ExitOver(){
         Services.ExitOverDown{(error:Error? , ExitOver:[ExitOverDownload]?) in
             if let ExitOverItem = ExitOver {
@@ -90,6 +155,7 @@ class HomeVC: UIViewController {
     
     //    BSA Action
     @IBAction func BSA(_ sender: Any) {
+        
         guard let code = Services.getApiTell() else  {return}
         let first4 = String((code.prefix(2)))
         
@@ -185,5 +251,13 @@ class HomeVC: UIViewController {
         }
   
         self.present(alertView, animated: true, completion:nil) }
+    
+    func loadLoginScreen(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier:
+            
+            "LoginVC") as! LoginVC
+      
+        navigationController?.pushViewController(viewController, animated: true) }
     
 }

@@ -239,17 +239,9 @@ class Services: NSObject {
     
     class func GetPrice( id:Int ,completion: @escaping(_ error: Error?, _ PriceModel: [PriceModel]?)->Void){
         let url = Urls.Price
-        guard let api_User = Services.getApiUser() else {
-            completion(nil,nil)
-            return
-        }
-        print("",api_User)
-        
-        let Params:[String: Any] = [
-            "id": id
-        ]
-        print("param", Params)
-        Alamofire.request(url, method: .get, parameters:Params ,encoding: URLEncoding.default, headers: Urls.header)
+    let PriceURL = url + "\(id)"
+        print(PriceURL)
+        Alamofire.request(PriceURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure(let error):
@@ -648,12 +640,71 @@ class Services: NSObject {
                         Chartitem.y = data["y"]?.int ?? 0
                         Charts.append(Chartitem)
                         print("tell",data)
-                    }
+                        }
                     completion(nil, Charts)
-                }
-        }
+                }}}
+    
+    class func CheckUserMobile(completion: @escaping(_ error: Error?, _ UserMobile:[UserMobile]?)->Void){
+        guard let api_User = Services.getApiUser() else {
+            return }
+        let url = Urls.CheckUserMobile
+        let ChartURL = url + api_User
+        Alamofire.request(ChartURL, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Users:[UserMobile] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        var UsersItem =  UserMobile()
+                        UsersItem.FullName = data["FullName"]?.string ?? ""
+                        UsersItem.Message = data["Message"]?.string ?? ""
+                          UsersItem.Usertype = data["Usertype"]?.int ?? 0
+                        Users.append(UsersItem)
+                        print("tell",data)
+                    }
+                    completion(nil, Users)
+                }}}
+    
+    
+//
+    class func AddpendingMessageClass(MessageError:String,MessageCode:String, hamlaID:Int,SpeedID:Int, PeriodID:Int, completion: @escaping(_ error: Error?, _ AddpendingMessage:[AddpendingMessage]?)->Void){
+        var Msgs = MessageError
+        let url = Urls.AddPending
+        guard let api_User = Services.getApiTell() else { return }
+        let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"
         
-    }
+        print(AddPending)
+        Alamofire.request(AddPending, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Add:[AddpendingMessage] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        var AddItem =  AddpendingMessage()
+                        AddItem.MessageCode = data["MessageCode"]?.string ?? ""
+                        AddItem.Message = data["Message"]?.string ?? ""
+                        Add.append(AddItem)
+                        print("tell",data)
+                    }
+                    completion(nil, Add)
+                }}}
     
-    
+ 
+
 }

@@ -22,7 +22,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
      var GetHamlaList_Var = [HamlaList]()
      var GetHamlaSpeed_Var = [HamlaSpeed]()
      var GetHamlaPeriod_Var = [HamlaPeriod]()
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.HamlaPK.dataSource = self
@@ -119,31 +119,31 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     }
     
     @IBAction func AddPending(_ sender: Any) {
-        
+        var MessageError: String = ""
+        var MessageCode: String = ""
         let url = Urls.AddPending
         guard let api_User = Services.getApiTell() else { return }
+        let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"
         
-       let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"
+        print(AddPending)
         Alamofire.request(AddPending, method: .post, encoding: URLEncoding.default, headers: Urls.header)
-            .validate(statusCode: 200..<500)
+            .validate(statusCode: 200..<600)
             .responseJSON { response  in
-                
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    if let MessageCode = json["data"]["MessageCode"].string,
-                       let Message = json["data"]["Message"].string {
-
-                        print(Message)
-                        self.displaySuccessMessage(message: Message,title: MessageCode)
+                    if  MessageCode == json["data"]["MessageCode"].string,
+                        MessageError == json["data"]["Message"].string {
+                        print(MessageError)
+                        self.displaySuccessMessage(message: MessageError,title:MessageCode)
+                        print(MessageError)
                     } else {
-                        
                         print("error .. !")
-                        self.displayErrorMessage(message: "خطأ بالادخال حاول مرة أخرى")
+                        self.displayErrorMessage(message: MessageError)
                     }
                     print(response)
                 case .failure(let error):
-                    self.displayErrorMessage(message: "")
+                    self.displayErrorMessage(message:MessageError)
                     print(error)
                 }
         }

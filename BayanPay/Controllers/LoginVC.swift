@@ -9,13 +9,17 @@ class LoginVC: UIViewController {
     var msg:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        self.navigationItem.hideBackWord()
 
+        self.navigationItem.hideBackWord()
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        
         
   }
 
-    
+
     func Check(){
         Services.GetCheckUser{(error:Error? , _ GetCheckuser:[CheckUser]?) in
             if let User = GetCheckuser {
@@ -60,7 +64,7 @@ class LoginVC: UIViewController {
                         
                         print(response)
                     case .failure(let error):
-                        self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
+                        self.displayErrorMessage(message: "عذرا قم بالتأكد من إدخالك رقم الجوال وكلمة السر /n رقم الجوال يحتوي علي ")
                         print(error)
                 }
         }

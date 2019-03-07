@@ -113,6 +113,7 @@ extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
             overlay.skipButton.isHidden = false
         } else {
             overlay.continueButton.setTitle("اضغط تخطي", for: .normal)
+             loadLoginScreen()
             overlay.skipButton.isHidden = false
         }
     }

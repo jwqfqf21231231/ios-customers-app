@@ -14,4 +14,6 @@ target 'BayanPay' do
   pod 'SDWebImage'
   pod 'SwiftyOnboard'
   pod 'Charts', '~> 3.1.0'
+  pod 'IQKeyboardManagerSwift'
+
 end

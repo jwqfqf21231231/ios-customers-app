@@ -38,7 +38,7 @@ struct Urls {
 
     
     // Get Hamla Price
-    static let Price = "http://mapi.fusion.ps/api/Values/GetHamlaPrice"
+    static let Price = "http://mapi.fusion.ps/api/Values/GetHamlaPrice?id="
     
    
     // CheckExitOverDownload
@@ -81,6 +81,23 @@ struct Urls {
     
 // ChargeHamla
     static let ChargeHamla = "http://mapi.fusion.ps/api/Users/chargHamla?userID="
+    
+    // CheckUser
+    static let CheckUserVerifiy = "http://mapi.fusion.ps/api/Values/GetUserVerficationCode?MobileNo="
+    
+    
+    static let chekCode = "http://mapi.fusion.ps/api/Values/CheckVerficationCode?MobileNo="
+    
+    
+    static let Newpassword = "http://mapi.fusion.ps/api/Values/SetPassword?MobileNo="
+    
+    
+    static let IsAccountExist = "http://mapi.fusion.ps/api/Values/IsAccountExist?MobileNo="
+    
+    
+    static let CheckUserMobile = "http://mapi.fusion.ps/api/Users/CheckUsermobile?MobileNo="
+    
+    
     
     
 }

@@ -51,14 +51,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUg-y3-f0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="54"/>
+            <point key="canvasLocation" x="2719" y="549"/>
         </scene>
         <!--Tb BarVS-->
         <scene sceneID="b7b-4c-bco">
             <objects>
                 <tabBarController storyboardIdentifier="TbBarVS" id="SbE-3f-jen" customClass="TbBarVS" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="FB8-yS-6aq"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0A1-eN-MJ9">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="0A1-eN-MJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +76,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tm-iI-qGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="-716"/>
+            <point key="canvasLocation" x="2613" y="-311"/>
         </scene>
         <!--الحملات-->
         <scene sceneID="jWr-Dd-FXh">
@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vVZ-I2-H9h">
-                                <rect key="frame" x="10" y="64" width="394" height="573"/>
+                                <rect key="frame" x="10" y="20" width="394" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="11V-fA-rZK">
                                     <size key="itemSize" width="169" height="135"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmP-ak-zlM">
-                                <rect key="frame" x="0.0" y="637" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fiX-0j-AJ5"/>
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTq-U2-sGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="-1513"/>
+            <point key="canvasLocation" x="1412" y="-1940"/>
         </scene>
         <!--تسجيل دخول-->
         <scene sceneID="tne-QT-ifu">
@@ -172,14 +172,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Tj-zf-gUh">
                                 <rect key="frame" x="20" y="260" width="374" height="216"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YrV-ax-2Dd">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YrV-ax-2Dd">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1ye-qj-EN3"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-C0-8m2">
                                         <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
@@ -204,7 +204,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PW-nb-h6I">
                                                 <rect key="frame" x="8" y="3" width="143" height="44"/>
@@ -212,6 +212,9 @@
                                                 <state key="normal" title="استرجاع كلمة مرور ؟">
                                                     <color key="titleColor" red="0.47843137254901957" green="0.72156862745098038" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="ZxR-vo-ekw" kind="show" id="fhi-Te-wmh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,7 +257,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Og4-QL-jjd">
-                                <rect key="frame" x="0.0" y="637" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.47843137254901957" green="0.72156862745098038" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="J94-QK-L4o"/>
@@ -309,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="-716"/>
+            <point key="canvasLocation" x="1332" y="-2673"/>
         </scene>
         <!--تسجيل مستخدم جديد-->
         <scene sceneID="ccW-PA-KED">
@@ -352,7 +355,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل تأكيد كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-xl-a6m">
                                         <rect key="frame" x="16" y="121" width="382" height="50"/>
@@ -361,7 +364,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-y8-5t6">
                                         <rect key="frame" x="16" y="171" width="382" height="0.66666666666665719"/>
@@ -464,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaC-H4-Zfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386.9565217391305" y="-717.39130434782612"/>
+            <point key="canvasLocation" x="2925" y="-2658"/>
         </scene>
         <!--سياسة الخصوصية-->
         <scene sceneID="OUe-vh-0OH">
@@ -480,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4J-FS-tfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="-717"/>
+            <point key="canvasLocation" x="3609" y="-2658"/>
         </scene>
         <!--الحملات-->
         <scene sceneID="sK8-gA-NkE">
@@ -506,7 +509,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mve-wQ-uuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="54"/>
+            <point key="canvasLocation" x="4101" y="550"/>
         </scene>
         <!--نسبة التحميل-->
         <scene sceneID="5ll-MN-pZs">
@@ -550,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf1-mr-awT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2066.666666666667" y="2259.7826086956525"/>
+            <point key="canvasLocation" x="932" y="2704"/>
         </scene>
         <!--فحص السرعه-->
         <scene sceneID="XTB-Qd-Pv8">
@@ -574,13 +577,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xu3-YT-1IA"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZKP-6O-E6Q"/>
                     <connections>
                         <outlet property="WebSpeed" destination="x89-rB-Ica" id="dq5-lx-Ydl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycw-5Q-jV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1322" y="2265"/>
+            <point key="canvasLocation" x="1680" y="2704"/>
         </scene>
         <!--الخدمات الرئيسية-->
         <scene sceneID="9vY-lq-sIv">
@@ -830,12 +834,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyv-Ew-eLd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="787"/>
+            <point key="canvasLocation" x="2719" y="1268"/>
         </scene>
-        <!--TicketVC-->
+        <!--الدعم الفني-->
         <scene sceneID="Cbj-Me-eTh">
             <objects>
-                <viewController storyboardIdentifier="TicketVC" id="Bb8-JU-pw7" customClass="TicketVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TicketVC" title="الدعم الفني" id="Bb8-JU-pw7" customClass="TicketVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLP-PZ-9gD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -951,6 +955,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FY9-4S-lfT"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="الدعم الفني" image="user_male" id="3iz-cU-I9f"/>
                     <connections>
                         <outlet property="Mobile" destination="nsR-o8-y2T" id="gYJ-ae-4BD"/>
                         <outlet property="Name" destination="KAU-Sr-Ab6" id="8KZ-Nz-Kdb"/>
@@ -959,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZF-w6-TxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="2266"/>
+            <point key="canvasLocation" x="2370" y="2703"/>
         </scene>
         <!--سجل الاستخدام-->
         <scene sceneID="k3f-cM-eVX">
@@ -1108,7 +1113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFU-0K-c5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="2266"/>
+            <point key="canvasLocation" x="3106" y="2704"/>
         </scene>
         <!--الأشعارات-->
         <scene sceneID="eO5-pj-1Wb">
@@ -1159,7 +1164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMC-x2-8VJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-945" y="54"/>
+            <point key="canvasLocation" x="1286" y="549"/>
         </scene>
         <!--حجز بطاقة-->
         <scene sceneID="FaM-KY-JLO">
@@ -1280,7 +1285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dx-MR-OO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5999999999999" y="53.523238380809602"/>
+            <point key="canvasLocation" x="3371" y="549"/>
         </scene>
         <!--خدمات BSA-->
         <scene sceneID="d1e-03-p0a">
@@ -1680,7 +1685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwG-1H-PZZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593" y="1535"/>
+            <point key="canvasLocation" x="2732" y="1931"/>
         </scene>
         <!--الحملات-->
         <scene sceneID="ssh-h1-qIa">
@@ -1790,7 +1795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vd4-ox-vlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="800"/>
+            <point key="canvasLocation" x="4743" y="521"/>
         </scene>
         <!--الشحن-->
         <scene sceneID="caA-Pc-O8u">
@@ -1956,7 +1961,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owq-Dh-GKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="54"/>
+            <point key="canvasLocation" x="1983" y="549"/>
         </scene>
         <!--Login NavVC-->
         <scene sceneID="LwX-c8-p8g">
@@ -1981,7 +1986,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCL-7G-iJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-2199"/>
+            <point key="canvasLocation" x="1412" y="-3526"/>
         </scene>
         <!--تفاصيل الحملات-->
         <scene sceneID="lgS-kW-HN7">
@@ -2028,16 +2033,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oLX-kK-P0D">
-                                                <rect key="frame" x="21" y="331.66666666666669" width="339" height="129.33333333333331"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-a3-TqJ">
-                                                <rect key="frame" x="20" y="543" width="341" height="170"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اسعار الحملة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-Jn-ioc">
                                                 <rect key="frame" x="269" y="733" width="90" height="32"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
@@ -2177,35 +2172,47 @@
                                                     <outlet property="delegate" destination="yao-oA-7B9" id="EPm-4n-i8x"/>
                                                 </connections>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط غير متوفرة حاليا لهذه الحملة " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mm-HT-oiH">
+                                                <rect key="frame" x="20" y="326" width="341" height="170"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لايوجد شروط  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-nc-seS">
+                                                <rect key="frame" x="20" y="538" width="341" height="187"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pcL-nc-seS" secondAttribute="trailing" constant="20" id="2hY-KO-lX8"/>
+                                            <constraint firstItem="gDh-Jn-ioc" firstAttribute="top" secondItem="pcL-nc-seS" secondAttribute="bottom" constant="8" id="2oo-cZ-s1q"/>
                                             <constraint firstItem="CGk-mZ-LVo" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="22" id="3VS-y5-Kfh"/>
                                             <constraint firstAttribute="trailing" secondItem="CGk-mZ-LVo" secondAttribute="trailing" constant="22" id="63Q-Lt-TOf"/>
+                                            <constraint firstItem="5Mm-HT-oiH" firstAttribute="top" secondItem="CGk-mZ-LVo" secondAttribute="bottom" constant="5" id="6Yi-u2-OrG"/>
                                             <constraint firstAttribute="bottom" secondItem="ifn-At-4mr" secondAttribute="bottom" constant="476.5" id="79Q-eN-1cu"/>
+                                            <constraint firstItem="5Mm-HT-oiH" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="20" id="8zj-YK-yAg"/>
                                             <constraint firstItem="KkL-y4-PLA" firstAttribute="top" secondItem="6XF-i5-3db" secondAttribute="bottom" constant="10" id="E8m-jn-o6Z"/>
                                             <constraint firstItem="ifn-At-4mr" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="22" id="Hqd-Lo-Bww"/>
                                             <constraint firstAttribute="trailing" secondItem="Ney-gn-SZG" secondAttribute="trailing" constant="5" id="Hvy-BA-eEb"/>
                                             <constraint firstItem="6XF-i5-3db" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" id="INm-Sd-ZLH"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Mm-HT-oiH" secondAttribute="trailing" constant="20" id="ISP-Bf-qan"/>
                                             <constraint firstItem="95n-kd-jwZ" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="22" id="Jhc-kQ-q1d"/>
                                             <constraint firstAttribute="trailing" secondItem="gDh-Jn-ioc" secondAttribute="trailing" constant="22" id="KSx-O2-vkb"/>
-                                            <constraint firstItem="oLX-kK-P0D" firstAttribute="top" secondItem="CGk-mZ-LVo" secondAttribute="bottom" constant="10" id="Lq9-mU-OhX"/>
-                                            <constraint firstAttribute="trailing" secondItem="g6D-a3-TqJ" secondAttribute="trailing" constant="20" id="NOm-rQ-R8V"/>
                                             <constraint firstAttribute="trailing" secondItem="KkL-y4-PLA" secondAttribute="trailing" constant="22" id="S3I-UB-usz"/>
                                             <constraint firstItem="gDh-Jn-ioc" firstAttribute="top" secondItem="ifn-At-4mr" secondAttribute="bottom" constant="200" id="bg5-kz-Vff"/>
-                                            <constraint firstItem="gDh-Jn-ioc" firstAttribute="top" secondItem="g6D-a3-TqJ" secondAttribute="bottom" constant="20" id="ccR-5a-DTV"/>
-                                            <constraint firstItem="ifn-At-4mr" firstAttribute="top" secondItem="oLX-kK-P0D" secondAttribute="bottom" constant="40" id="cdJ-8E-M6J"/>
-                                            <constraint firstAttribute="trailing" secondItem="oLX-kK-P0D" secondAttribute="trailing" constant="21" id="d2u-0W-Q8T"/>
-                                            <constraint firstItem="g6D-a3-TqJ" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="20" id="he9-TT-ARo"/>
                                             <constraint firstItem="6XF-i5-3db" firstAttribute="top" secondItem="hIR-ay-ZCD" secondAttribute="top" id="hwI-zM-eWj"/>
+                                            <constraint firstItem="ifn-At-4mr" firstAttribute="top" secondItem="5Mm-HT-oiH" secondAttribute="bottom" constant="5" id="iS4-WG-RWg"/>
+                                            <constraint firstItem="pcL-nc-seS" firstAttribute="top" secondItem="ifn-At-4mr" secondAttribute="bottom" constant="5" id="iyz-Hj-Bwc"/>
                                             <constraint firstItem="95n-kd-jwZ" firstAttribute="top" secondItem="6XF-i5-3db" secondAttribute="bottom" constant="10" id="j08-sz-3eh"/>
                                             <constraint firstAttribute="trailing" secondItem="6XF-i5-3db" secondAttribute="trailing" constant="22" id="kem-6r-m5z"/>
                                             <constraint firstItem="Ney-gn-SZG" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="5" id="nQi-GO-xCn"/>
-                                            <constraint firstItem="oLX-kK-P0D" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="21" id="oU5-Of-JkY"/>
                                             <constraint firstItem="CGk-mZ-LVo" firstAttribute="top" secondItem="6XF-i5-3db" secondAttribute="bottom" constant="50" id="qZW-v6-z6s"/>
                                             <constraint firstAttribute="trailing" secondItem="ifn-At-4mr" secondAttribute="trailing" constant="22" id="riO-f9-igj"/>
+                                            <constraint firstItem="pcL-nc-seS" firstAttribute="leading" secondItem="hIR-ay-ZCD" secondAttribute="leading" constant="20" id="roz-D4-MYA"/>
                                             <constraint firstItem="ifn-At-4mr" firstAttribute="top" secondItem="CGk-mZ-LVo" secondAttribute="bottom" constant="180" id="uSi-Py-4VT"/>
-                                            <constraint firstItem="g6D-a3-TqJ" firstAttribute="top" secondItem="ifn-At-4mr" secondAttribute="bottom" constant="10" id="vqw-VD-YYY"/>
                                             <constraint firstItem="Ney-gn-SZG" firstAttribute="top" secondItem="gDh-Jn-ioc" secondAttribute="bottom" constant="5" id="wqR-72-Ct4"/>
                                         </constraints>
                                     </view>
@@ -2248,8 +2255,8 @@
                     </view>
                     <size key="freeformSize" width="375" height="1060"/>
                     <connections>
-                        <outlet property="Conditions" destination="g6D-a3-TqJ" id="bLO-Zd-MJG"/>
-                        <outlet property="Deatails" destination="oLX-kK-P0D" id="bJa-wW-o7j"/>
+                        <outlet property="Conditions" destination="pcL-nc-seS" id="bMO-db-HEh"/>
+                        <outlet property="Deatails" destination="5Mm-HT-oiH" id="ZDg-Hw-zHi"/>
                         <outlet property="ExpDate" destination="95n-kd-jwZ" id="iLh-gw-Acs"/>
                         <outlet property="Image" destination="6XF-i5-3db" id="EOI-XP-an9"/>
                         <outlet property="PricesCollection" destination="Ney-gn-SZG" id="sYb-Wy-2he"/>
@@ -2258,7 +2265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWq-D4-aYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1165" y="-1782"/>
+            <point key="canvasLocation" x="804" y="-1808"/>
         </scene>
         <!--الصفحة الشخصية-->
         <scene sceneID="28i-QC-WMu">
@@ -2469,7 +2476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5f-6Q-EY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="2266"/>
+            <point key="canvasLocation" x="3877" y="2704"/>
         </scene>
         <!--حجم التحميل-->
         <scene sceneID="u1f-8w-wgz">
@@ -2571,7 +2578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exh-St-YZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="2266"/>
+            <point key="canvasLocation" x="4612" y="2705"/>
         </scene>
         <!--تفاصيل الحملات-->
         <scene sceneID="p3R-f3-xDS">
@@ -2614,11 +2621,6 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-Zk-qDd">
                                                 <rect key="frame" x="21" y="331.66666666666669" width="332" height="129.33333333333331"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MtH-gC-sof">
-                                                <rect key="frame" x="20" y="543" width="334" height="170"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -2766,32 +2768,48 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشروط غير متوفرة حاليا لهذه الحملة " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-dB-Uon">
+                                                <rect key="frame" x="20" y="326" width="334" height="170"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لايوجد شروط  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-Ip-Spg">
+                                                <rect key="frame" x="20" y="538" width="334" height="187"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="UPu-dB-Uon" firstAttribute="top" secondItem="MG6-xX-lU4" secondAttribute="bottom" constant="5" id="34B-q2-eeD"/>
                                             <constraint firstItem="bAP-Zk-qDd" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="21" id="3Hy-Hf-qzY"/>
                                             <constraint firstAttribute="trailing" secondItem="bAP-Zk-qDd" secondAttribute="trailing" constant="21" id="5pT-J4-EAU"/>
+                                            <constraint firstItem="UfE-Ip-Spg" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="20" id="7Du-nc-Tap"/>
                                             <constraint firstAttribute="trailing" secondItem="t6a-iU-gY3" secondAttribute="trailing" constant="5" id="7dX-jU-xVl"/>
                                             <constraint firstAttribute="trailing" secondItem="gvg-uT-K3r" secondAttribute="trailing" constant="5" id="88f-7R-AlN"/>
                                             <constraint firstAttribute="trailing" secondItem="frL-mp-W8y" secondAttribute="trailing" constant="5" id="9yc-wH-auZ"/>
+                                            <constraint firstItem="UPu-dB-Uon" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="20" id="COe-X9-Kg6"/>
                                             <constraint firstItem="bAP-Zk-qDd" firstAttribute="top" secondItem="MG6-xX-lU4" secondAttribute="bottom" constant="10" id="DTE-dt-nNA"/>
+                                            <constraint firstAttribute="trailing" secondItem="UfE-Ip-Spg" secondAttribute="trailing" constant="20" id="FAy-Oa-SvJ"/>
                                             <constraint firstItem="t6a-iU-gY3" firstAttribute="top" secondItem="MG6-xX-lU4" secondAttribute="bottom" constant="180" id="FGR-b1-Kov"/>
-                                            <constraint firstItem="MtH-gC-sof" firstAttribute="top" secondItem="t6a-iU-gY3" secondAttribute="bottom" constant="10" id="Ji8-N2-yqh"/>
+                                            <constraint firstItem="UfE-Ip-Spg" firstAttribute="top" secondItem="t6a-iU-gY3" secondAttribute="bottom" constant="5" id="GDL-3f-APd"/>
+                                            <constraint firstItem="t6a-iU-gY3" firstAttribute="top" secondItem="UPu-dB-Uon" secondAttribute="bottom" constant="5" id="ITx-ym-6cJ"/>
                                             <constraint firstItem="pOc-oe-uqN" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="22" id="Ks1-2k-PhP"/>
                                             <constraint firstItem="MG6-xX-lU4" firstAttribute="top" secondItem="J4F-DG-aEW" secondAttribute="bottom" constant="50" id="Kzk-Rm-Nvy"/>
-                                            <constraint firstItem="MtH-gC-sof" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="20" id="TS2-ok-ioM"/>
                                             <constraint firstAttribute="trailing" secondItem="J4F-DG-aEW" secondAttribute="trailing" constant="-12" id="V1l-Pu-rd1"/>
-                                            <constraint firstItem="frL-mp-W8y" firstAttribute="top" secondItem="MtH-gC-sof" secondAttribute="bottom" constant="20" id="X5B-F3-igN"/>
-                                            <constraint firstAttribute="trailing" secondItem="MtH-gC-sof" secondAttribute="trailing" constant="20" id="Xgs-Lg-XBa"/>
                                             <constraint firstItem="J4F-DG-aEW" firstAttribute="top" secondItem="NBK-2X-Z6i" secondAttribute="top" id="Yo3-gh-pqP"/>
                                             <constraint firstItem="frL-mp-W8y" firstAttribute="top" secondItem="t6a-iU-gY3" secondAttribute="bottom" constant="200" id="ZyG-uP-IAk"/>
                                             <constraint firstItem="t6a-iU-gY3" firstAttribute="top" secondItem="bAP-Zk-qDd" secondAttribute="bottom" constant="40" id="aOW-EA-Fnc"/>
+                                            <constraint firstItem="frL-mp-W8y" firstAttribute="top" secondItem="UfE-Ip-Spg" secondAttribute="bottom" constant="8" id="eqf-qU-x9P"/>
                                             <constraint firstItem="t6a-iU-gY3" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="22" id="fph-3B-93B"/>
                                             <constraint firstItem="IEx-4w-z4O" firstAttribute="top" secondItem="frL-mp-W8y" secondAttribute="bottom" constant="5" id="gc2-JU-p0L"/>
                                             <constraint firstAttribute="trailing" secondItem="MG6-xX-lU4" secondAttribute="trailing" constant="5" id="i85-H8-0IM"/>
                                             <constraint firstItem="IEx-4w-z4O" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="5" id="ifr-mC-Mer"/>
                                             <constraint firstAttribute="bottom" secondItem="t6a-iU-gY3" secondAttribute="bottom" constant="476.5" id="lmf-Jp-kym"/>
                                             <constraint firstAttribute="trailing" secondItem="IEx-4w-z4O" secondAttribute="trailing" id="nyZ-ID-Zrh"/>
+                                            <constraint firstAttribute="trailing" secondItem="UPu-dB-Uon" secondAttribute="trailing" constant="20" id="p4q-4l-mic"/>
                                             <constraint firstItem="MG6-xX-lU4" firstAttribute="leading" secondItem="NBK-2X-Z6i" secondAttribute="leading" constant="22" id="reL-tE-Uun"/>
                                             <constraint firstItem="gvg-uT-K3r" firstAttribute="top" secondItem="J4F-DG-aEW" secondAttribute="bottom" constant="10" id="tdQ-b5-veM"/>
                                             <constraint firstItem="pOc-oe-uqN" firstAttribute="top" secondItem="J4F-DG-aEW" secondAttribute="bottom" constant="10" id="v2N-09-2hT"/>
@@ -2839,14 +2857,14 @@
                     <connections>
                         <outlet property="ExpDate" destination="pOc-oe-uqN" id="91M-cL-fr3"/>
                         <outlet property="ImgAdv" destination="J4F-DG-aEW" id="hKo-m8-Z98"/>
-                        <outlet property="conditionsAdvs" destination="MtH-gC-sof" id="wPQ-hc-Dff"/>
-                        <outlet property="detailsAdv" destination="bAP-Zk-qDd" id="e92-A6-FsL"/>
+                        <outlet property="conditionsAdvs" destination="UPu-dB-Uon" id="oWS-uK-P2j"/>
+                        <outlet property="detailsAdv" destination="UfE-Ip-Spg" id="Fm2-o6-3qv"/>
                         <outlet property="pricesCollection" destination="IEx-4w-z4O" id="NxU-51-Zbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXG-2r-h8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="1665"/>
+            <point key="canvasLocation" x="5321.0144927536239" y="681.52173913043487"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wzo-IH-Ied">
@@ -2865,7 +2883,306 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLe-YU-Ppa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-3025"/>
+            <point key="canvasLocation" x="2925" y="-3526"/>
+        </scene>
+        <!--استعادة كلمة المرور-->
+        <scene sceneID="qsP-KK-YqG">
+            <objects>
+                <viewController storyboardIdentifier="VerficationCodeVC" title="استعادة كلمة المرور" id="1k5-tE-bXH" customClass="VerficationCodeVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R3k-PK-FC0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="US3-T5-BBR">
+                                <rect key="frame" x="20" y="332.66666666666669" width="374" height="71"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feA-vI-ZCG">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="RSh-tS-0yj"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-wR-oKd">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.5983989877" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="Uek-vP-kq6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVl-Fg-e7m">
+                                        <rect key="frame" x="0.0" y="50.666666666666629" width="374" height="0.3333333333333357"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="0.5983989877" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="U7D-yO-bwG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QV-AX-5vs">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8Mj-Ou-q40"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEC-Vo-ho2">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="La9-Om-blg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <state key="normal" title="ارسال">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SendNumber:" destination="1k5-tE-bXH" eventType="touchUpInside" id="rD8-db-j3Z"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="NUf-Rx-CjD" customClass="hand">
+                                <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="GN3-jy-xMp"/>
+                                    <constraint firstAttribute="width" constant="100" id="iSP-ey-QFH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="510-jK-6Wb" firstAttribute="bottom" secondItem="vEC-Vo-ho2" secondAttribute="bottom" id="1Ik-Nh-w0i"/>
+                            <constraint firstItem="US3-T5-BBR" firstAttribute="centerX" secondItem="R3k-PK-FC0" secondAttribute="centerX" id="9Qd-09-lHu"/>
+                            <constraint firstItem="NUf-Rx-CjD" firstAttribute="centerX" secondItem="R3k-PK-FC0" secondAttribute="centerX" id="Eqo-Uf-aE7"/>
+                            <constraint firstItem="vEC-Vo-ho2" firstAttribute="leading" secondItem="510-jK-6Wb" secondAttribute="leading" id="Glq-aM-mtH"/>
+                            <constraint firstItem="510-jK-6Wb" firstAttribute="trailing" secondItem="US3-T5-BBR" secondAttribute="trailing" constant="20" id="fbo-hX-3a2"/>
+                            <constraint firstItem="US3-T5-BBR" firstAttribute="centerY" secondItem="R3k-PK-FC0" secondAttribute="centerY" id="fii-uk-zrn"/>
+                            <constraint firstItem="510-jK-6Wb" firstAttribute="trailing" secondItem="vEC-Vo-ho2" secondAttribute="trailing" id="gWp-ls-2NC"/>
+                            <constraint firstItem="NUf-Rx-CjD" firstAttribute="centerY" secondItem="R3k-PK-FC0" secondAttribute="centerY" constant="-200" id="qi7-VL-1k3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="510-jK-6Wb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="استعادة كلمة المرور" id="h7E-ey-qze"/>
+                    <connections>
+                        <outlet property="MobileNo" destination="feA-vI-ZCG" id="x9z-Yx-GlL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OsS-uT-Rxl" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="-2691"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sm0-Gd-plv">
+            <objects>
+                <navigationController id="ZxR-vo-ekw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5tt-uX-oqj">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1k5-tE-bXH" kind="relationship" relationship="rootViewController" id="c4x-n3-o8J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85r-8M-Gll" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="-2691"/>
+        </scene>
+        <!--رقم التحقق-->
+        <scene sceneID="V5i-SG-lni">
+            <objects>
+                <viewController storyboardIdentifier="CodeVC" title="رقم التحقق" id="RTR-cq-bMw" customClass="CodeVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fxY-Tz-LPd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f1p-Da-6hW">
+                                <rect key="frame" x="20" y="332.66666666666669" width="374" height="71"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل رقم التحقق" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4q3-i4-4iV">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Jfw-QI-q0D"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-LM-Kei">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.5983989877" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="V9c-Vu-sHD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5P-lE-fYf">
+                                        <rect key="frame" x="0.0" y="50.666666666666629" width="374" height="0.3333333333333357"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="0.5983989877" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="fU7-kI-ZNn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwA-lm-SkA">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="45J-iM-MOm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uo-zP-Qwk">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="epp-qO-l5s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <state key="normal" title="ارسال">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="SendCode:" destination="RTR-cq-bMw" eventType="touchUpInside" id="KQC-IL-zR3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-Tc-7MB">
+                                <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Dvl-QV-lVM"/>
+                                    <constraint firstAttribute="height" constant="115" id="uoT-KA-OCQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gkf-QX-2PW" firstAttribute="trailing" secondItem="f1p-Da-6hW" secondAttribute="trailing" constant="20" id="0hX-NC-gWE"/>
+                            <constraint firstItem="LGY-Tc-7MB" firstAttribute="centerX" secondItem="fxY-Tz-LPd" secondAttribute="centerX" id="5uY-TY-iWz"/>
+                            <constraint firstItem="Gkf-QX-2PW" firstAttribute="bottom" secondItem="6uo-zP-Qwk" secondAttribute="bottom" id="Bhc-8D-eS3"/>
+                            <constraint firstItem="f1p-Da-6hW" firstAttribute="centerX" secondItem="fxY-Tz-LPd" secondAttribute="centerX" id="C45-Zw-64P"/>
+                            <constraint firstItem="Gkf-QX-2PW" firstAttribute="trailing" secondItem="6uo-zP-Qwk" secondAttribute="trailing" id="cc4-cu-Wd5"/>
+                            <constraint firstItem="f1p-Da-6hW" firstAttribute="centerY" secondItem="fxY-Tz-LPd" secondAttribute="centerY" id="qq5-JZ-Deb"/>
+                            <constraint firstItem="6uo-zP-Qwk" firstAttribute="leading" secondItem="Gkf-QX-2PW" secondAttribute="leading" id="xTq-GV-owV"/>
+                            <constraint firstItem="LGY-Tc-7MB" firstAttribute="centerY" secondItem="fxY-Tz-LPd" secondAttribute="centerY" constant="-200" id="zdt-2e-VNS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gkf-QX-2PW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="تسجيل الدخول" id="76m-eg-JWL"/>
+                    <connections>
+                        <outlet property="CodeSMS" destination="4q3-i4-4iV" id="W2n-uf-aAu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Npl-Te-fVA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-661" y="-2691"/>
+        </scene>
+        <!--تسجيل مستخدم جديد-->
+        <scene sceneID="cFp-ha-Sih">
+            <objects>
+                <viewController storyboardIdentifier="NewPasswordVC" title="تسجيل مستخدم جديد" id="i9Q-nY-Myb" customClass="NewPasswordVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ad2-5i-fAH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBY-fd-6PB">
+                                <rect key="frame" x="0.0" y="228" width="414" height="280"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل كلمة المرور الجديدة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-Jk-gc0">
+                                        <rect key="frame" x="16" y="10" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="sxg-xK-61Z"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L5-fq-egS">
+                                        <rect key="frame" x="16" y="60" width="382" height="0.6666666666666643"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="0.51104987160000004" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="j85-3E-UEM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t11-Cr-zMQ">
+                                        <rect key="frame" x="16" y="115.66666666666669" width="380" height="0.3333333333333286"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="0.51104987160000004" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="VL1-DX-Zy0"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل تأكيد رقم كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-1D-cOj">
+                                        <rect key="frame" x="16" y="65.666666666666686" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Wwi-Ue-QvW"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="t11-Cr-zMQ" firstAttribute="top" secondItem="MzK-1D-cOj" secondAttribute="bottom" id="7dR-EK-UXw"/>
+                                    <constraint firstItem="5L5-fq-egS" firstAttribute="leading" secondItem="cBY-fd-6PB" secondAttribute="leading" constant="16" id="87i-XH-P4h"/>
+                                    <constraint firstItem="MzK-1D-cOj" firstAttribute="leading" secondItem="cBY-fd-6PB" secondAttribute="leading" constant="16" id="Blb-xa-NGz"/>
+                                    <constraint firstAttribute="trailing" secondItem="MzK-1D-cOj" secondAttribute="trailing" constant="16" id="N1v-vJ-jhf"/>
+                                    <constraint firstItem="MzK-1D-cOj" firstAttribute="top" secondItem="5L5-fq-egS" secondAttribute="bottom" constant="5" id="Srb-en-QC8"/>
+                                    <constraint firstItem="xAK-Jk-gc0" firstAttribute="top" secondItem="cBY-fd-6PB" secondAttribute="top" constant="10" id="W06-YT-oC7"/>
+                                    <constraint firstAttribute="trailing" secondItem="xAK-Jk-gc0" secondAttribute="trailing" constant="16" id="XF4-y3-YkO"/>
+                                    <constraint firstAttribute="trailing" secondItem="t11-Cr-zMQ" secondAttribute="trailing" constant="18" id="cCa-KI-XDs"/>
+                                    <constraint firstItem="t11-Cr-zMQ" firstAttribute="leading" secondItem="cBY-fd-6PB" secondAttribute="leading" constant="16" id="nXX-Sv-fp5"/>
+                                    <constraint firstAttribute="height" constant="280" id="qcf-ag-Iu6"/>
+                                    <constraint firstItem="xAK-Jk-gc0" firstAttribute="leading" secondItem="cBY-fd-6PB" secondAttribute="leading" constant="16" id="tFB-gw-aCd"/>
+                                    <constraint firstAttribute="trailing" secondItem="5L5-fq-egS" secondAttribute="trailing" constant="16" id="xMR-ug-BcP"/>
+                                    <constraint firstItem="5L5-fq-egS" firstAttribute="top" secondItem="xAK-Jk-gc0" secondAttribute="bottom" id="xmI-B9-0Xd"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="padlock" translatesAutoresizingMaskIntoConstraints="NO" id="Vwd-H5-p9C">
+                                <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="9eV-25-2WH"/>
+                                    <constraint firstAttribute="width" constant="100" id="rpQ-YA-Joz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-JJ-JmH">
+                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kG6-dY-5rN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                <state key="normal" title="إرسال البيانات ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginAc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4NW-pY-5C1"/>
+                                    <action selector="NewPassword:" destination="i9Q-nY-Myb" eventType="touchUpInside" id="vqf-Jn-GWb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cBY-fd-6PB" firstAttribute="leading" secondItem="Zrj-eh-ejg" secondAttribute="leading" id="DCx-Zu-7h1"/>
+                            <constraint firstItem="Vwd-H5-p9C" firstAttribute="centerX" secondItem="Ad2-5i-fAH" secondAttribute="centerX" id="KJp-LD-yTJ"/>
+                            <constraint firstItem="cBY-fd-6PB" firstAttribute="centerX" secondItem="Ad2-5i-fAH" secondAttribute="centerX" id="L0S-Oj-Rzy"/>
+                            <constraint firstItem="Pkh-JJ-JmH" firstAttribute="trailing" secondItem="Zrj-eh-ejg" secondAttribute="trailing" id="PF0-4H-JxQ"/>
+                            <constraint firstItem="Pkh-JJ-JmH" firstAttribute="leading" secondItem="Zrj-eh-ejg" secondAttribute="leading" id="WXb-yG-5zV"/>
+                            <constraint firstItem="Zrj-eh-ejg" firstAttribute="trailing" secondItem="cBY-fd-6PB" secondAttribute="trailing" id="X80-u2-Obs"/>
+                            <constraint firstItem="Vwd-H5-p9C" firstAttribute="centerY" secondItem="Ad2-5i-fAH" secondAttribute="centerY" constant="-200" id="hzF-Ej-lUq"/>
+                            <constraint firstAttribute="bottom" secondItem="Pkh-JJ-JmH" secondAttribute="bottom" id="tss-sa-0VX"/>
+                            <constraint firstItem="cBY-fd-6PB" firstAttribute="centerY" secondItem="Ad2-5i-fAH" secondAttribute="centerY" id="xvD-8j-U0G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zrj-eh-ejg"/>
+                    </view>
+                    <connections>
+                        <outlet property="ConfirmNewPassword" destination="MzK-1D-cOj" id="Ec0-Dh-g1R"/>
+                        <outlet property="PasswordNew" destination="xAK-Jk-gc0" id="5Sa-5o-cDX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pU-ul-b6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1310" y="-2691"/>
         </scene>
     </scenes>
     <resources>
@@ -2876,6 +3193,8 @@
         <image name="advertising" width="30" height="30"/>
         <image name="advs" width="600" height="400"/>
         <image name="arrow" width="8" height="14"/>
+        <image name="hand" width="240" height="240"/>
+        <image name="key" width="240" height="240"/>
         <image name="login" width="660" height="712"/>
         <image name="menu" width="30" height="30"/>
         <image name="movie-tickets" width="24" height="24"/>
@@ -2885,16 +3204,18 @@
         <image name="onboard4" width="390" height="402"/>
         <image name="onboard5" width="347" height="304"/>
         <image name="operator" width="128" height="128"/>
+        <image name="padlock" width="240" height="240"/>
         <image name="price_tag" width="30" height="30"/>
         <image name="server" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
         <image name="slide0" width="1264" height="568"/>
         <image name="ticket" width="229" height="229"/>
         <image name="user" width="128" height="128"/>
+        <image name="user_male" width="30" height="30"/>
         <image name="worldwide_location" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N0k-3v-ala"/>
-        <segue reference="gWq-8i-sJA"/>
+        <segue reference="xW8-8H-3GN"/>
     </inferredMetricsTieBreakers>
 </document>

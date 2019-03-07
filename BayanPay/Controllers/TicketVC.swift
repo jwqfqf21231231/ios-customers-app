@@ -28,7 +28,6 @@ class TicketVC: UIViewController {
     }
     
     func TicketSend(){
-        
         TName = self.Name.text!
         TMobile = self.Mobile.text!
         TNote = self.Note.text!
@@ -59,7 +58,15 @@ class TicketVC: UIViewController {
     }
     
     @IBAction func SendTicket(_ sender: Any) {
-        TicketSend() }
+        if ((self.Name.text ) == "" || (self.Mobile.text == "") || (self.Note.text == ""))  {
+            return displayMessage(message: "", Title: "خطا بالادخال")
+        }else{
+            self.Mobile.text = ""
+            self.Name.text = ""
+            self.Note.text = ""
+            TicketSend()
+        }
+    }
 
     func displayMessage(message:String,Title:String) {
         let alertView = UIAlertController(title: Title, message: message, preferredStyle: .alert)

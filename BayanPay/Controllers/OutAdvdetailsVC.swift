@@ -15,16 +15,17 @@ import SDWebImage
 class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var Scroll: UIScrollView!
+    @IBOutlet weak var Conditions: UILabel!
     var advData:AdvModel!
-    var PriceItem: [PriceModel] = []
+     var PriceItem: [PriceModel] = []
     @IBOutlet weak var Image: UIImageView!
-    @IBOutlet weak var Conditions: UITextView!
-    @IBOutlet weak var Deatails: UITextView!
+    @IBOutlet weak var Deatails: UILabel!
     @IBOutlet weak var ExpDate: UILabel!
     @IBOutlet weak var PricesCollection: UICollectionView!
     var id:Int!
     
     override func viewDidLoad() {
+        self.navigationItem.hideBackWord()
         super.viewDidLoad()
         PricesCollection.delegate = self
         PricesCollection.dataSource = self
@@ -52,23 +53,38 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     
     func detalis(){
-        let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + advData.Image)
+        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + advData.Image)
         Image.sd_setImage(with: url)
-        Conditions.text = advData.Conditions
-        Deatails.text = advData.Deatails
+        
+        if advData.Conditions == "" {
+            Conditions.text = "الشروط غير متوفرة حاليا لهذه الحملة  "
+        }else{
+         Conditions.text = advData.Conditions
+        }
+        
+        if  advData.Deatails == "" {
+            
+            Conditions.text = "التفاصيل غير متوفرة حاليا لهذه الحملة"
+        }else{
+             Deatails.text = advData.Deatails
+        }
+       
+       
         ExpDate.text = advData?.ExpireDate
         self.id = advData?.ID
         
     }
     func getprices() {
         Services.GetPrice(id: id){(error:Error? , PriceData:[PriceModel]?) in
-            let id = self.id
+            _ = self.id
             if let Prices = PriceData {
                 self.PriceItem = Prices
                 self.PricesCollection.reloadData()
+                print(Prices)
             }
         }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return PriceItem.count
@@ -105,7 +121,6 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
         if price12 >= 1{
             cell.price12?.text = "\(price12) سنة"
         }else{ cell.price12?.text = "" }
-        //cell.g?.text = PriceItem[indexPath.row].name
         cell.giga.text = PriceItem[indexPath.row].group
         return cell
     }

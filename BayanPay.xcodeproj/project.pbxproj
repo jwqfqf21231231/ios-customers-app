@@ -43,6 +43,9 @@
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
 		C16256F32227BA5500C35475 /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16256F22227BA5500C35475 /* SpeedVC.swift */; };
+		C1760FF3222EE2A500B4FB34 /* VerficationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */; };
+		C1760FF5222EE69900B4FB34 /* CodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF4222EE69900B4FB34 /* CodeVC.swift */; };
+		C1760FF7222EE6AF00B4FB34 /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */; };
 		C17E3B82222288CF0078380A /* LoginNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17E3B81222288CF0078380A /* LoginNavVC.swift */; };
 		C17E3B842222B4820078380A /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17E3B832222B4820078380A /* Chart.swift */; };
 		C18073442223D1AB00DD8DEE /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18073432223D1AB00DD8DEE /* TicketVC.swift */; };
@@ -57,6 +60,7 @@
 		C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB02EA2201A692000F72C9 /* ProfileVC.swift */; };
 		C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB02EE2201A73F000F72C9 /* Profile.swift */; };
 		C1D972F4220842C500024CCD /* CheckExit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D972F3220842C500024CCD /* CheckExit.swift */; };
+		C1E25D412231377000C65CFA /* UserMobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E25D402231376F00C65CFA /* UserMobile.swift */; };
 		C1F2FB0D21FDE081003040F5 /* AdvModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2FB0C21FDE081003040F5 /* AdvModels.swift */; };
 		C1F46064221ED916007A16AC /* LoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F46063221ED916007A16AC /* LoadVC.swift */; };
 		C1F4606C221ED999007A16AC /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F46067221ED997007A16AC /* CustomPage.swift */; };
@@ -109,6 +113,9 @@
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
 		C16256F22227BA5500C35475 /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
+		C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerficationCodeVC.swift; sourceTree = "<group>"; };
+		C1760FF4222EE69900B4FB34 /* CodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVC.swift; sourceTree = "<group>"; };
+		C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
 		C17E3B81222288CF0078380A /* LoginNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavVC.swift; sourceTree = "<group>"; };
 		C17E3B832222B4820078380A /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		C18073432223D1AB00DD8DEE /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
@@ -123,6 +130,7 @@
 		C1CB02EA2201A692000F72C9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		C1CB02EE2201A73F000F72C9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C1D972F3220842C500024CCD /* CheckExit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckExit.swift; sourceTree = "<group>"; };
+		C1E25D402231376F00C65CFA /* UserMobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMobile.swift; sourceTree = "<group>"; };
 		C1F2FB0C21FDE081003040F5 /* AdvModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvModels.swift; sourceTree = "<group>"; };
 		C1F46063221ED916007A16AC /* LoadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadVC.swift; sourceTree = "<group>"; };
 		C1F46067221ED997007A16AC /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPage.swift; sourceTree = "<group>"; };
@@ -235,6 +243,9 @@
 				C18073432223D1AB00DD8DEE /* TicketVC.swift */,
 				C16256F22227BA5500C35475 /* SpeedVC.swift */,
 				C142282E2229CD7A00D1C503 /* ChartsVC.swift */,
+				C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */,
+				C1760FF4222EE69900B4FB34 /* CodeVC.swift */,
+				C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +306,7 @@
 				C186F384221566FD00D6B444 /* CheckUser.swift */,
 				C1483E92222130A700B04378 /* HamlaList.swift */,
 				C17E3B832222B4820078380A /* Chart.swift */,
+				C1E25D402231376F00C65CFA /* UserMobile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +432,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
@@ -431,6 +444,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
@@ -448,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174E6080206F15D80022CD0A /* HomeVC.swift in Sources */,
+				C1760FF7222EE6AF00B4FB34 /* NewPasswordVC.swift in Sources */,
 				C103DE24221EA79E00296EF4 /* ReservationVC.swift in Sources */,
 				C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */,
 				C1D972F4220842C500024CCD /* CheckExit.swift in Sources */,
@@ -458,6 +473,7 @@
 				C135681322005923000A6CBC /* ActivityCell.swift in Sources */,
 				C1CB02EF2201A73F000F72C9 /* Profile.swift in Sources */,
 				C18073442223D1AB00DD8DEE /* TicketVC.swift in Sources */,
+				C1760FF5222EE69900B4FB34 /* CodeVC.swift in Sources */,
 				C1483E93222130A700B04378 /* HamlaList.swift in Sources */,
 				C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */,
 				C1F46064221ED916007A16AC /* LoadVC.swift in Sources */,
@@ -476,6 +492,7 @@
 				174E6029206ECD1A0022CD0A /* AppDelegate.swift in Sources */,
 				C17E3B842222B4820078380A /* Chart.swift in Sources */,
 				C1A3FD5D2202CF4500A7CB0F /* AccountHistoryCell.swift in Sources */,
+				C1760FF3222EE2A500B4FB34 /* VerficationCodeVC.swift in Sources */,
 				C142282F2229CD7A00D1C503 /* ChartsVC.swift in Sources */,
 				C18E484121EF3A4E003E0E27 /* API.swift in Sources */,
 				C1F5A9CA21F5F5A1002DAB9A /* AdvertaismentItem.swift in Sources */,
@@ -486,6 +503,7 @@
 				174E6081206F15D80022CD0A /* ActivityVC.swift in Sources */,
 				C139BBA421C68899003124E5 /* AdvdetailsVS.swift in Sources */,
 				C10E622421D8A36F00813CB6 /* AdvsVC.swift in Sources */,
+				C1E25D412231377000C65CFA /* UserMobile.swift in Sources */,
 				C124CADB2206CB6400E8CBE7 /* BadHistoryModel.swift in Sources */,
 				C10E622621D8A4EE00813CB6 /* AdvsCell.swift in Sources */,
 				C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */,
@@ -624,7 +642,6 @@
 			baseConfigurationReference = CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
@@ -642,7 +659,6 @@
 			baseConfigurationReference = 31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";

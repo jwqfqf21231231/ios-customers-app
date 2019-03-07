@@ -25,18 +25,16 @@ class ChartsVC: UIViewController {
         super.viewDidLoad()
         GetData()
         PieChartView.chartDescription?.text = ""
-//        PieChartView.isUserInteractionEnabled = false
-       
-        //UpdateData()
     }
+    
     
     //function set and show data
     func UpdateData(){
         //Configration of chart and set data of x , y
         DataEntryX.value = Double(self.x)
         DataEntryY.value = Double(self.y)
-        DataEntryY.label = "نسبة التحميل"
-        DataEntryX.label = "نسة المتبقي"
+        DataEntryY.label = "نسبة المتبقي"
+        DataEntryX.label = "نسبة التحميل"
         NumberOfRows = [DataEntryX,DataEntryY]
     
         let chartDataSet = PieChartDataSet(values:NumberOfRows, label:nil)
@@ -58,7 +56,7 @@ class ChartsVC: UIViewController {
         Alamofire.request(ChartURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
-                case .failure(let error):
+                case .failure(let _):
                     print("error")
                 case .success(let value):
                     let json = JSON(value)
@@ -76,6 +74,7 @@ class ChartsVC: UIViewController {
                         Charts.append(Chartitem)
                         print("Chart",data)
                     }
+                    
                     //set Data after load from api
                     self.UpdateData()
                 }

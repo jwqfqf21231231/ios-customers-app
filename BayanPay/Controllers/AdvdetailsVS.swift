@@ -16,11 +16,12 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     var CheckHamlData:[CheckHamla] = []
     var ChargeHamladata:[ChargeHamla] = []
     
+    @IBOutlet weak var detailsAdv: UILabel!
+    @IBOutlet weak var conditionsAdvs: UILabel!
     @IBOutlet weak var pricesCollection: UICollectionView!
     @IBOutlet weak var ImgAdv: UIImageView!
-    @IBOutlet weak var conditionsAdvs: UITextView!
-    @IBOutlet weak var detailsAdv: UITextView!
     @IBOutlet weak var ExpDate: UILabel!
+    
     var id:Int!
     var groupid:Int!
     var choices = ["",""]
@@ -43,7 +44,6 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
 
@@ -141,10 +141,22 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     
     
     func detalis(){
-        let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + advData.Image)
+        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + advData.Image)
         ImgAdv.sd_setImage(with: url)
-        conditionsAdvs.text = advData.Conditions
-        detailsAdv.text = advData.Deatails
+        
+        if advData.Conditions == "" {
+            conditionsAdvs.text = "الشروط غير متوفرة حاليا لهذه الحملة  "
+        }else{
+            conditionsAdvs.text = advData.Conditions
+        }
+        
+        if  advData.Deatails == "" {
+            
+            detailsAdv.text = "التفاصيل غير متوفرة حاليا لهذه الحملة"
+        }else{
+            detailsAdv.text = advData.Deatails
+        }
+        
         ExpDate.text = advData?.ExpireDate
         self.id = advData?.ID
         

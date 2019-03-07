@@ -43,7 +43,7 @@ class AdvsVC: UIViewController,UICollectionViewDataSource,UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "proCell", for: indexPath) as! AdvsCell
         
         let item = Advtems[indexPath.row]
-        let url = URL(string:"http://acc.fusion.ps/images/shortImg/" + item.ShortImage)
+        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + item.ShortImage)
         cell.UIImg.sd_setImage(with: url)
         cell.ID = Advtems[indexPath.row].ID
         return cell
