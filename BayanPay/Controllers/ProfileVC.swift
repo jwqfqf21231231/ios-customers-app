@@ -21,10 +21,14 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var ExpDate: UILabel!
     @IBOutlet weak var Password: UILabel!
     @IBOutlet weak var Email: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Profile()
+       
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+         Profile()
     }
     
     func Profile(){

@@ -11,8 +11,10 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hideBackWord()
   }
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        UserName.text = ""
+        Password.text = ""
+    }
     func Check(){
         Services.GetCheckUser{(error:Error? , _ GetCheckuser:[CheckUser]?) in
             if let User = GetCheckuser {
@@ -48,7 +50,7 @@ class LoginVC: UIViewController {
                         Services.SaveUser(UserName: UserName)
                         self.loadLoginScreen()
                         print(access_token)
-                           self.Check()
+                           //self.Check()
                         } else {
                         print("error .. !")
                         self.displayErrorMessage(message: "أدخل كلمة مرور صحيحة")

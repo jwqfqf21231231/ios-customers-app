@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -103,7 +104,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="169" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advs" translatesAutoresizingMaskIntoConstraints="NO" id="m2t-x2-RIr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advs" translatesAutoresizingMaskIntoConstraints="NO" id="m2t-x2-RIr">
                                                     <rect key="frame" x="0.0" y="0.0" width="169" height="135"/>
                                                 </imageView>
                                             </subviews>
@@ -270,7 +271,7 @@
                                     <action selector="LoginAc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N3h-gb-gsh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="5PN-RZ-Jus">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="5PN-RZ-Jus">
                                 <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Aim-AA-FBh"/>
@@ -397,7 +398,7 @@
                                     <constraint firstAttribute="trailing" secondItem="3AV-xl-a6m" secondAttribute="trailing" constant="16" id="xFy-O8-gDs"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="M57-75-bIW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-1" translatesAutoresizingMaskIntoConstraints="NO" id="M57-75-bIW">
                                 <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="JoJ-dM-fid"/>
@@ -406,7 +407,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rF-Uh-btC">
                                 <rect key="frame" x="0.0" y="686" width="414" height="50"/>
-                                <color key="backgroundColor" red="0.47843137250000001" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.48627450980392156" green="0.71764705882352942" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9hG-yd-CCu"/>
                                 </constraints>
@@ -767,11 +768,11 @@
                                     <constraint firstItem="Xna-NG-sQu" firstAttribute="centerX" secondItem="RVI-jT-3uK" secondAttribute="centerX" constant="-90" id="yrI-36-aoV"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-2S-9MW">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-2S-9MW">
                                 <rect key="frame" x="98" y="257.66666666666669" width="218" height="85.333333333333314"/>
-                                <color key="minimumTrackTintColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" red="0.27450980390000002" green="0.59607843140000005" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="0.5983989877" colorSpace="calibratedRGB"/>
+                                <color key="minimumTrackTintColor" name="macColor"/>
+                                <color key="maximumTrackTintColor" name="macColor"/>
+                                <color key="thumbTintColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="MySlider:" destination="iV6-4o-NRw" eventType="valueChanged" id="nCo-4K-XaD"/>
                                 </connections>
@@ -1290,7 +1291,7 @@
         <!--خدمات BSA-->
         <scene sceneID="d1e-03-p0a">
             <objects>
-                <viewController storyboardIdentifier="Menus" title="خدمات BSA" automaticallyAdjustsScrollViewInsets="NO" id="iBC-yI-Nbc" customClass="HomeVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menus" title="خدمات BSA" automaticallyAdjustsScrollViewInsets="NO" id="iBC-yI-Nbc" customClass="MainVC" customModule="BayanPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJQ-Px-VtM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1328,7 +1329,6 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="54.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
                                                         <connections>
-                                                            <action selector="UserProfile:" destination="iBC-yI-Nbc" eventType="touchUpInside" id="vmL-lC-CgT"/>
                                                             <segue destination="PCJ-dD-5lV" kind="show" id="P2j-C8-N3H"/>
                                                         </connections>
                                                     </button>
@@ -1604,7 +1604,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxt-FG-SgB">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="54.666666666666664"/>
                                                         <connections>
-                                                            <action selector="CheckExitOverDownload:" destination="iBC-yI-Nbc" eventType="touchUpInside" id="Gk9-fF-owJ"/>
+                                                            <action selector="ExitOverDownload:" destination="iBC-yI-Nbc" eventType="touchUpInside" id="ZDy-7S-ASt"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1632,7 +1632,7 @@
                                                         <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-zc-mIc">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-zc-mIc">
                                                         <rect key="frame" x="364" y="13" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="2EZ-Zz-XtF"/>
@@ -1640,9 +1640,9 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxK-To-ebm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                                         <connections>
-                                                            <action selector="LogOut:" destination="iBC-yI-Nbc" eventType="touchUpInside" id="DQq-Dd-6lP"/>
+                                                            <action selector="Exit:" destination="iBC-yI-Nbc" eventType="touchUpInside" id="Jpi-wH-VlO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1655,6 +1655,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="a8d-zc-mIc" secondAttribute="trailing" constant="20" symbolic="YES" id="qiD-N7-mYL"/>
                                                     <constraint firstItem="ezy-Jk-gbQ" firstAttribute="centerY" secondItem="bnJ-mY-1Ft" secondAttribute="centerY" id="sLL-GU-Xpv"/>
                                                     <constraint firstItem="mxK-To-ebm" firstAttribute="top" secondItem="bnJ-mY-1Ft" secondAttribute="top" id="yFA-p3-9NN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mxK-To-ebm" secondAttribute="bottom" id="yOz-A0-VCG"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1685,7 +1686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwG-1H-PZZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="1405"/>
+            <point key="canvasLocation" x="928.98550724637687" y="1404.6195652173915"/>
         </scene>
         <!--الحملات-->
         <scene sceneID="ssh-h1-qIa">
@@ -2002,7 +2003,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-ay-ZCD">
                                         <rect key="frame" x="0.0" y="0.0" width="381" height="1009.6666666666666"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advs" translatesAutoresizingMaskIntoConstraints="NO" id="6XF-i5-3db">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advs" translatesAutoresizingMaskIntoConstraints="NO" id="6XF-i5-3db">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="239"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="6XF-i5-3db" secondAttribute="height" multiplier="359:239" id="Vnd-Ut-ytO"/>
@@ -2410,7 +2411,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="hxX-9S-ZET">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="hxX-9S-ZET">
                                         <rect key="frame" x="257" y="128" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="BcX-G5-xNQ"/>
@@ -2476,7 +2477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5f-6Q-EY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075" y="2177"/>
+            <point key="canvasLocation" x="2020" y="2181"/>
         </scene>
         <!--حجم التحميل-->
         <scene sceneID="u1f-8w-wgz">
@@ -2941,7 +2942,7 @@
                                     <action selector="SendNumber:" destination="1k5-tE-bXH" eventType="touchUpInside" id="rD8-db-j3Z"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="NUf-Rx-CjD" customClass="hand">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="padlock" translatesAutoresizingMaskIntoConstraints="NO" id="NUf-Rx-CjD" customClass="hand">
                                 <rect key="frame" x="147" y="110.33333333333334" width="100" height="115.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="GN3-jy-xMp"/>
@@ -3046,7 +3047,7 @@
                                     <action selector="SendCode:" destination="RTR-cq-bMw" eventType="touchUpInside" id="KQC-IL-zR3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-Tc-7MB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-Tc-7MB">
                                 <rect key="frame" x="152" y="110.33333333333334" width="100" height="115.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Dvl-QV-lVM"/>
@@ -3137,7 +3138,7 @@
                                     <constraint firstItem="5L5-fq-egS" firstAttribute="top" secondItem="xAK-Jk-gc0" secondAttribute="bottom" id="xmI-B9-0Xd"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="padlock" translatesAutoresizingMaskIntoConstraints="NO" id="Vwd-H5-p9C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlocks" translatesAutoresizingMaskIntoConstraints="NO" id="Vwd-H5-p9C">
                                 <rect key="frame" x="157" y="110.33333333333334" width="100" height="115.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="9eV-25-2WH"/>
@@ -3192,10 +3193,9 @@
         <image name="4" width="190" height="201"/>
         <image name="advertising" width="30" height="30"/>
         <image name="advs" width="600" height="400"/>
-        <image name="arrow" width="8" height="14"/>
-        <image name="hand" width="240" height="240"/>
-        <image name="key" width="240" height="240"/>
-        <image name="login" width="660" height="712"/>
+        <image name="login" width="240" height="240"/>
+        <image name="logout" width="256" height="256"/>
+        <image name="mail" width="240" height="240"/>
         <image name="menu" width="30" height="30"/>
         <image name="movie-tickets" width="24" height="24"/>
         <image name="onboard0" width="429" height="403"/>
@@ -3204,19 +3204,23 @@
         <image name="onboard4" width="390" height="402"/>
         <image name="onboard5" width="347" height="304"/>
         <image name="operator" width="128" height="128"/>
-        <image name="padlock" width="240" height="240"/>
+        <image name="padlock" width="256" height="256"/>
         <image name="price_tag" width="30" height="30"/>
+        <image name="profile" width="240" height="240"/>
         <image name="server" width="30" height="30"/>
         <image name="services" width="30" height="30"/>
         <image name="slide0" width="1264" height="568"/>
         <image name="ticket" width="229" height="229"/>
-        <image name="user" width="128" height="128"/>
+        <image name="unlocks" width="256" height="256"/>
+        <image name="user-1" width="256" height="256"/>
         <image name="user_male" width="30" height="30"/>
         <image name="worldwide_location" width="30" height="30"/>
+        <namedColor name="macColor">
+            <color red="0.41600000858306885" green="0.62000000476837158" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4DV-P6-9ET"/>
-        <segue reference="c9v-A1-1CO"/>
+        <segue reference="N0k-3v-ala"/>
         <segue reference="xW8-8H-3GN"/>
     </inferredMetricsTieBreakers>
 </document>

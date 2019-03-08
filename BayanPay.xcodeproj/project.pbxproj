@@ -43,6 +43,7 @@
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
 		C16256F32227BA5500C35475 /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16256F22227BA5500C35475 /* SpeedVC.swift */; };
+		C165BB7B2232EBA700A7CD8D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165BB7A2232EBA700A7CD8D /* MainVC.swift */; };
 		C1760FF3222EE2A500B4FB34 /* VerficationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */; };
 		C1760FF5222EE69900B4FB34 /* CodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF4222EE69900B4FB34 /* CodeVC.swift */; };
 		C1760FF7222EE6AF00B4FB34 /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */; };
@@ -113,6 +114,7 @@
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
 		C16256F22227BA5500C35475 /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
+		C165BB7A2232EBA700A7CD8D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerficationCodeVC.swift; sourceTree = "<group>"; };
 		C1760FF4222EE69900B4FB34 /* CodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVC.swift; sourceTree = "<group>"; };
 		C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				C1760FF2222EE2A500B4FB34 /* VerficationCodeVC.swift */,
 				C1760FF4222EE69900B4FB34 /* CodeVC.swift */,
 				C1760FF6222EE6AF00B4FB34 /* NewPasswordVC.swift */,
+				C165BB7A2232EBA700A7CD8D /* MainVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174E6080206F15D80022CD0A /* HomeVC.swift in Sources */,
+				C165BB7B2232EBA700A7CD8D /* MainVC.swift in Sources */,
 				C1760FF7222EE6AF00B4FB34 /* NewPasswordVC.swift in Sources */,
 				C103DE24221EA79E00296EF4 /* ReservationVC.swift in Sources */,
 				C1A3FD5B2202CEF400A7CB0F /* AccountHistoryVC.swift in Sources */,
