@@ -50,11 +50,11 @@ class RegisterVC: UIViewController {
                    
                 } else {
                     print("error .. !")
-                    self.displayErrorMessage(message: "أدخل كلمة مرور صحيحة")
+                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
                 }
                 print(response)
             case .failure(let error):
-                self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
+                self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
                 print(error)
             }
     }
@@ -79,7 +79,7 @@ class RegisterVC: UIViewController {
                     }
                     print(response)
                 case .failure(let error):
-                    self.displayErrorMessage(message: "عذرا قم بتأكد من  إدخالك رقم الجوال و كلمة المرور تحتوي حروف وارقام و رموز")
+                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
                     print(error)
                 }
         }
@@ -92,7 +92,7 @@ class RegisterVC: UIViewController {
         self.present(viewController, animated: true, completion: nil) }
     
     func displayErrorMessage(message:String) {
-        let alertView = UIAlertController(title: "خطأ في الأدخال", message: message, preferredStyle: .alert)
+        let alertView = UIAlertController(title: "خطأ بالأدخال", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)

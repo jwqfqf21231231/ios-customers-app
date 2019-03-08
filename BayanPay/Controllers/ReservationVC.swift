@@ -14,6 +14,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     var hamlaID:Int = 0
     var SpeedID:Int = 0
     var PeriodID:Int = 0
+    var messages = String()
     
     @IBOutlet weak var PeriodPK: UIPickerView!
     @IBOutlet weak var HamlaPK: UIPickerView!
@@ -22,7 +23,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
      var GetHamlaList_Var = [HamlaList]()
      var GetHamlaSpeed_Var = [HamlaSpeed]()
      var GetHamlaPeriod_Var = [HamlaPeriod]()
-  
+     var AddpendingMsg = [AddpendingMessage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.HamlaPK.dataSource = self
@@ -35,6 +36,18 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         self.PeriodPK.delegate = self
         
           GetHamlaList()
+    }
+    
+    func Addpending(){
+        Services.AddpendingMessageClass(hamlaID: hamlaID, SpeedID: SpeedID, PeriodID: PeriodID){(error:Error? , AddpendingMsg:[AddpendingMessage]?) in
+        if let add = AddpendingMsg {
+            self.AddpendingMsg = add
+            let add :AddpendingMessage = add[0]
+            self.displayErrorMessage(message: add.Message)
+            
+            print(add)
+        }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,39 +132,12 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     }
     
     @IBAction func AddPending(_ sender: Any) {
-        var MessageError: String = ""
-        var MessageCode: String = ""
-        let url = Urls.AddPending
-        guard let api_User = Services.getApiTell() else { return }
-        let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"
-        
-        print(AddPending)
-        Alamofire.request(AddPending, method: .post, encoding: URLEncoding.default, headers: Urls.header)
-            .validate(statusCode: 200..<600)
-            .responseJSON { response  in
-                switch response.result {
-                case .success(let value):
-                    let json = JSON(value)
-                    if  MessageCode == json["data"]["MessageCode"].string,
-                        MessageError == json["data"]["Message"].string {
-                        print(MessageError)
-                        self.displaySuccessMessage(message: MessageError,title:MessageCode)
-                        print(MessageError)
-                    } else {
-                        print("error .. !")
-                        self.displayErrorMessage(message: MessageError)
-                    }
-                    print(response)
-                case .failure(let error):
-                    self.displayErrorMessage(message:MessageError)
-                    print(error)
-                }
-        }
+        Addpending()
         
     }
     func displayErrorMessage(message:String) {
-        let alertView = UIAlertController(title: "خطأ بالأدخال", message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
+        let alertView = UIAlertController(title: "\n \n", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "موافق", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)
         if let presenter = alertView.popoverPresentationController {
@@ -162,7 +148,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     
     func displaySuccessMessage(message:String,title:String) {
         let alertView = UIAlertController(title:title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
+        let OKAction = UIAlertAction(title:"موافق", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)
         if let presenter = alertView.popoverPresentationController {

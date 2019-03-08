@@ -9,14 +9,7 @@ class LoginVC: UIViewController {
     var msg:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.navigationItem.hideBackWord()
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        
-        
   }
 
 
@@ -64,7 +57,7 @@ class LoginVC: UIViewController {
                         
                         print(response)
                     case .failure(let error):
-                        self.displayErrorMessage(message: "عذرا قم بالتأكد من إدخالك رقم الجوال وكلمة السر /n رقم الجوال يحتوي علي ")
+                        self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
                         print(error)
                 }
         }
@@ -74,8 +67,8 @@ class LoginVC: UIViewController {
    
     
     func displayErrorMessage(message:String) {
-        let alertView = UIAlertController(title: "خطأ في الأدخال", message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
+        let alertView = UIAlertController(title: "خطأ بالأدخال", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "موافق", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)
         if let presenter = alertView.popoverPresentationController {

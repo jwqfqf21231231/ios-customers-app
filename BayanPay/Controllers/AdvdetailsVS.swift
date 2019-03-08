@@ -38,14 +38,7 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
         getprices()
             
         }
-        
-    override func viewWillAppear(_ animated: Bool) {
-        //  CheckHamlaFunc()
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
+    
 
     func CheckHamlaFunc(gID:Int){
         Services.CheckHamlat(id: id, groupid: gID){(error:Error? , CheckHamlData:[CheckHamla]?) in
@@ -66,11 +59,8 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     
     
     @IBAction func ChooseHamla(_ sender: Any) {
-     
       PopUpChoose()
-       
-        
-    }
+      }
     
     func PopUpChoose(){
         let alert = UIAlertController(title: "اختر الحملة", message: "\n\n\n\n\n\n", preferredStyle: .alert)
@@ -124,16 +114,15 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return choices[row]
     }
-    
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
             pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(name: "Cairo", size: 14)
+            pickerLabel?.font = UIFont(name: "Cairo", size: 16)
             pickerLabel?.textAlignment = .center }
             pickerLabel?.text = choices[row]
-            pickerLabel?.textColor = UIColor.blue
+            pickerLabel?.textColor = UIColor.black
         return pickerLabel!
     }
 

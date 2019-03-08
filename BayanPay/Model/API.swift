@@ -316,10 +316,7 @@ class Services: NSObject {
             completion(nil,nil)
             return
         }
-        print("",api_User)
-        
-     let checkURL = url + api_User
-
+         let checkURL = url + api_User
         Alamofire.request(checkURL, method: .get ,encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
@@ -666,7 +663,7 @@ class Services: NSObject {
                         var UsersItem =  UserMobile()
                         UsersItem.FullName = data["FullName"]?.string ?? ""
                         UsersItem.Message = data["Message"]?.string ?? ""
-                          UsersItem.Usertype = data["Usertype"]?.int ?? 0
+                        UsersItem.Usertype = data["Usertype"]?.int ?? 0
                         Users.append(UsersItem)
                         print("tell",data)
                     }
@@ -675,8 +672,8 @@ class Services: NSObject {
     
     
 //
-    class func AddpendingMessageClass(MessageError:String,MessageCode:String, hamlaID:Int,SpeedID:Int, PeriodID:Int, completion: @escaping(_ error: Error?, _ AddpendingMessage:[AddpendingMessage]?)->Void){
-        var Msgs = MessageError
+    class func AddpendingMessageClass(hamlaID:Int,SpeedID:Int, PeriodID:Int, completion: @escaping(_ error: Error?, _ AddpendingMessage:[AddpendingMessage]?)->Void){
+       
         let url = Urls.AddPending
         guard let api_User = Services.getApiTell() else { return }
         let AddPending =  url + api_User + "&hamlaid=" + "\(hamlaID)" + "&speedid=" + "\(SpeedID)" + "&Month=" + "\(PeriodID)"

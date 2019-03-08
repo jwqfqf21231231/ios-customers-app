@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-struct UserMobile {
+
+class UserMobile:NSObject {
     var Message :String = ""
     var FullName: String = ""
     var Usertype: Int = 0
@@ -17,7 +18,7 @@ struct UserMobile {
 }
 
 
-struct AddpendingMessage {
+class AddpendingMessage:NSObject {
     var Message: String = ""
     var MessageCode:String = ""
 }

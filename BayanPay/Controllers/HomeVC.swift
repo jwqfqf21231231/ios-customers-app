@@ -11,7 +11,7 @@ import UIKit
 class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
   
     var window: UIWindow?
-    var total:Int = 000
+    var total:Int =  00
     var Status:Int = 000
     var Msg:String = ""
     var CheckExitOverDownload:[CheckExit] = []
@@ -22,7 +22,6 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         Services.CheckUserMobile{(error:Error? , UserMobile:[UserMobile]?) in
             if let Users = UserMobile {
                 self.UserMobile = Users
-//                self.PricesCollection.reloadData()
                 print(Users)
                 
             }
@@ -36,15 +35,10 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
         
         alert.view.addSubview(pickerFrame)
-        pickerFrame.dataSource = (self as? UIPickerViewDataSource)
+        pickerFrame.dataSource = (self as UIPickerViewDataSource)
         pickerFrame.delegate = (self as UIPickerViewDelegate)
         
         alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { (UIAlertAction) in
-//            print("You selected " + self.typeValue )
-            self.GetUserMobile()
-             Services.getApiTell()
-            print(Services.getApiTell())
-
         }))
         self.present(alert,animated: true, completion: nil )
     }
@@ -59,23 +53,26 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let ExsitUser = UserMobile[row].Message
-        Services.getApiTell() == ExsitUser
+       
+        Services.SaveTell(Tell: ExsitUser)
         print(ExsitUser)
+        print(Services.getApiTell() ?? "")
         return ExsitUser
-        
-        
+
+
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
             pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(name: "Cairo", size: 14)
+            pickerLabel?.font = UIFont(name: "Cairo", size: 16)
             pickerLabel?.textAlignment = .center }
         pickerLabel?.text = UserMobile[row].Message
-        pickerLabel?.textColor = UIColor.blue
+        pickerLabel?.textColor = UIColor.black
         return pickerLabel!
     }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {    }
     
 //    ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
     
@@ -111,14 +108,16 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         ExitOver()
         GetUserMobile()
         PopUpChoose()
+        alertCheckOver()
+      
     }
     
     @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) { }
     
     @IBAction func LogOut(_ sender: Any) {
         Services.removeUser()
-         dismiss(animated: true, completion: nil)
-       loadLoginScreen()
+        loadLoginScreen()
+        dismiss(animated: true, completion: nil)
        
     }
     
@@ -217,8 +216,9 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
             
         }
         let ExitOverAction = UIAlertAction(title: "أضغط هنا للخروج من سياسة", style: .default) { (action:UIAlertAction) in
+             self.alertCheckOver()
             self.ExitOver()
-            self.ExitOverDownload(message: "لديك \(self.total) للخروج من سياسة الاستخدام" )
+            self.ExitOverDownload(message: "لديك \(self.total) محاولات للخروج من سياسة الاستخدام العادل" )
             
         }
         alertView.addAction(OKAction)
@@ -242,7 +242,7 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
             
         }
         let ExitOverAction = UIAlertAction(title: "الخروج من سياسة الاستخدام", style: .default) { (action:UIAlertAction) in
-            
+           
         }
         alertView.addAction(OKAction)
         if let presenter = alertView.popoverPresentationController {
