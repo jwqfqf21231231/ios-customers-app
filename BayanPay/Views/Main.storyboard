@@ -179,7 +179,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-C0-8m2">
                                         <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
@@ -332,7 +332,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-Ix-fme">
                                         <rect key="frame" x="16" y="60" width="382" height="0.6666666666666643"/>
@@ -355,7 +355,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="أدخل تأكيد كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-xl-a6m">
                                         <rect key="frame" x="16" y="121" width="382" height="50"/>
@@ -553,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf1-mr-awT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="2174"/>
+            <point key="canvasLocation" x="-870" y="2177"/>
         </scene>
         <!--فحص السرعه-->
         <scene sceneID="XTB-Qd-Pv8">
@@ -584,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycw-5Q-jV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="2174"/>
+            <point key="canvasLocation" x="-120" y="2177"/>
         </scene>
         <!--الخدمات الرئيسية-->
         <scene sceneID="9vY-lq-sIv">
@@ -862,7 +862,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-2J-nWu">
                                         <rect key="frame" x="16" y="60" width="382" height="0.6666666666666643"/>
@@ -885,7 +885,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nX3-J8-De1">
                                         <rect key="frame" x="16" y="216" width="382" height="0.66666666666665719"/>
@@ -901,7 +901,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -964,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZF-w6-TxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="2174"/>
+            <point key="canvasLocation" x="568" y="2177"/>
         </scene>
         <!--سجل الاستخدام-->
         <scene sceneID="k3f-cM-eVX">
@@ -1113,7 +1113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFU-0K-c5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="2174"/>
+            <point key="canvasLocation" x="1304" y="2177"/>
         </scene>
         <!--الأشعارات-->
         <scene sceneID="eO5-pj-1Wb">
@@ -1685,7 +1685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwG-1H-PZZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="1402"/>
+            <point key="canvasLocation" x="930" y="1405"/>
         </scene>
         <!--الحملات-->
         <scene sceneID="ssh-h1-qIa">
@@ -2476,7 +2476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5f-6Q-EY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="2174"/>
+            <point key="canvasLocation" x="2075" y="2177"/>
         </scene>
         <!--حجم التحميل-->
         <scene sceneID="u1f-8w-wgz">
@@ -2578,7 +2578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exh-St-YZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2832" y="2177"/>
+            <point key="canvasLocation" x="2810" y="2181"/>
         </scene>
         <!--تفاصيل الحملات-->
         <scene sceneID="p3R-f3-xDS">
@@ -2903,7 +2903,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfU-wR-oKd">
                                         <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
@@ -3008,7 +3008,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-LM-Kei">
                                         <rect key="frame" x="0.0" y="50" width="374" height="0.6666666666666643"/>
@@ -3215,7 +3215,8 @@
         <image name="worldwide_location" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N0k-3v-ala"/>
+        <segue reference="4DV-P6-9ET"/>
+        <segue reference="c9v-A1-1CO"/>
         <segue reference="xW8-8H-3GN"/>
     </inferredMetricsTieBreakers>
 </document>

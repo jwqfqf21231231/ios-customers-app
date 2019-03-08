@@ -44,11 +44,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
             self.AddpendingMsg = add
             let add :AddpendingMessage = add[0]
             self.displayErrorMessage(message: add.Message)
-            
-            print(add)
-        }
-        }
-    }
+          }}}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -136,7 +132,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         
     }
     func displayErrorMessage(message:String) {
-        let alertView = UIAlertController(title: "\n \n", message: message, preferredStyle: .alert)
+        let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "موافق", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)

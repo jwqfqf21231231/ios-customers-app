@@ -17,16 +17,26 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     var CheckExitOverDownload:[CheckExit] = []
     var ExitOverDown:[ExitOverDownload] = []
     var UserMobile: [UserMobile] = []
+    var array = [UIImage]()
+    @IBOutlet weak var Slider: UISlider!
+    @IBOutlet weak var SliderImage: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        array = [#imageLiteral(resourceName: "slide0"),#imageLiteral(resourceName: "slide1"),#imageLiteral(resourceName: "slide2"),#imageLiteral(resourceName: "slide3"),#imageLiteral(resourceName: "slide4"),#imageLiteral(resourceName: "slide5")]
+        self.navigationItem.hideBackWord()
+        ExitOver()
+        PopUpChoose()
+       GetUserMobile()
+        alertCheckOver()
+    }
     
     func GetUserMobile() {
         Services.CheckUserMobile{(error:Error? , UserMobile:[UserMobile]?) in
             if let Users = UserMobile {
                 self.UserMobile = Users
                 print(Users)
-                
-            }
-        }
-    }
+            }}}
     
     func PopUpChoose(){
         let alert = UIAlertController(title: "أختر المستخدم", message: "\n\n\n\n\n\n", preferredStyle: .alert)
@@ -35,10 +45,11 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
         
         alert.view.addSubview(pickerFrame)
-        pickerFrame.dataSource = (self as UIPickerViewDataSource)
-        pickerFrame.delegate = (self as UIPickerViewDelegate)
+        pickerFrame.dataSource = self as UIPickerViewDataSource
+        pickerFrame.delegate = self as UIPickerViewDelegate
         
         alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { (UIAlertAction) in
+            
         }))
         self.present(alert,animated: true, completion: nil )
     }
@@ -51,77 +62,33 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         return UserMobile.count
     }
     
+   
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let ExsitUser = UserMobile[row].Message
-       
         Services.SaveTell(Tell: ExsitUser)
-        print(ExsitUser)
-        print(Services.getApiTell() ?? "")
+        print(Services.getApiTell() ?? "hello telle")
         return ExsitUser
 
 
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel: UILabel? = (view as? UILabel)
-        if pickerLabel == nil {
-            pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(name: "Cairo", size: 16)
-            pickerLabel?.textAlignment = .center }
-        pickerLabel?.text = UserMobile[row].Message
-        pickerLabel?.textColor = UIColor.black
-        return pickerLabel!
-    }
+//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//        var pickerLabel: UILabel? = (view as? UILabel)
+//        if pickerLabel == nil {
+//            pickerLabel = UILabel()
+//            pickerLabel?.font = UIFont(name: "Cairo", size: 16)
+//            pickerLabel?.textAlignment = .center }
+//        pickerLabel?.text = UserMobile[row].Message
+//        Services.SaveTell(Tell: (pickerLabel?.text)!)
+//        pickerLabel?.textColor = UIColor.black
+//        return pickerLabel!
+//    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {    }
     
+    
+    
 //    ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
-    
-    
-    var array = [UIImage]()
-    
-    @IBOutlet weak var Slider: UISlider!
-    @IBOutlet weak var SliderImage: UIImageView!
-    
-    
-    @IBAction func Back(_ sender: Any) {
-        Slider.value -= 1
-        SliderImage.image = array[Int(Slider.value)]
-    }
-    @IBAction func Next(_ sender: Any) {
-        Slider.value += 1
-        SliderImage.image = array[Int(Slider.value)]
-        
-    }
-    
-    @IBAction func MySlider(_ sender: UISlider) {
-        var value = Int(sender.value)
-        SliderImage.image = array[value]
-        
-    }
-    
-    
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       array = [#imageLiteral(resourceName: "slide0"),#imageLiteral(resourceName: "slide1"),#imageLiteral(resourceName: "slide2"),#imageLiteral(resourceName: "slide3"),#imageLiteral(resourceName: "slide4"),#imageLiteral(resourceName: "slide5")]
-        self.navigationItem.hideBackWord()
-        ExitOver()
-        GetUserMobile()
-        PopUpChoose()
-        alertCheckOver()
-      
-    }
-    
-    @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) { }
-    
-    @IBAction func LogOut(_ sender: Any) {
-        Services.removeUser()
-        loadLoginScreen()
-        dismiss(animated: true, completion: nil)
-       
-    }
-    
-    @IBAction func UserProfile(_ sender: Any) { }
     
     // Services Start
     func ExitOver(){
@@ -145,22 +112,51 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-//    Services End
+    //    Services End
+    
+    
+    @IBAction func Back(_ sender: Any) {
+        Slider.value -= 1
+        SliderImage.image = array[Int(Slider.value)]
+    }
+    @IBAction func Next(_ sender: Any) {
+        Slider.value += 1
+        SliderImage.image = array[Int(Slider.value)]
+        
+    }
+    
+    @IBAction func MySlider(_ sender: UISlider) {
+        var value = Int(sender.value)
+        SliderImage.image = array[value]
+        
+    }
+    
+    
+    @IBAction func unwindToHomeVC(segue:UIStoryboardSegue) { }
+    
+    @IBAction func LogOut(_ sender: Any) {
+        Services.removeUser()
+        loadLoginScreen()
+        dismiss(animated: true, completion: nil)
+       
+    }
+    
+    @IBAction func UserProfile(_ sender: Any) { }
+  
     
     @IBAction func CheckExitOverDownload(_ sender: Any) {
-//        CheckExitOver(message:"لديك \(self.total) محاولات للخروج من الاستخدام العادل")
         CheckExitOver(message: Msg)
     }
     
+    
     //    BSA Action
     @IBAction func BSA(_ sender: Any) {
-        
         guard let code = Services.getApiTell() else  {return}
         let first4 = String((code.prefix(2)))
         
         if first4 == "08" {
+            
             loadMenuScreen()
-            print("This is Tell",first4)
         } else if(first4 == "05"){
             displayBSAMessage(message: "عذرا انت مشترك انترنت بدون خط نفاذ", title: "اهلا بك")
             print ("this is Not Tell", first4)
@@ -169,6 +165,7 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
             print ("this is Not Tell", first4)
         }
     }
+    
     
     @IBAction func VDS(_ sender: Any) {
      guard let code = Services.getApiTell() else  {return}
@@ -188,7 +185,7 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     }
     
     
-    //    Load Menu From Home
+    //  Load Menu From Home
     func loadMenuScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let ViewController = storyBoard.instantiateViewController(withIdentifier: "Menus")
@@ -254,10 +251,6 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     
     func loadLoginScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier:
-            
-            "LoginVC") as! LoginVC
-      
+        let viewController = storyBoard.instantiateViewController(withIdentifier:"LoginVC") as! LoginVC
         navigationController?.pushViewController(viewController, animated: true) }
-    
 }

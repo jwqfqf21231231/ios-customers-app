@@ -47,9 +47,8 @@ class LoginVC: UIViewController {
                         Services.saveSessions(access_token: access_token)
                         Services.SaveUser(UserName: UserName)
                         self.loadLoginScreen()
-                            
                         print(access_token)
-                            self.Check()
+                           self.Check()
                         } else {
                         print("error .. !")
                         self.displayErrorMessage(message: "أدخل كلمة مرور صحيحة")
