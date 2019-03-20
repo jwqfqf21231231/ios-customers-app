@@ -9,8 +9,8 @@
 import Foundation
 class Chart: NSObject {
     
-    var x:Int = 0
-    var y:Int = 0
+    var x:Double = 0
+    var y:Double = 0
 }
 
 class Ticket:NSObject{
@@ -18,4 +18,9 @@ class Ticket:NSObject{
     var Mobile:String = ""
     var Name:String = ""
     var Note:String = ""
+}
+
+class PerDay:NSObject{
+    var limit:Double = 0.0
+    var download:Double = 0.0
 }

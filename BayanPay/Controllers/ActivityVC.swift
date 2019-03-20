@@ -14,10 +14,10 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     var ActivityItem = [ActivityModel]()
     
     override func viewDidLoad() {
-      
+      super.viewDidLoad()
+        self.title = "الشحن"
 
-        super.viewDidLoad()
-        UIApplication.shared.statusBarStyle = .default
+          self.navigationItem.hideBackWord()
         ActivaityTB.dataSource = self
         ActivaityTB.delegate = self
         ActivityData()
@@ -29,14 +29,10 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
                 self.ActivityItem = activity
                 self.ActivaityTB.reloadData()
                 print(activity)
-             
-            }
-        }
-    }
+             }}}
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
     }
   
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +52,7 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
         cell.UseDate?.text = ActivityItem[indexPath.row].UseDate
         cell.Point?.text = ActivityItem[indexPath.row].point
         let priceData = ActivityItem[indexPath.row].Price
-        cell.Price?.text = "\(priceData)"
+        cell.Price?.text = "السعر: \(priceData)"
         
         return cell
     }

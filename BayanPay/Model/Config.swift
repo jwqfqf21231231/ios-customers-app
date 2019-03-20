@@ -97,7 +97,7 @@ struct Urls {
     
     static let CheckUserMobile = "http://mapi.fusion.ps/api/Users/CheckUsermobile?MobileNo="
     
-    
+    static let GetPerDay = "http://mapi.fusion.ps/api/Users/GetDownloadPerDay?userid="
     
     
 }

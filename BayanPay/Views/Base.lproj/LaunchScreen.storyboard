@@ -6,18 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Cairo-Bold.ttf">
-            <string>Cairo-Bold</string>
-        </array>
-        <array key="Cairo-Regular.ttf">
-            <string>Cairo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -30,40 +21,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-9B-dHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="agV-C2-ItU">
-                                        <rect key="frame" x="87" y="33.5" width="200" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="3pA-41-zTh"/>
-                                            <constraint firstAttribute="height" constant="300" id="CR3-BE-f9v"/>
-                                            <constraint firstAttribute="width" secondItem="agV-C2-ItU" secondAttribute="height" multiplier="200:300" id="GiN-UB-l0q"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-A8-rFj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شركة فيوجن" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Py-d4-XSC">
-                                        <rect key="frame" x="37.5" y="283" width="300" height="41.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="nok-QT-3li"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="22"/>
-                                        <color key="textColor" red="0.47058823529999999" green="0.72156862749999995" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لخدمة الانترنت وأنظمة الاتصالات" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-uF-ndy">
-                                        <rect key="frame" x="37" y="313" width="300" height="41.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="2SW-dt-C9Z"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="-30" id="0Kp-6l-7CE"/>
-                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" id="B0g-Of-D08"/>
-                                    <constraint firstItem="4Py-d4-XSC" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="Bxo-AQ-c9c"/>
-                                    <constraint firstItem="agV-C2-ItU" firstAttribute="centerY" secondItem="PhM-9B-dHJ" secondAttribute="centerY" constant="-150" id="Iby-FZ-wVx"/>
-                                    <constraint firstItem="hWr-uF-ndy" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="MJb-QQ-jYT"/>
-                                    <constraint firstItem="agV-C2-ItU" firstAttribute="centerX" secondItem="PhM-9B-dHJ" secondAttribute="centerX" id="V6R-u9-cpd"/>
+                                    <constraint firstItem="Jsd-A8-rFj" firstAttribute="leading" secondItem="PhM-9B-dHJ" secondAttribute="leading" id="7p9-xG-2JM"/>
+                                    <constraint firstItem="Jsd-A8-rFj" firstAttribute="top" secondItem="PhM-9B-dHJ" secondAttribute="top" id="Ewu-2B-6gD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jsd-A8-rFj" secondAttribute="trailing" id="nFZ-NM-g4d"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jsd-A8-rFj" secondAttribute="bottom" id="pvb-UG-1Pu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -85,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo-1" width="612" height="792"/>
+        <image name="LaunchImage" width="444" height="766"/>
     </resources>
 </document>

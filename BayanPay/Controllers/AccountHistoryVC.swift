@@ -18,6 +18,7 @@ class AccountHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSour
         AccountHistoryTB.delegate = self
         AccountHistoryTB.dataSource = self
         AccountData()
+         super.didReceiveMemoryWarning()
     }
     
     override func didReceiveMemoryWarning() {

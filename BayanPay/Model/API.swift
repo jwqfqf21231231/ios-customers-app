@@ -181,6 +181,7 @@ class Services: NSObject {
                         ProfileItem.UserOnline = data["UserOnline"]?.bool ?? true
                         ProfileItem.Isbad = data["Isbad"]?.bool ?? false
                         ProfileItem.Email = data["Email"]?.string ?? ""
+                        ProfileItem.Password = data["Password"]?.string ?? ""
                         ProfileModel.append(ProfileItem)
                         
                     }
@@ -583,7 +584,6 @@ class Services: NSObject {
     class func ChargeHamlaFunc(id:Int, groupid:Int, completion: @escaping(_ error: Error?, _ ChargeHamla:[ChargeHamla]?)->Void){
         guard let api_User = Services.getApiTell() else {
             return }
-        //        082853838&HamlaID=104&Groupid=22
         let url = Urls.ChargeHamla
         let Charge = url + api_User + "&&HamlaID=" + "\(id)" + "&Groupid=" + "\(groupid)"
         print("RegisterHamla",Charge)
@@ -633,8 +633,8 @@ class Services: NSObject {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  Chart()
-                        Chartitem.x = data["x"]?.int ?? 0
-                        Chartitem.y = data["y"]?.int ?? 0
+                        Chartitem.x = data["x"]?.double ?? 0
+                        Chartitem.y = data["y"]?.double ?? 0
                         Charts.append(Chartitem)
                         print("tell",data)
                         }
@@ -660,7 +660,7 @@ class Services: NSObject {
                     var Users:[UserMobile] = []
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
-                        var UsersItem =  UserMobile()
+                        let UsersItem =  UserMobile()
                         UsersItem.FullName = data["FullName"]?.string ?? ""
                         UsersItem.Message = data["Message"]?.string ?? ""
                         UsersItem.Usertype = data["Usertype"]?.int ?? 0
@@ -693,13 +693,42 @@ class Services: NSObject {
                     var Add:[AddpendingMessage] = []
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
-                        var AddItem =  AddpendingMessage()
+                        let AddItem =  AddpendingMessage()
                         AddItem.MessageCode = data["MessageCode"]?.string ?? ""
                         AddItem.Message = data["Message"]?.string ?? ""
                         Add.append(AddItem)
                         print("tell",data)
                     }
                     completion(nil, Add)
+                }}}
+    
+    //    perDay
+    class func GetChartperDay(completion: @escaping(_ error: Error?, _ PerDay:[PerDay]?)->Void){
+        guard let api_User = Services.getApiTell() else {
+            return }
+        let url = Urls.GetPerDay
+        let ChartURL = url + api_User
+        Alamofire.request(ChartURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Charts:[PerDay] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let Chartitem =  PerDay()
+                        Chartitem.limit = data["limit"]?.double ?? 0.0
+                        Chartitem.download = data["download"]?.double ?? 0.0
+                        Charts.append(Chartitem)
+                        print("tell",data)
+                    }
+                    completion(nil, Charts)
                 }}}
     
  

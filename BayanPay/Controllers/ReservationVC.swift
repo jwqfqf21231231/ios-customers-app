@@ -24,7 +24,11 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
      var GetHamlaSpeed_Var = [HamlaSpeed]()
      var GetHamlaPeriod_Var = [HamlaPeriod]()
      var AddpendingMsg = [AddpendingMessage]()
+    
     override func viewDidLoad() {
+        self.navigationItem.hideBackWord()
+        self.title = "حجز البطاقة"
+
         super.viewDidLoad()
         self.HamlaPK.dataSource = self
         self.HamlaPK.delegate = self

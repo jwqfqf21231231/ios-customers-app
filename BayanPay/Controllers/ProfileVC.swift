@@ -24,13 +24,10 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+         Profile()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-         Profile()
-    }
-    
+ 
     func Profile(){
         Services.UserProfile{(error:Error? , ProfileData:[Profile]?) in
             if let User = ProfileData {

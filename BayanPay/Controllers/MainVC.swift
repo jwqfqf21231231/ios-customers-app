@@ -37,11 +37,7 @@ class MainVC: UIViewController {
                 let Total :CheckExit = CheckExitOverDownload[0]
                 self.total = Total.Total
                 self.Status = Total.Status
-                print(self.Status)
-                print(self.total)
-            }
-        }
-    }
+            }}}
     
     //    ExitOverDownload Action
     func ExitOverDownload(message:String) {
@@ -93,6 +89,14 @@ class MainVC: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
         
     }
+    func Move(){
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+            if let navigator = navigationController {
+                viewController.hidesBottomBarWhenPushed = true
+                navigator.pushViewController(viewController, animated: false)
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -104,9 +108,15 @@ class MainVC: UIViewController {
 
     }
     
+     func clearUserData(){
+        UserDefaults.standard.removeObject(forKey: "Message")
+        UserDefaults.standard.removeObject(forKey: "UserName")
+    }
+    
     @IBAction func Exit(_ sender: Any) {
         Services.removeUser()
-        loadLoginScreen()
-        dismiss(animated: true, completion: nil)
+        clearUserData()
+        Move()
+       
     }
 }

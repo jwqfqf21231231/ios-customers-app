@@ -23,7 +23,6 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         array = [#imageLiteral(resourceName: "slide0"),#imageLiteral(resourceName: "slide1"),#imageLiteral(resourceName: "slide2"),#imageLiteral(resourceName: "slide3"),#imageLiteral(resourceName: "slide4"),#imageLiteral(resourceName: "slide5")]
         self.navigationItem.hideBackWord()
-        PopUpChoose()
         GetUserMobile()
     }
     
@@ -31,7 +30,7 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         Services.CheckUserMobile{(error:Error? , UserMobile:[UserMobile]?) in
             if let Users = UserMobile {
                 self.UserMobile = Users
-                print(Users)
+                self.PopUpChoose()
             }}}
     
     func PopUpChoose(){
@@ -65,12 +64,7 @@ class HomeVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
         Services.SaveTell(Tell: ExsitUser)
         print(Services.getApiTell() ?? "hello telle")
         return ExsitUser
-
-
-    }
-
-    
-    
+    }    
     @IBAction func Back(_ sender: Any) {
         Slider.value -= 1
         SliderImage.image = array[Int(Slider.value)]

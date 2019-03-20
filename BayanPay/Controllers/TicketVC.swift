@@ -59,7 +59,7 @@ class TicketVC: UIViewController {
     
     @IBAction func SendTicket(_ sender: Any) {
         if ((self.Name.text ) == "" || (self.Mobile.text == "") || (self.Note.text == ""))  {
-            return displayMessage(message: "", Title: "خطا بالادخال")
+            return displayMessage(message: "", Title: "قم بإدخال اسم والرقم والملاحظة")
         }else{
             self.Mobile.text = ""
             self.Name.text = ""
@@ -70,7 +70,7 @@ class TicketVC: UIViewController {
 
     func displayMessage(message:String,Title:String) {
         let alertView = UIAlertController(title: Title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
+        let OKAction = UIAlertAction(title: "تم", style: .default) { (action:UIAlertAction) in
         }
         alertView.addAction(OKAction)
         if let presenter = alertView.popoverPresentationController {

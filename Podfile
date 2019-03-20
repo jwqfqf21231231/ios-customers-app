@@ -15,5 +15,6 @@ target 'BayanPay' do
   pod 'SwiftyOnboard'
   pod 'Charts', '~> 3.1.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'IBAnimatable','~> 5.0.0'
 
 end

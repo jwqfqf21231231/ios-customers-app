@@ -12,8 +12,8 @@ import Alamofire
 import SwiftyJSON
 
 class ChartsVC: UIViewController {
-    var x:Int = 0
-    var y:Int = 0
+    var x:Double = 0
+    var y:Double = 0
     var ChartItem = [Chart]()
     @IBOutlet weak var PieChartView: PieChartView!
     
@@ -31,8 +31,8 @@ class ChartsVC: UIViewController {
     //function set and show data
     func UpdateData(){
         //Configration of chart and set data of x , y
-        DataEntryX.value = Double(self.x)
-        DataEntryY.value = Double(self.y)
+        DataEntryX.value = self.x
+        DataEntryY.value = self.y
         DataEntryY.label = "نسبة المتبقي"
         DataEntryX.label = "نسبة التحميل"
         NumberOfRows = [DataEntryX,DataEntryY]
@@ -56,7 +56,7 @@ class ChartsVC: UIViewController {
         Alamofire.request(ChartURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
-                case .failure(let _):
+                case .failure( _):
                     print("error")
                 case .success(let value):
                     let json = JSON(value)
@@ -67,9 +67,9 @@ class ChartsVC: UIViewController {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  Chart()
-                        Chartitem.x = data["x"]?.int ?? 0
+                        Chartitem.x = data["x"]?.double ?? 0
                         self.x = self.x + Chartitem.x
-                        Chartitem.y = data["y"]?.int ?? 0
+                        Chartitem.y = data["y"]?.double ?? 0
                         self.y = self.y + Chartitem.y
                         Charts.append(Chartitem)
                         print("Chart",data)

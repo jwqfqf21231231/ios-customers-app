@@ -26,7 +26,6 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     var groupid:Int!
     var choices = ["",""]
     var pickerView = UIPickerView()
-    var messages = String()
     var typeValue = String()
 
     
@@ -53,7 +52,8 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
             if let Charge = ChargeHamladata {
                 self.ChargeHamladata = Charge
                 let Charge :ChargeHamla = Charge[0]
-                self.messages = Charge.Message
+                let messages = Charge.Message
+                 self.ChargeHamlaAlert(message: messages)
             }}}
     
     
@@ -76,7 +76,7 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
         alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { (UIAlertAction) in
             print("You selected " + self.typeValue )
             self.ChargeHamla()
-            self.ChargeHamlaAlert(message: self.messages)
+           
             
             
         }))
