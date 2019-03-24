@@ -1045,11 +1045,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-aA-wfi" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="10" y="120" width="355" height="467"/>
+                                <rect key="frame" x="10" y="120" width="155.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسبة التحميل الكلي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7B-dc-J2c">
-                                <rect key="frame" x="20" y="30" width="335" height="50"/>
+                                <rect key="frame" x="20" y="30" width="135.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="RSL-xh-NSW"/>
                                     <constraint firstAttribute="height" constant="50" id="rbn-Xs-GCo"/>
