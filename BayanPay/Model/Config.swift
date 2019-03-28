@@ -8,7 +8,7 @@
 
 import Foundation
 struct Urls {
-    
+
     //    Header
     static let header: [String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
     
@@ -99,5 +99,9 @@ struct Urls {
     
     static let GetPerDay = "http://mapi.fusion.ps/api/Users/GetDownloadPerDay?userid="
     
+    
+    static let VireyficationCode = "http://mapi.fusion.ps/api/Values/CheckVerficationCode?MobileNo="
+    
+    static var Mobile:String = ""
     
 }

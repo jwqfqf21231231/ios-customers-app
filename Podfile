@@ -15,6 +15,8 @@ target 'BayanPay' do
   pod 'SwiftyOnboard'
   pod 'Charts', '~> 3.1.0'
   pod 'IQKeyboardManagerSwift'
-  pod 'IBAnimatable','~> 5.0.0'
-
+  pod 'SwiftSocket'
+  pod 'Firebase', '~> 4.8'
+  pod 'Firebase/Messaging'
+  pod 'BRYXBanner', '~> 0.7.0'
 end

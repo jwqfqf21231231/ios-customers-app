@@ -22,3 +22,9 @@ class AddpendingMessage:NSObject {
     var Message: String = ""
     var MessageCode:String = ""
 }
+
+class GetUserVerficationCode:NSObject{
+    var Message: String = ""
+    
+    
+}

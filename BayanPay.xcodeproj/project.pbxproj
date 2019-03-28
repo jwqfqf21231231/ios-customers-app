@@ -41,6 +41,7 @@
 		C1483E93222130A700B04378 /* HamlaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1483E92222130A700B04378 /* HamlaList.swift */; };
 		C14AEB0E220C110E002BB10B /* Advs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0D220C110E002BB10B /* Advs.swift */; };
 		C14AEB10220C1AD5002BB10B /* InGetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */; };
+		C14EEC8E224C36300027FBB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14EEC8D224C36300027FBB3 /* GoogleService-Info.plist */; };
 		C1526AA022057E440033E61A /* GetPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526A9F22057E440033E61A /* GetPrice.swift */; };
 		C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1526AA1220597950033E61A /* GetPriceCell.swift */; };
 		C16256F32227BA5500C35475 /* SpeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16256F22227BA5500C35475 /* SpeedVC.swift */; };
@@ -115,6 +116,8 @@
 		C1483E92222130A700B04378 /* HamlaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamlaList.swift; sourceTree = "<group>"; };
 		C14AEB0D220C110E002BB10B /* Advs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advs.swift; sourceTree = "<group>"; };
 		C14AEB0F220C1AD5002BB10B /* InGetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGetPriceCell.swift; sourceTree = "<group>"; };
+		C14EEC8D224C36300027FBB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C14EEC8F224C3CB80027FBB3 /* BayanPay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BayanPay.entitlements; sourceTree = "<group>"; };
 		C1526A9F22057E440033E61A /* GetPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrice.swift; sourceTree = "<group>"; };
 		C1526AA1220597950033E61A /* GetPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceCell.swift; sourceTree = "<group>"; };
 		C16256F22227BA5500C35475 /* SpeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedVC.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		174E6027206ECD1A0022CD0A /* BayanPay */ = {
 			isa = PBXGroup;
 			children = (
+				C14EEC8F224C3CB80027FBB3 /* BayanPay.entitlements */,
 				174E6028206ECD1A0022CD0A /* AppDelegate.swift */,
 				174E603A206ECD2E0022CD0A /* Views */,
 				174E6040206EED4F0022CD0A /* Controllers */,
@@ -214,6 +218,7 @@
 		174E603C206ECD450022CD0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C14EEC8D224C36300027FBB3 /* GoogleService-Info.plist */,
 				174E6034206ECD1A0022CD0A /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -370,6 +375,11 @@
 					174E6024206ECD1A0022CD0A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -396,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14EEC8E224C36300027FBB3 /* GoogleService-Info.plist in Resources */,
 				C12982A8221FEEFF0076EDFD /* Cairo-Light.ttf in Resources */,
 				C12982A7221FEEFF0076EDFD /* Cairo-Regular.ttf in Resources */,
 				C12982A6221FEEFF0076EDFD /* Cairo-SemiBold.ttf in Resources */,
@@ -441,27 +452,35 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BRYXBanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -660,13 +679,16 @@
 			baseConfigurationReference = CF786067F2AE71D61B3E507E /* Pods-BayanPay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BayanPay/BayanPay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2XQ773BB5L;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohanad.fusionapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -677,13 +699,16 @@
 			baseConfigurationReference = 31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BayanPay/BayanPay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2XQ773BB5L;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mohanadhilles.BayanPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohanad.fusionapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -47,7 +47,11 @@ class AccountHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AccountHistoryCell",for: indexPath) as! AccountHistoryCell
         cell.IPAddress?.text = AccountHistory[indexPath.row].IP
-        cell.AccDate?.text = AccountHistory[indexPath.row].AcctDate
+//
+          var acDate  = AccountHistory[indexPath.row].AcctDate
+          let first4 = acDate.split(separator: "T")
+          cell.AccDate?.text = "\(first4[0])"
+          cell.TDate?.text = "\(first4[1])"
         
         let down = AccountHistory[indexPath.row].Download
         cell.Download?.text = "\(down)"

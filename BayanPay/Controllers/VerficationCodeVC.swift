@@ -59,6 +59,7 @@ class VerficationCodeVC: UIViewController {
             displayErrorMessage(message: "أدخل رقم جوال فعال", title: "خطأ بالأدخال")
            
         } else {
+            
           GetCode()
         
         }

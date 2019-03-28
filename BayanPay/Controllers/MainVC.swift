@@ -16,11 +16,15 @@ class MainVC: UIViewController {
     var CheckExitOverDownload:[CheckExit] = []
     var ExitOverDown:[ExitOverDownload] = []
     
+    override func viewDidLoad() {
+       
+          self.title = "القائمة الرئيسية للمشترك"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.hideBackWord()
         ExitOver()
         alertCheckOver()
-        
     }
     
     func ExitOver(){
@@ -45,7 +49,7 @@ class MainVC: UIViewController {
         let OKAction = UIAlertAction(title: "موافق", style: .default) { (action:UIAlertAction) in
             
         }
-        let ExitOverAction = UIAlertAction(title: "الخروج من سياسة الاستخدام", style: .default) { (action:UIAlertAction) in
+        let ExitOverAction = UIAlertAction(title:"الخروج من سياسة الأستخدام غير العادل", style: .default) { (action:UIAlertAction) in
             
         }
         alertView.addAction(OKAction)
@@ -65,7 +69,8 @@ class MainVC: UIViewController {
         let ExitOverAction = UIAlertAction(title: "أضغط هنا للخروج من سياسة", style: .default) { (action:UIAlertAction) in
             self.alertCheckOver()
             self.ExitOver()
-            self.ExitOverDownload(message: "لديك \(self.total) محاولات للخروج من سياسة الاستخدام العادل" )
+            self.ExitOverDownload(message: "لديك \(self.total) محاولات للخروج من سياسة الاستخدام غير العادل" )
+            
             
         }
         alertView.addAction(OKAction)
@@ -90,10 +95,10 @@ class MainVC: UIViewController {
         
     }
     func Move(){
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StoryboardVC") as? ViewController {
             if let navigator = navigationController {
                 viewController.hidesBottomBarWhenPushed = true
-                navigator.pushViewController(viewController, animated: false)
+                self.present(viewController, animated: false)
             }
         }
     }

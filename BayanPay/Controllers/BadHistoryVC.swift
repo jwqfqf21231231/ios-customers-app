@@ -12,6 +12,8 @@ class BadHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
  var BadHistory = [BadHistoryModel]()
     @IBOutlet weak var BadHistoryTB: UITableView!
     
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         BadHistoryTB.delegate = self

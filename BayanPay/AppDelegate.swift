@@ -8,14 +8,17 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
     var window: UIWindow?
    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
 
         if let userName = Services.lunched(){
@@ -26,8 +29,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let wind = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "StoryboardVC")
             window?.rootViewController = wind
         }
+        setupRemoteNotifications(application)
         return true
         
+    }
+    
+    func setupRemoteNotifications(_ application: UIApplication){
+        
+        //        Messaging.messaging().delegate = self
+        //UNUserNotificationCenter.current().delegate = self
+        //
+        let application = UIApplication.shared
+        if !application.isRegisteredForRemoteNotifications {
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(options: authOptions,completionHandler: {_, _ in })
+            
+            application.registerForRemoteNotifications()
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -54,4 +72,100 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+ @available(iOS 10, *)
+ extension AppDelegate : UNUserNotificationCenterDelegate {
+ 
+ func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+ }
+ 
+ 
+ func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+ fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+ completionHandler(UIBackgroundFetchResult.newData)
+ }
+ 
+ func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) { }
+ 
+ func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+ Messaging.messaging().apnsToken = deviceToken
+ }
+ 
+ 
+ func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+ 
+ if let refreshedToken = InstanceID.instanceID().token() {
+// if Auth_User.User_Id != 0 {
+// Auth_User.User_Token = refreshedToken
+// //Auth_User.func_updateDeviceTokenForFirebase(refreshedToken)
+// }
+ }
+ connectToFcm()
+ }
+ 
+ func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) { }
+ 
+ func connectToFcm() {
+ guard InstanceID.instanceID().token() != nil else {
+ return;
+ }
+ Messaging.messaging().shouldEstablishDirectChannel = true
+ }
+ 
+ // Receive displayed notifications for iOS 10 devices.
+ func userNotificationCenter(_ center: UNUserNotificationCenter,
+ willPresent notification: UNNotification,
+ withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+ 
+ 
+ let userInfo = notification.request.content.userInfo
+ 
+ //clicked
+ 
+ let state = UIApplication.shared.applicationState
+ // id user save local in app
+    //Banner library use to show alert
+    
+    
+// if state == .active  && Auth_User.User_Id !=  0 {
+// if let aps = userInfo["aps"] as? [String:Any] {
+// if let alert = aps["alert"] as? [String:Any] {
+// let body = alert["body"] as? String ?? ""
+// let title = alert["title"] as? String ?? ""
+// let banner = Banner(title: title, subtitle: body, image: nil, backgroundColor: "00ABA3".color)
+// banner.dismissesOnSwipe = true
+// banner.show(duration: 3.0)
+// banner.didTapBlock = {
+// Auth_User.func_goToApp()
+// // Auth_User.func_openSpecificScreen(userInfo)
+// }
+// }
+// }
+//
+ //self.func_updatePadgeActive(userInfo)
+// }
+ }
+ 
+ /////
+ func userNotificationCenter(_ center: UNUserNotificationCenter,
+ didReceive response: UNNotificationResponse,
+ withCompletionHandler completionHandler: @escaping () -> Void) {
+ 
+ //clicked
+ let userInfo = response.notification.request.content.userInfo
+ 
+ let state = UIApplication.shared.applicationState
+// if (state == .inactive || state == .background)  && Auth_User.User_Id != 0 {
+// self.func_updatePadgeActive(userInfo)
+// Auth_User.func_goToApp()
+// // Auth_User.func_openSpecificScreen(userInfo)
+// }
+ }
+ 
+ 
+ 
+ 
+    }
+
+ 
 

@@ -18,6 +18,7 @@ class AccountHistoryCell: UITableViewCell {
     @IBOutlet weak var Time: UILabel!
     @IBOutlet weak var Speed: UILabel!
     @IBOutlet weak var AccDate: UILabel!
+    @IBOutlet weak var TDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
+    @IBOutlet weak var Activityindecator: UIActivityIndicatorView!
     //    var ProfileData:[Profile]
     var ProfileData:[Profile] = []
     @IBOutlet weak var Name: UILabel!
@@ -25,10 +26,12 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          Profile()
+         Activityindecator.startAnimating()
         
     }
  
     func Profile(){
+       
         Services.UserProfile{(error:Error? , ProfileData:[Profile]?) in
             if let User = ProfileData {
                 self.ProfileData = User
@@ -74,10 +77,10 @@ class ProfileVC: UIViewController {
                 let _ :Profile = User[0]
                 self.Advs.text = name.Hamla
                 
-                
-                
+                self.Activityindecator.stopAnimating()
             }
         }
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -15,7 +15,7 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        self.title = "الشحن"
+        self.title = "بطاقات الشحن"
 
           self.navigationItem.hideBackWord()
         ActivaityTB.dataSource = self

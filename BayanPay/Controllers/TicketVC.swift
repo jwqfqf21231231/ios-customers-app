@@ -11,9 +11,7 @@ import Alamofire
 import SwiftyJSON
 class TicketVC: UIViewController {
     
-    var TName:String = ""
-    var TMobile:String = ""
-    var TNote:String = ""
+
     
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Note: UITextField!
@@ -22,20 +20,20 @@ class TicketVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
         
        
     }
     
     func TicketSend(){
-        TName = self.Name.text!
-        TMobile = self.Mobile.text!
-        TNote = self.Note.text!
-        
+        var TName:String = self.Name.text!
+        var TMobile:String = self.Mobile.text!
+        var TNote:String = self.Note.text!
+
         guard let api_User = Services.getApiTell() else {
             return }
         let url = Urls.AddTicket
-        let AddTicketURL = url + api_User + "@gfusion" + "&name=" + "\(TName)" + "&mobile=" + "\(TMobile)" + "&nots=" + "\(TNote)"
+        let AddTicketURL = url + api_User + "@gfusion" + "&name=" + TName + "&mobile=" + "\(TMobile)" + "&nots=" + "\(TNote)"
         print("URL",AddTicketURL)
         Alamofire.request(AddTicketURL, method: .post, encoding: URLEncoding.default, headers: Urls.header)
             .validate(statusCode: 200..<500)
@@ -61,10 +59,10 @@ class TicketVC: UIViewController {
         if ((self.Name.text ) == "" || (self.Mobile.text == "") || (self.Note.text == ""))  {
             return displayMessage(message: "", Title: "قم بإدخال اسم والرقم والملاحظة")
         }else{
+            TicketSend()
             self.Mobile.text = ""
             self.Name.text = ""
             self.Note.text = ""
-            TicketSend()
         }
     }
 

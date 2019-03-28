@@ -551,7 +551,6 @@ class Services: NSObject {
     class func CheckHamlat(id:Int, groupid:Int, completion: @escaping(_ error: Error?, _ CheckHamla:[CheckHamla]?)->Void){
         guard let api_User = Services.getApiTell() else {
             return }
-        //        082853838&HamlaID=104&Groupid=22
         let url = Urls.CheckHamla
         let RegisterHamla = url + api_User + "&&HamlaID=" + "\(id)" + "&Groupid=" + "\(groupid)"
         print("RegisterHamla",RegisterHamla)
