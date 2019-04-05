@@ -11,7 +11,6 @@ import UIKit
 class ProfileVC: UIViewController {
     
     @IBOutlet weak var Activityindecator: UIActivityIndicatorView!
-    //    var ProfileData:[Profile]
     var ProfileData:[Profile] = []
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var IsBad: UILabel!
@@ -22,6 +21,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var ExpDate: UILabel!
     @IBOutlet weak var Password: UILabel!
     @IBOutlet weak var Email: UILabel!
+    @IBOutlet weak var StatusOnline: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,6 @@ class ProfileVC: UIViewController {
     }
  
     func Profile(){
-       
         Services.UserProfile{(error:Error? , ProfileData:[Profile]?) in
             if let User = ProfileData {
                 self.ProfileData = User
@@ -63,6 +62,14 @@ class ProfileVC: UIViewController {
                     self.IsBad.text = "ضمن الاستخدام العادل"
                 }
                 
+                let Online = name.StatusOnline as Bool
+                if(Online == true){
+                    self.StatusOnline.text = "يعمل حاليا"
+                } else{
+                    
+                    self.StatusOnline.text = "لا يعمل حاليا"
+                }
+                
                 
                 let _ :Profile = User[0]
                 self.Mobile.text = name.Mobile
@@ -76,7 +83,7 @@ class ProfileVC: UIViewController {
                 
                 let _ :Profile = User[0]
                 self.Advs.text = name.Hamla
-                
+               
                 self.Activityindecator.stopAnimating()
             }
         }

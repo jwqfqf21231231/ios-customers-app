@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
+    @IBOutlet weak var activityLoad: UIActivityIndicatorView!
+    
     var hamlaID:Int = 0
     var SpeedID:Int = 0
     var PeriodID:Int = 0
@@ -26,9 +28,10 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
      var AddpendingMsg = [AddpendingMessage]()
     
     override func viewDidLoad() {
+        activityLoad.startAnimating()
         self.navigationItem.hideBackWord()
         self.title = "حجز البطاقة"
-
+       
         super.viewDidLoad()
         self.HamlaPK.dataSource = self
         self.HamlaPK.delegate = self
@@ -38,7 +41,6 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         
         self.PeriodPK.dataSource = self
         self.PeriodPK.delegate = self
-        
           GetHamlaList()
     }
     
@@ -50,11 +52,7 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
             self.displayErrorMessage(message: add.Message)
           }}}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-      
-    }
-    
+  
     func GetHamlaList(){
         Services.GetHamlaListPost{(error:Error? , HamlaList:[HamlaList]?) in
             if let HamlaItem = HamlaList {
@@ -85,7 +83,8 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
                 self.GetHamlaPeriod_Var = PeriodItem
                 self.PeriodPK.reloadAllComponents()
                 print("per",PeriodItem)
-                
+                  self.activityLoad.stopAnimating()
+              
             }
         }
     }
@@ -113,12 +112,9 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         if (pickerView.tag == 0){
             hamlaID = GetHamlaList_Var[row].id
             GetHamlaSpeed(hamlaID)
-            
+
             return GetHamlaList_Var[row].name
-            
-            
-        }
-        else if(pickerView.tag == 1){
+        } else if(pickerView.tag == 1){
             SpeedID = GetHamlaSpeed_Var[row].ID
             GetHamlaPeriod(SpeedID,hamlaID)
             
@@ -128,7 +124,8 @@ class ReservationVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
            PeriodID = GetHamlaPeriod_Var[row].ID
           return self.GetHamlaPeriod_Var[row].Title
         }
-        
+      
+      
     }
     
     @IBAction func AddPending(_ sender: Any) {

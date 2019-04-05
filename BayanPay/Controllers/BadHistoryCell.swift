@@ -12,7 +12,7 @@ class BadHistoryCell: UITableViewCell {
     @IBOutlet weak var BadHistoryView: UIView!
     @IBOutlet weak var ID: UILabel!
     @IBOutlet weak var DownloadPerDay: UILabel!
-        @IBOutlet weak var Date: UILabel!
+    @IBOutlet weak var Date: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

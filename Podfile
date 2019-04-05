@@ -18,5 +18,5 @@ target 'BayanPay' do
   pod 'SwiftSocket'
   pod 'Firebase', '~> 4.8'
   pod 'Firebase/Messaging'
-  pod 'BRYXBanner', '~> 0.7.0'
+  pod 'BRYXBanner'
 end

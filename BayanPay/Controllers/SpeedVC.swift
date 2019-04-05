@@ -14,7 +14,7 @@ class SpeedVC: UIViewController,UIWebViewDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let webUrl : NSURL = NSURL(string: "https://fast.com/")!
+        let webUrl : NSURL = NSURL(string: "http://fusionps.speedtestcustom.com")!
         let webRequest : NSURLRequest = NSURLRequest(url: webUrl as URL)
         WebSpeed.loadRequest(webRequest as URLRequest)
     }

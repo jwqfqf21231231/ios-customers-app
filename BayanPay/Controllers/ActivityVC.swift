@@ -13,6 +13,7 @@ class ActivityVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     @IBOutlet weak var ActivaityTB: UITableView!
     var ActivityItem = [ActivityModel]()
     
+    
     override func viewDidLoad() {
       super.viewDidLoad()
         self.title = "بطاقات الشحن"

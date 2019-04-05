@@ -55,7 +55,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage (~> 3.5)
-  - BRYXBanner (~> 0.7.0)
+  - BRYXBanner
   - ChameleonFramework
   - Charts (~> 3.1.0)
   - DZNEmptyDataSet
@@ -110,6 +110,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   SwiftyOnboard: de60e90c2af23dd61b01ec0c6a8d0be3370f857b
 
-PODFILE CHECKSUM: 7c6f7ccdcc24f7bd5235c0ec4fa5aa15467a4135
+PODFILE CHECKSUM: 79afaa3baa4ce9898fa044d37802255efb7cfb9c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

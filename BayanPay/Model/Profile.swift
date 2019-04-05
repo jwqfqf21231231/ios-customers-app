@@ -17,8 +17,9 @@ struct Profile {
     var Hamla : String = ""
     var ExpiryDate :String = ""
     var UserOnline : Bool = true
-    var Isbad :Bool = false
+    var Isbad :Bool = true
     var Email : String = ""
+    var StatusOnline:Bool = true
     
 
 }

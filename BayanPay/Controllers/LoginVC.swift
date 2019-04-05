@@ -27,7 +27,6 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func LoginAc(_ sender: Any) {
-        
         guard  (UserName.text != nil)  &&  (Password.text != nil)else {
             return self.displayErrorMessage(message: "قم بإدخال رقم الجوال وكلمة المرور")
         }
@@ -58,7 +57,7 @@ class LoginVC: UIViewController {
                         
                         print(response)
                     case .failure(let error):
-                        self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
+                        self.displayErrorMessage(message: "عذرا قم بإدخال رقم موبيل فعال مبدوء 05 \n وكلمة المرور مكونة من 6 حقول")
                         print(error)
                 }
         }

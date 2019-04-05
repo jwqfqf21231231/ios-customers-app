@@ -22,6 +22,7 @@ class CodeVC: UIViewController {
 
     }
     func CheckCode(){
+        
         let Mobile = MobileNumber
         let url = Urls.chekCode + Mobile + "&VerficationCode=" + "\(CodeSMS.text!)"
         print(url)
@@ -50,9 +51,7 @@ class CodeVC: UIViewController {
         }else{
             CheckCode()
         }}
-    
         
-    
     
     func displayErrorMessage(message:String, title:String) {
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -13,6 +13,8 @@
 		174E6080206F15D80022CD0A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6076206F15D70022CD0A /* HomeVC.swift */; };
 		174E6081206F15D80022CD0A /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6077206F15D70022CD0A /* ActivityVC.swift */; };
 		174E6082206F15D80022CD0A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E6078206F15D70022CD0A /* LoginVC.swift */; };
+		C1027F2F225098E300E7B22A /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1027F2E225098E300E7B22A /* NotificationCell.swift */; };
+		C1027F3322509A6400E7B22A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1027F3222509A6400E7B22A /* Notification.swift */; };
 		C103DE24221EA79E00296EF4 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C103DE23221EA79E00296EF4 /* ReservationVC.swift */; };
 		C1044853221ECBB200290138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1044852221ECBB200290138 /* Main.storyboard */; };
 		C1052BF62233B79900C3D225 /* PerDayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1052BF52233B79900C3D225 /* PerDayVC.swift */; };
@@ -88,6 +90,8 @@
 		174E6077206F15D70022CD0A /* ActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		174E6078206F15D70022CD0A /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		31F0EAA685FA1E7B06DD442A /* Pods-BayanPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BayanPay.release.xcconfig"; path = "Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay.release.xcconfig"; sourceTree = "<group>"; };
+		C1027F2E225098E300E7B22A /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		C1027F3222509A6400E7B22A /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C103DE23221EA79E00296EF4 /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		C1044852221ECBB200290138 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C1052BF52233B79900C3D225 /* PerDayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerDayVC.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				C1052BF52233B79900C3D225 /* PerDayVC.swift */,
 				C1D1FD2122350A0E00076344 /* AboutVC.swift */,
 				C19A0FC222421BEE0086C76C /* PrivacyPolicyVC.swift */,
+				C1027F2E225098E300E7B22A /* NotificationCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				C1483E92222130A700B04378 /* HamlaList.swift */,
 				C17E3B832222B4820078380A /* Chart.swift */,
 				C1E25D402231376F00C65CFA /* UserMobile.swift */,
+				C1027F3222509A6400E7B22A /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,7 +455,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BRYXBanner/BRYXBanner.framework",
@@ -484,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BayanPay/Pods-BayanPay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -517,6 +523,7 @@
 				C17E3B82222288CF0078380A /* LoginNavVC.swift in Sources */,
 				C14AEB0E220C110E002BB10B /* Advs.swift in Sources */,
 				C186F385221566FD00D6B444 /* CheckUser.swift in Sources */,
+				C1027F2F225098E300E7B22A /* NotificationCell.swift in Sources */,
 				C120FB9121EDD0C0004A5694 /* OutAdvsVS.swift in Sources */,
 				C1526AA2220597950033E61A /* GetPriceCell.swift in Sources */,
 				C1F4606D221ED999007A16AC /* CustomOverlay.swift in Sources */,
@@ -545,6 +552,7 @@
 				C10E622621D8A4EE00813CB6 /* AdvsCell.swift in Sources */,
 				C1CB02EB2201A692000F72C9 /* ProfileVC.swift in Sources */,
 				C1F4606C221ED999007A16AC /* CustomPage.swift in Sources */,
+				C1027F3322509A6400E7B22A /* Notification.swift in Sources */,
 				C1A3FD5F2202CF6700A7CB0F /* AccountHistoryModel.swift in Sources */,
 				C139BBA621C68927003124E5 /* ConfairmVC.swift in Sources */,
 				C1F46070221ED999007A16AC /* StoryboardExample.swift in Sources */,
@@ -684,13 +692,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XQ773BB5L;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mohanad.fusionapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -704,13 +712,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XQ773BB5L;
 				INFOPLIST_FILE = "$(SRCROOT)/BayanPay/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mohanad.fusionapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

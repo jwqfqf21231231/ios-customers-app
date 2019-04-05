@@ -10,10 +10,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ConfairmVC: UIViewController {
+class ConfairmVC:RegisterVC {
 
     @IBOutlet weak var CodeV: UITextField!
     var MobileNo:String = ""
+    var EmailNo:String = ""
+    var passwordNo:String = ""
+    var ConfirmPasswordNo:String = ""
+    var hamlaidNo:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
           self.navigationItem.hideBackWord()
@@ -21,10 +26,14 @@ class ConfairmVC: UIViewController {
     }
     
     @IBAction func SendCode(_ sender: Any) {
+        guard  ((CodeV.text) != nil)else {
+            return self.displayErrorMessageForConfirm(message: "تأكد من رمز التفعيل")
+        }
         VeriyficationCode()
     }
     
     func VeriyficationCode(){
+       
         let url = Urls.VireyficationCode
         let Code = CodeV.text!
         let Mobile = MobileNo
@@ -35,41 +44,25 @@ class ConfairmVC: UIViewController {
             .responseJSON { response  in
                 switch response.result {
                 case .failure( _):
-                    self.displayErrorMessage(message: "تأكد من رمز التفعيل")
+                    self.displayErrorMessageForConfirm(message: "تأكد من رمز التفعيل")
                 case .success(let value):
                     let json = JSON(value)
-                    self.loadLoginScreen()
+                    self.RegisterNewUser(email: self.EmailNo, password: self.passwordNo, confirmpassword: self.ConfirmPasswordNo )
+                    self.RegisterHamla(email: self.EmailNo, hamlaid: self.hamlaidNo)
                     print(json)
                 }}
         
     }
-//                switch response.result {
-//                case .success(let value):
-//                    let json = JSON(value)
-//                    if  let _ = json["1"].string{
-//
-//                            self.loadLoginScreen()
-//
-//                    } else {
-//                        self.displayErrorMessage(message: "قم بإدخال رقم التحقق الذي تم أرسالة لك")
-//                    }
-//                    print(response)
-//                case .failure(let error):
-//
-//                    self.displayErrorMessage(message: "حاول مرة أخرى")
-//                    print(error)
-//                }
-//        }
-//    }
+
     
-    func loadLoginScreen(){
+    override func loadLoginScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
          navigationController?.pushViewController(viewController, animated: true) }
     
 
     
-    func displayErrorMessage(message:String) {
+     func displayErrorMessageForConfirm(message:String) {
         let alertView = UIAlertController(title: "خطأ بالأدخال", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "رجوع ", style: .default) { (action:UIAlertAction) in
         }

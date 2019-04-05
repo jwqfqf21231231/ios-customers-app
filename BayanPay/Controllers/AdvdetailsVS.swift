@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource {
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     
     var advData:AdvsModel!
     var PriceItem: [PriceModel] = []
@@ -30,6 +31,7 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
 
     
     override func viewDidLoad() {
+        activityLoader.startAnimating()
         super.viewDidLoad()
         pricesCollection.dataSource = self
         pricesCollection.delegate = self
@@ -130,7 +132,7 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
     
     
     func detalis(){
-        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + advData.Image)
+        let url = URL(string:"http://mapi.fusion.ps/images/img/" + advData.Image)
         ImgAdv.sd_setImage(with: url)
         
         if advData.Conditions == "" {
@@ -155,8 +157,8 @@ class AdvdetailsVS: UIViewController,UICollectionViewDelegate,UICollectionViewDa
             _ = self.id
             if let Prices = PriceData {
                 self.PriceItem = Prices
-                
                 self.pricesCollection.reloadData()
+                self.activityLoader.stopAnimating()
             }
         }
     }

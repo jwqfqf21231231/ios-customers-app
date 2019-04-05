@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import Firebase
 import UserNotifications
+import BRYXBanner
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
@@ -90,6 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
  Messaging.messaging().apnsToken = deviceToken
  }
+    
+    
  
  
  func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
@@ -127,24 +130,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     //Banner library use to show alert
     
     
-// if state == .active  && Auth_User.User_Id !=  0 {
-// if let aps = userInfo["aps"] as? [String:Any] {
-// if let alert = aps["alert"] as? [String:Any] {
-// let body = alert["body"] as? String ?? ""
-// let title = alert["title"] as? String ?? ""
-// let banner = Banner(title: title, subtitle: body, image: nil, backgroundColor: "00ABA3".color)
-// banner.dismissesOnSwipe = true
-// banner.show(duration: 3.0)
-// banner.didTapBlock = {
-// Auth_User.func_goToApp()
-// // Auth_User.func_openSpecificScreen(userInfo)
-// }
-// }
-// }
-//
- //self.func_updatePadgeActive(userInfo)
-// }
- }
+ if state == .active  &&  Services.getApiTell() !=  "" {
+ if let aps = userInfo["aps"] as? [String:Any] {
+ if let alert = aps["alert"] as? [String:Any] {
+ let body = alert["body"] as? String ?? ""
+ let title = alert["title"] as? String ?? ""
+ let banner = Banner(title: title, subtitle:body, image: UIImage(named: "mail"), backgroundColor: UIColor(red:48.00/255.0, green:174.0/255.0, blue:51.5/255.0, alpha:1.000))
+    banner.dismissesOnTap = true
+    banner.show(duration: 6.0)
+
+ banner.didTapBlock = {}
+    
+}
+}}
+
+
  
  /////
  func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -158,7 +158,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 // if (state == .inactive || state == .background)  && Auth_User.User_Id != 0 {
 // self.func_updatePadgeActive(userInfo)
 // Auth_User.func_goToApp()
-// // Auth_User.func_openSpecificScreen(userInfo)
 // }
  }
  
@@ -169,3 +168,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
  
 
+}

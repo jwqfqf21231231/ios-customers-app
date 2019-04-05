@@ -23,6 +23,7 @@ class NewPasswordVC: UIViewController {
     }
 
     func GetCode(){
+      
         let NewPassword = PasswordNew.text!
         let url = Urls.Newpassword + "\(MobileNumber)" + "&VerficationCode=" + "\(Code)" + "&Newpassword=" + NewPassword
         print(url)
@@ -30,7 +31,7 @@ class NewPasswordVC: UIViewController {
             .responseJSON { response in
                 switch response.result {
                 case .failure( _):
-                    self.displayErrorMessage(message: "أدخل رقم جوال فعال", title: "خطأ بالأدخال")
+                    self.displayErrorMessage(message:"قم بتعبئة الحقول", title: "خطأ بالأدخال")
                 case .success(let value):
                     let json = JSON(value)
                     if json == "1"{
@@ -43,7 +44,7 @@ class NewPasswordVC: UIViewController {
     
     @IBAction func NewPassword(_ sender: Any) {
         if(ConfirmNewPassword.text == nil || ConfirmNewPassword.text == "" || PasswordNew.text == nil || PasswordNew.text == "" ){
-            displayErrorMessage(message: "قم بإدخال رقم التحقق ", title: "خطأ بالأدخال")
+            self.displayErrorMessage(message:"قم بتعبئة الحقول", title: "")
         }else{
             GetCode()
         }}

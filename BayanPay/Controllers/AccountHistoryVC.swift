@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 class AccountHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var AccountHistory = [AccountHistoryModel]()
     @IBOutlet weak var AccountHistoryTB: UITableView!
@@ -18,7 +17,7 @@ class AccountHistoryVC: UIViewController,UITableViewDelegate,UITableViewDataSour
         AccountHistoryTB.delegate = self
         AccountHistoryTB.dataSource = self
         AccountData()
-         super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning()
     }
     
     override func didReceiveMemoryWarning() {

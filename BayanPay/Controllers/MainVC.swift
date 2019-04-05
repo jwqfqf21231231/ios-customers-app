@@ -62,11 +62,12 @@ class MainVC: UIViewController {
     
     //    CheckExitOver Action
     func CheckExitOver(message:String) {
+        
         let alertView = UIAlertController(title:"", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "موفق", style: .default) { (action:UIAlertAction) in
-            
         }
-        let ExitOverAction = UIAlertAction(title: "أضغط هنا للخروج من سياسة", style: .default) { (action:UIAlertAction) in
+       
+        let ExitOverAction = UIAlertAction(title:"أضغط هنا للخروج من سياسة", style: .default) { (action:UIAlertAction) in
             self.alertCheckOver()
             self.ExitOver()
             self.ExitOverDownload(message: "لديك \(self.total) محاولات للخروج من سياسة الاستخدام غير العادل" )
@@ -96,7 +97,7 @@ class MainVC: UIViewController {
     }
     func Move(){
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StoryboardVC") as? ViewController {
-            if let navigator = navigationController {
+            if navigationController != nil {
                 viewController.hidesBottomBarWhenPushed = true
                 self.present(viewController, animated: false)
             }

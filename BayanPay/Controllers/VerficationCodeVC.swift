@@ -24,19 +24,26 @@ class VerficationCodeVC: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+  
     func IsAccount(){
         let Mobile = MobileNo.text
-        let url = Urls.IsAccountExist + Mobile!
+        let url = Urls.isUserExist + Mobile!
         print(url)
         Alamofire.request(url, method: .post, encoding: URLEncoding.default, headers: Urls.header)
             .responseJSON { response in
                 switch response.result {
                 case .failure( _):
-                    self.displayErrorMessage(message: "ليس لديك حساب لدينا", title: "خطأ بالأدخال")
+                    
+                    self.displayErrorMessage(message: "أدخل رقم جوال فعال", title: "")
                 case .success(let value):
-                    let json = JSON(value)
+                    let json:Int = response.result.value as! Int
                     print(json)
-                }}}
+                    if json == 1 {
+                        print(json)
+                        self.GetCode()
+                    }else{
+                        self.displayErrorMessage(message: "قم بإدخال رقم موبيل فعال", title: "")
+                    }}}}
     
     func GetCode(){
         let Mobile = MobileNo.text
@@ -57,10 +64,8 @@ class VerficationCodeVC: UIViewController {
     @IBAction func SendNumber(_ sender: Any) {
         if(MobileNo.text == nil || MobileNo.text == "" ){
             displayErrorMessage(message: "أدخل رقم جوال فعال", title: "خطأ بالأدخال")
-           
         } else {
-            
-          GetCode()
+         IsAccount()
         
         }
     }

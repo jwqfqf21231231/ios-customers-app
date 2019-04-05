@@ -67,10 +67,10 @@ class ChartsVC: UIViewController {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  Chart()
-                        Chartitem.x = data["x"]?.double ?? 0
-                        self.x = self.x + Chartitem.x
-                        Chartitem.y = data["y"]?.double ?? 0
-                        self.y = self.y + Chartitem.y
+                        Chartitem.x = data["x"]?.int ?? 0
+                        self.x = self.x + Double(Chartitem.x) * 100
+                        Chartitem.y = data["y"]?.int ?? 0
+                        self.y = self.y + Double(Chartitem.y) * 100
                         Charts.append(Chartitem)
                         print("Chart",data)
                     }

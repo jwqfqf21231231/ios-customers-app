@@ -14,6 +14,8 @@ import SDWebImage
 
 class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    @IBOutlet weak var actvitiyLoader: UIActivityIndicatorView!
+    
     @IBOutlet weak var Scroll: UIScrollView!
     @IBOutlet weak var Conditions: UILabel!
     var advData:AdvModel!
@@ -25,6 +27,7 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     var id:Int!
     
     override func viewDidLoad() {
+        actvitiyLoader.startAnimating()
         self.navigationItem.hideBackWord()
         super.viewDidLoad()
         PricesCollection.delegate = self
@@ -53,7 +56,7 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
     
     
     func detalis(){
-        let url = URL(string:"http://mapi.fusion.ps/images/shortImg/" + advData.Image)
+        let url = URL(string:"http://mapi.fusion.ps/images/img/" + advData.Image)
         Image.sd_setImage(with: url)
         
         if advData.Conditions == "" {
@@ -81,8 +84,10 @@ class OutAdvdetailsVC: UIViewController,UICollectionViewDelegate,UICollectionVie
                 self.PriceItem = Prices
                 self.PricesCollection.reloadData()
                 print(Prices)
+                 self.actvitiyLoader.stopAnimating()
             }
         }
+        
     }
 
     

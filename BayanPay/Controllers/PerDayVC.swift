@@ -19,10 +19,9 @@ class PerDayVC: UIViewController {
     var NumberOfRows = [PieChartDataEntry]()
     
     override func viewDidLoad() {
-        self.title = "نسبة التحميل اليوم"
-
+        self.title = "التحميل اليومي"
         super.viewDidLoad()
-        PieChart.chartDescription?.text = ""
+        PieChart.chartDescription?.text = "الكوته اليومية \(self.limit)"
         ActivityData()
     }
     
@@ -32,8 +31,8 @@ class PerDayVC: UIViewController {
                 self.PerDays = char
                 let limit:PerDay = char[0]
                 let download:PerDay = char[0]
-                self.limit = limit.limit
-                self.download = download.download
+                self.limit = Double(limit.limit)
+                self.download = Double(download.download)
                 print(char)
                 self.UpdateData()
             }
@@ -44,16 +43,16 @@ class PerDayVC: UIViewController {
     //function set and show data
     func UpdateData(){
         //Configration of chart and set data of x , y
-        DataEntryLimit.value = self.limit
+        DataEntryLimit.value = self.limit - self.download
         DataEntryDownload.value = self.download
-        DataEntryLimit.label = "نسبة الكلية "
-        DataEntryDownload.label = "نسبة التحميل المستهلك"
+        DataEntryLimit.label = "المتبقي بالجيجا"
+        DataEntryDownload.label = "المستخدم بالجيجا"
         NumberOfRows = [DataEntryLimit,DataEntryDownload]
         
         let chartDataSet = PieChartDataSet(values:NumberOfRows, label:nil)
         let ChartData = PieChartData(dataSet: chartDataSet)
-        
-        let colors = [UIColor(named: "iosColor"),UIColor(named: "macColor")]
+
+        let colors = [UIColor(named: "macColor"),UIColor(named: "iosColor")]
         chartDataSet.colors = colors as! [NSUIColor]
         
         PieChart.data = ChartData

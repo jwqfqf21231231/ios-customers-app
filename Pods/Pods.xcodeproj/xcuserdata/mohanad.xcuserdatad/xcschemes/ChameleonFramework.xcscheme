@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4273171B8F85B95806C7A7AEE258783F"
+               BlueprintIdentifier = "DDA4920E0F0355D615535EC440A51F7A"
+               BuildableName = "ChameleonFramework.framework"
                BlueprintName = "ChameleonFramework"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ChameleonFramework.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

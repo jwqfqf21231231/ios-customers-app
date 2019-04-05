@@ -10,20 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 class TicketVC: UIViewController {
-    
-
-    
     @IBOutlet weak var Name: UITextField!
-    @IBOutlet weak var Note: UITextField!
     @IBOutlet weak var Mobile: UITextField!
-   
-
+    @IBOutlet weak var Note: UITextField!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-       
-    }
+        super.viewDidLoad()}
     
     func TicketSend(){
         var TName:String = self.Name.text!

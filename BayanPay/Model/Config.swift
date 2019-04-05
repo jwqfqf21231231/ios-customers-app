@@ -97,11 +97,14 @@ struct Urls {
     
     static let CheckUserMobile = "http://mapi.fusion.ps/api/Users/CheckUsermobile?MobileNo="
     
+    
     static let GetPerDay = "http://mapi.fusion.ps/api/Users/GetDownloadPerDay?userid="
     
     
     static let VireyficationCode = "http://mapi.fusion.ps/api/Values/CheckVerficationCode?MobileNo="
     
-    static var Mobile:String = ""
     
+    static let GetUserNotification = "http://mapi.fusion.ps/api/Users/GetUserNotification?MobileNo="
+    
+    static let isUserExist = "http://mapi.fusion.ps/api/Values/IsAccountExist?MobileNo="
 }

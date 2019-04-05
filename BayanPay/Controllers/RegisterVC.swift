@@ -15,9 +15,9 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var ConfirmPassword: UITextField!
     @IBOutlet weak var Password: UITextField!
     var Hamlaid:Int = 0
+    
     override func viewDidLoad() {
         self.title = "تسجيل مستخدم جديد"
-        
         super.viewDidLoad()
         self.view.endEditing(true)
         print("HAMLAID",Hamlaid)
@@ -30,14 +30,16 @@ class RegisterVC: UIViewController {
     
 
     @IBAction func RegisterBtn(_ sender: Any) {
-    RegisterNewUser()
-     self.GetCode()
+    guard  ((Email.text) != nil) && ((Password.text) != nil) && ((ConfirmPassword.text) != nil) else {
+        return self.displayErrorMessage(message: "قم بتعبئة الحقول")
+    }
+     self.isUser()
   }
-    func RegisterNewUser(){
+    public  func RegisterNewUser(email:String, password:String, confirmpassword:String){
         let parameters: [String: String]=[
-            "Mobile":Email.text!,
-            "Password":Password.text!,
-            "ConfirmPassword":ConfirmPassword.text!,
+            "Mobile":email,
+            "Password":password,
+            "ConfirmPassword":confirmpassword,
             ]
         
         Alamofire.request(Urls.Register, method: .post,parameters:parameters, encoding: URLEncoding.default, headers: Urls.header)
@@ -48,24 +50,25 @@ class RegisterVC: UIViewController {
                     let json = JSON(value)
                     if  let _ = json["result"].string,
                         let _ = json["result"].string {
-                         self.RegisterHamla()
+                     
+                         self.loadLoginScreen()
                         
                     } else  {
                         print("error .. !")
-                        self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
+                        self.displayErrorMessage(message: "عذرا قم بتأكد من إدخال رقم موبيل فعال")
                     }
                     print(response)
                 case .failure(let error):
-                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
+                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم موبيل فعال مبدوء 05 \n وكلمة المرور مكونة من 6 حقول")
                     print(error)
                 }
         }
     }
     
     
-    func RegisterHamla(){
+    public func RegisterHamla(email:String, hamlaid:Int){
         let url = Urls.RegisterHamla
-        let RegisterHamla = url + "\(Email.text!)" + "&Hamlaid=" + "\(Hamlaid)"
+        let RegisterHamla = url + "\(email)" + "&Hamlaid=" + "\(hamlaid)"
         print("RegisterHamla",RegisterHamla)
         Alamofire.request(RegisterHamla, method: .post, encoding: URLEncoding.default, headers: Urls.header)
             .validate(statusCode: 200..<500)
@@ -81,12 +84,33 @@ class RegisterVC: UIViewController {
                     }
                     print(response)
                 case .failure(let error):
-                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم الجوال مبدوء 059 \n وكلمة المرور مكونة من 6 حقول")
+                    self.displayErrorMessage(message: "عذرا قم بإدخال رقم موبيل فعال مبدوء 05 \n وكلمة المرور مكونة من 6 حقول")
                     print(error)
                 }
         }
         
     }
+    
+    func isUser(){
+          let Mobile = Email.text
+          let isUserExit = Urls.isUserExist + Mobile!
+        print(isUserExit)
+        Alamofire.request(isUserExit, method: .post, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure( _):
+                   
+                    self.displayErrorMessage(message: "أدخل رقم جوال فعال")
+                case .success(let value):
+                    let json:Int = response.result.value as! Int
+                    print(json)
+                    if json == 0 {
+                        print(json)
+                        self.GetCode()
+                    }else{
+                        self.displayErrorMessage(message: "قم بإدخال رقم موبيل فعال")
+                    }
+                 }}}
     
     func GetCode(){
         let Mobile = Email.text
@@ -107,16 +131,17 @@ class RegisterVC: UIViewController {
 
     func loadLoginScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         navigationController?.pushViewController(viewController, animated: true) }
     
     func loadConfirmVCScreen(){
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "ConfairmVC") as! ConfairmVC
-           viewController.MobileNo = Email.text!
-        print(Urls.Mobile)
-       navigationController?.pushViewController(viewController, animated: true) }
+            viewController.MobileNo = Email.text!
+            viewController.ConfirmPasswordNo = ConfirmPassword.text!
+            viewController.EmailNo = Email.text!
+            viewController.passwordNo = Password.text!
+        navigationController?.pushViewController(viewController, animated: true) }
     
     func displayErrorMessage(message:String) {
         let alertView = UIAlertController(title: "خطأ بالأدخال", message: message, preferredStyle: .alert)

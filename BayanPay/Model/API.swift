@@ -178,9 +178,11 @@ class Services: NSObject {
                         ProfileItem.Password = data["Price"]?.string ?? ""
                         ProfileItem.Hamla = data["Hamla"]?.string ?? ""
                         ProfileItem.ExpiryDate = data["ExpiryDate"]?.string ?? ""
-                        ProfileItem.UserOnline = data["UserOnline"]?.bool ?? true
-                        ProfileItem.Isbad = data["Isbad"]?.bool ?? false
+                        ProfileItem.UserOnline = data["status"]?.bool ?? true
+                        ProfileItem.Isbad = data["Isbad"]?.bool ?? true
+                        ProfileItem.StatusOnline = data["UserOnline"]?.bool ?? true
                         ProfileItem.Email = data["Email"]?.string ?? ""
+                        
                         ProfileItem.Password = data["Password"]?.string ?? ""
                         ProfileModel.append(ProfileItem)
                         
@@ -632,8 +634,8 @@ class Services: NSObject {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  Chart()
-                        Chartitem.x = data["x"]?.double ?? 0
-                        Chartitem.y = data["y"]?.double ?? 0
+                        Chartitem.x = data["x"]?.int ?? 0
+                        Chartitem.y = data["y"]?.int ?? 0
                         Charts.append(Chartitem)
                         print("tell",data)
                         }
@@ -722,14 +724,42 @@ class Services: NSObject {
                     for data in dataArr {
                         guard let data = data.dictionary else { return }
                         let Chartitem =  PerDay()
-                        Chartitem.limit = data["limit"]?.double ?? 0.0
-                        Chartitem.download = data["download"]?.double ?? 0.0
+                        Chartitem.limit = data["limit"]?.int ?? 0
+                        Chartitem.download = data["download"]?.int ?? 0
                         Charts.append(Chartitem)
                         print("tell",data)
                     }
                     completion(nil, Charts)
                 }}}
     
- 
-
+    
+    //    perDay
+    class func GetNotification(completion: @escaping(_ error: Error?, _ Notfication:[NotficationModel]?)->Void){
+        guard let api_User = Services.getApiUser() else {
+            return }
+        let url = Urls.GetUserNotification
+        let ChartURL = url + api_User
+        print(ChartURL)
+        Alamofire.request(ChartURL, method: .get, encoding: URLEncoding.default, headers: Urls.header)
+            .responseJSON { response in
+                switch response.result {
+                case .failure(let error):
+                    completion(error,nil)
+                    print("error")
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    guard let dataArr = json["data"].array else { return }
+                    
+                    var Notfications:[NotficationModel] = []
+                    for data in dataArr {
+                        guard let data = data.dictionary else { return }
+                        let NotiItem =  NotficationModel()
+                        NotiItem.date    = data["date"]?.string ?? ""
+                        NotiItem.message = data["message"]?.string ?? ""
+                        Notfications.append(NotiItem)
+                        print("tell",data)
+                    }
+                    completion(nil, Notfications)
+                }}}
 }
